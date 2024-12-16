@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross_double_farmland",
+    "textures": {
+        "cross": "block/beetroots_stage1",
+		"cross2": "block/beetroots_stage1"
+    }
+}

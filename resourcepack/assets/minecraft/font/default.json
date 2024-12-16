@@ -1,0 +1,226 @@
+{
+    "providers": [
+        
+		{
+         "type": "bitmap",
+			"file": "icons:chat/gamemodes.png",
+			"ascent": 8,
+			"height": 9,
+			"chars": [
+			"\uDB81\uDC18\uDB81\uDC19\uDB81\uDC1A\uDB81\uDC1B\uDB81\uDC1C"
+            ]
+        },
+        {
+         "type": "bitmap",
+         "file": "icons:chat/advancement_categories.png",
+         "ascent": 8,
+         "height": 9,
+         "chars": [
+		 "\uDB81\uDC1D\uDB81\uDC1E\uDB81\uDC1F"
+            ]
+        },
+        {
+         "type": "bitmap",
+         "file": "icons:chat/message_type.png",
+         "ascent": 7,
+         "height": 7,
+         "chars": [
+         "\uDB81\uDC20\uDB81\uDC21\uDB81\uDC22\uDB81\uDC23\uDB81\uDC24\uDB81\uDC25\uDB81\uDC26\uDB81\uDC27"
+            ]
+        },
+		{
+         "type": "bitmap",
+         "file": "icons:chat/commands.png",
+         "ascent": 7,
+         "height": 7,
+         "chars": [
+		 "\uDB81\uDC28\uDB81\uDC29\uDB81\uDC2A\uDB81\uDC2B\uDB81\uDC2C\uDB81\uDC2D\uDB81\uDC2E\uDB81\uDC2F\uDB81\uDC30\uDB81\uDC31\uDB81\uDC32\uDB81\uDC33\uDB81\uDC34\uDB81\uDC35\uDB81\uDC36",
+		 "\uDB81\uDC37\uDB81\uDC38\uDB81\uDC39\uDB81\uDC3A\uDB81\uDC3B\uDB81\uDC3C\uDB81\uDC3D\uDB81\uDC3E\uDB81\uDC3F\uDB81\uDC40\uDB81\uDC41\uDB81\uDC42\uDB81\uDC43\uDB81\uDC44\uDB81\uDC45"
+            ]
+        },
+        {
+         "type": "bitmap",
+         "file": "icons:chat/whitelist.png",
+         "ascent": 7,
+         "height": 7,
+         "chars": [
+		 "\uDB81\uDC46\uDB81\uDC47\uDB81\uDC48\uDB81\uDC49\uDB81\uDC4A\uDB81\uDC4B"
+            ]
+        },
+        {
+			"type": "bitmap",
+			"file": "minecraft:misc/helmet.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\uefe1"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/chestplate.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\uefe2"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/leggings.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\uefe3"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/boots.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\uefe4"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/sword.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\uefe5"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/pickaxe.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\uefe6"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/trident.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\uefe7"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/bow.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\uefe8"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/crosbow.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\uefe9"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/fishing.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\ueef1"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/star.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\ueef2"
+			]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:misc/skull.png",
+			"ascent": 8,
+			"height": 16,
+			"chars": [
+				"\ueef3"
+			]
+		},
+
+		{ "type": "bitmap",
+			"file": "minecraft:font/raid.png",
+			"ascent": 13, "height": 52,
+			"chars": ["\uE903"]
+		},
+		
+		{ "type": "bitmap",
+			"file": "minecraft:font/ferrous.png",
+			"ascent": 13, "height": 52,
+			"chars": ["\uE904"]
+		},
+		
+		{ "type": "bitmap",
+			"file": "minecraft:font/frostmaw.png",
+			"ascent": 13, "height": 52,
+			"chars": ["\uE905"]
+		},
+		
+		{ "type": "bitmap",
+			"file": "minecraft:font/wither.png",
+			"ascent": 13, "height": 52,
+			"chars": ["\uE906"]
+		},
+		
+		{ 
+		"type": "bitmap",
+			"file": "minecraft:font/enderdragon.png",
+			"ascent": 13, "height": 52,
+			"chars": ["\uE907"]
+		},
+		
+		{ 
+		"type": "bitmap",
+			"file": "minecraft:font/ignis.png",
+			"ascent": 18, "height": 64,
+			"chars": ["\uE908"]
+		},
+
+		{ 
+		"type": "bitmap",
+			"file": "minecraft:font/voidworm.png",
+			"ascent": 18, "height": 64,
+			"chars": ["\uE909"]
+		},
+		
+		{ 
+		"type": "bitmap",
+			"file": "minecraft:font/swampjaw.png",
+			"ascent": 13, "height": 52,
+			"chars": ["\uE910"]
+		},
+		
+		{ 
+		"type": "bitmap",
+			"file": "minecraft:font/witherstorm.png",
+			"ascent": 18, "height": 64,
+			"chars": ["\uE911"]
+		},
+		
+		{ 
+		"type": "bitmap",
+			"file": "minecraft:font/bellringer.png",
+			"ascent": 13, "height": 52,
+			"chars": ["\uE912"]
+		}
+
+    ]
+}

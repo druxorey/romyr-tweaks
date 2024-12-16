@@ -1,0 +1,64 @@
+{
+	"credit": "Created by Stridey",
+	"textures": {
+		"1": "block/brewing_stand_bottle",
+		"particle": "block/brewing_stand",
+		"stand": "block/brewing_stand"
+	},
+	"elements": [
+		{
+			"name": "stand_arm",
+			"from": [-0.4, 0, 8],
+			"to": [7.6, 16, 8],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [8, 0, 0, 16], "texture": "#stand"},
+				"south": {"uv": [0, 0, 8, 16], "texture": "#stand"}
+			}
+		},
+		{
+			"from": [1.8, 2, 1.875],
+			"to": [5.8, 7, 5.875],
+			"rotation": {"angle": 45, "axis": "y", "origin": [3.75, 7, 3.75]},
+			"faces": {
+				"north": {"uv": [3, 0, 7, 5], "texture": "#1"},
+				"east": {"uv": [3, 0, 7, 5], "texture": "#1"},
+				"south": {"uv": [3, 0, 7, 5], "texture": "#1"},
+				"west": {"uv": [3, 0, 7, 5], "texture": "#1"},
+				"up": {"uv": [7, 0, 11, 4], "texture": "#1"},
+				"down": {"uv": [11, 0, 15, 4], "texture": "#1"}
+			}
+		},
+		{
+			"from": [2.3, 7, 2.375],
+			"to": [5.3, 9, 5.375],
+			"rotation": {"angle": 45, "axis": "y", "origin": [3.75, 7, 3.75]},
+			"faces": {
+				"north": {"uv": [0, 4, 3, 6], "texture": "#1"},
+				"east": {"uv": [0, 4, 3, 6], "texture": "#1"},
+				"south": {"uv": [0, 4, 3, 6], "texture": "#1"},
+				"west": {"uv": [0, 4, 3, 6], "texture": "#1"},
+				"down": {"uv": [0, 4, 3, 6], "texture": "#1"}
+			}
+		},
+		{
+			"from": [2.2, 7.9, 2.275],
+			"to": [5.4, 9.1, 5.475],
+			"rotation": {"angle": 45, "axis": "y", "origin": [3.75, 7, 3.75]},
+			"faces": {
+				"north": {"uv": [0, 3, 3, 4], "texture": "#1"},
+				"east": {"uv": [0, 3, 3, 4], "texture": "#1"},
+				"south": {"uv": [0, 3, 3, 4], "texture": "#1"},
+				"west": {"uv": [0, 3, 3, 4], "texture": "#1"},
+				"up": {"uv": [0, 0, 3, 3], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [0,
+		{
+			"name": "group",
+			"origin": [0, 0, 0],
+			"children": [1, 2, 3]
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/double_crop",
+    "textures": {
+        "crop_down": "block/wheat_stage7_2",
+		"crop_top": "block/wheat_stage7top_2"
+    }
+}

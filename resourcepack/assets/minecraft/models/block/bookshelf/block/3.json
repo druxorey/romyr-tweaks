@@ -1,0 +1,13 @@
+{
+    "parent": "block/ctm_sides",
+    "textures": {
+        "all": "block/variated/bookshelf/3",
+        "north": "block/variated/bookshelf/3_borderless",
+        "south": "block/variated/bookshelf/3_borderless",
+        "east": "block/variated/bookshelf/3_borderless",
+        "west": "block/variated/bookshelf/3_borderless",
+        "up": "block/oak_planks",
+        "down": "block/oak_planks",
+        "particle": "block/bookshelf"
+    }
+}

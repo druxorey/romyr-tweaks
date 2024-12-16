@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross_double",
+    "textures": {
+        "cross": "block/carrots_stage0",
+		"cross2": "block/carrots_stage0"
+    }
+}
