@@ -8,7 +8,7 @@
 
 To install the RomyrTweaks texture pack in Minecraft 1.19.4, follow these steps:
 
-1. Download the texture pack file from [here](romyrtweaks.zip).
+1. Download the texture pack file from [here](https://github.com/druxorey/romyr-tweaks/releases).
 2. Open Minecraft and select "Options".
 3. Go to "Resource Packs" and then "Open Resource Pack Folder".
 4. Move the downloaded file to the folder that opened.
