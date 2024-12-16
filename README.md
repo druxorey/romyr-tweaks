@@ -2,7 +2,7 @@
 
 <p align="center">My survival texture pack for Minecraft 1.19.4</p>
 
-![icon](assets\banner.png)
+![icon](/assets/banner.png)
 
 ## Installation
 
