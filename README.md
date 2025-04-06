@@ -15,6 +15,18 @@ To install the RomyrTweaks texture pack in Minecraft 1.19.4, follow these steps:
 5. Go back to Minecraft and select the RomyrTweaks texture pack from the available packs list.
 6. Enjoy your new texture pack!
 
+## Screenshots
+
+![general lookout](/assets/pack_image_1.webp)
+
+![mobs](/assets/pack_image_2.webp)
+
+![redstone](/assets/pack_image_3.webp)
+
+![armors](/assets/pack_image_4.webp)
+
+![items animation](/assets/pack_image_5.gif)
+
 ## Dependencies
 
 These are optional texture packs, but I recommend having them installed alongside this texture pack.
