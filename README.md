@@ -1,12 +1,12 @@
 <h1 align="center">RomyrTweaks</h1>
 
-<p align="center">My survival texture pack for Minecraft 1.19.4</p>
+<p align="center">My survival texture pack for Minecraft 1.21.8</p>
 
 ![icon](/assets/banner.png)
 
 ## Installation
 
-To install the RomyrTweaks texture pack in Minecraft 1.19.4, follow these steps:
+To install the RomyrTweaks texture pack in Minecraft 1.21.8, follow these steps:
 
 1. Download the texture pack file from [here](https://github.com/druxorey/romyr-tweaks/releases).
 2. Open Minecraft and select "Options".
