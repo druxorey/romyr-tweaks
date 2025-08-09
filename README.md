@@ -27,6 +27,19 @@ To install the RomyrTweaks texture pack in Minecraft 1.19.4, follow these steps:
 
 ![items animation](/assets/pack_image_5.gif)
 
+## Credits
+
+This texture pack includes resources from the following texture packs:
+
+- [GUI Retextures](https://modrinth.com/resourcepack/gui-retextures) by frugbug
+- [Even Better Enchants](https://modrinth.com/resourcepack/even-better-enchants) by mythitorium
+- [Xalis Enhanced Vanilla](https://modrinth.com/resourcepack/xalis-enhanced-vanilla) by xalixilax
+- [Animated Items](https://modrinth.com/resourcepack/animated-items) by paleettemc
+- [Faithless](https://modrinth.com/resourcepack/faithless) by StitchSprites
+- [BetterVanillaBuilding](https://modrinth.com/resourcepack/bettervanillabuilding) by stefanJ2
+- [Reimagined](https://modrinth.com/resourcepack/reimagined) by Reijvi
+- [Vanilla Tweaks](https://vanillatweaks.net/picker/resource-packs/) by xisumavoid
+
 ## Dependencies
 
 These are optional texture packs, but I recommend having them installed alongside this texture pack.
