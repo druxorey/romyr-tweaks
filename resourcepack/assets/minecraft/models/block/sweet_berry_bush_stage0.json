@@ -1,45 +1,69 @@
 {
-	"credit": "Made by NinthWorld with Blockbench",
+	"credit": "Created by Stridey",
+	"parent": "block/block",
 	"textures": {
-		"0": "block/sweet_berry_bush_small",
-		"particle": "block/sweet_berry_bush_small"
+		"texture": "block/sweet_berry_bush_stage0",
+		"particle": "#texture"
 	},
 	"elements": [
 		{
-			"name": "SideNS",
 			"from": [3, 0, 5],
+			"to": [13, 8, 5],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [5, 0, 5]},
+			"faces": {
+				"north": {"uv": [3, 6, 13, 14], "texture": "#texture"},
+				"south": {"uv": [3, 6, 13, 14], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [3, 0, 11],
 			"to": [13, 8, 11],
-			"rotation": {"angle": 0, "axis": "y", "origin": [11, 8, 8]},
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [5, 0, 11]},
 			"faces": {
-				"north": {"uv": [3, 4, 13, 12], "texture": "#0"},
-				"south": {"uv": [3, 4, 13, 12], "texture": "#0"}
+				"north": {"uv": [3, 6, 13, 14], "texture": "#texture"},
+				"south": {"uv": [3, 6, 13, 14], "texture": "#texture"}
 			}
 		},
 		{
-			"name": "SideEW",
-			"from": [5, 0, 3],
+			"from": [11, 0, 3],
 			"to": [11, 8, 13],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 11]},
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
 			"faces": {
-				"east": {"uv": [3, 4, 13, 12], "texture": "#0"},
-				"west": {"uv": [3, 4, 13, 12], "texture": "#0"}
+				"east": {"uv": [3, 6, 13, 14], "texture": "#texture"},
+				"west": {"uv": [3, 6, 13, 14], "texture": "#texture"}
 			}
 		},
 		{
-			"name": "SideUD",
-			"from": [3, 0, 4],
-			"to": [13, 6, 12],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3, 9]},
+			"from": [5, 0, 3],
+			"to": [5, 8, 13],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
 			"faces": {
-				"up": {"uv": [3, 4, 13, 12], "texture": "#0"}
+				"east": {"uv": [3, 6, 13, 14], "texture": "#texture"},
+				"west": {"uv": [3, 6, 13, 14], "texture": "#texture"}
 			}
-		}
-	],
-	"groups": [
+		},
 		{
-			"name": "Bush",
-			"origin": [8, 8, 11],
-			"children": [0, 1, 2]
+			"from": [3, 6, 3],
+			"to": [13, 6, 13],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -1, 0]},
+			"faces": {
+				"up": {"uv": [3, 6, 13, 16], "rotation": 180, "texture": "#texture"},
+				"down": {"uv": [3, 6, 13, 16], "rotation": 180, "texture": "#texture"}
+			}
+		},
+		{
+			"from": [5, 0, 5],
+			"to": [11, 0, 11],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -7, 0]},
+			"faces": {
+				"down": {"uv": [5, 8, 11, 14], "rotation": 180, "texture": "#texture", "cullface": "down"}
+			}
 		}
 	]
 }

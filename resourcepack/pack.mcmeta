@@ -1,6 +1,7 @@
 {
-    "pack": {
-        "pack_format": 13,
-        "description":"§7■ For Minecraft 1.19.4            ■ Made by §dDruxorey"
-    }
+  "pack": {
+    "pack_format": 15,
+    "supported_formats": [15, 99],
+    "description": "■ §7For Minecraft 1.21.8           ■ Made by §dDruxorey"
+  }
 }
