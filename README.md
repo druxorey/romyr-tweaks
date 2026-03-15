@@ -32,19 +32,22 @@ To install the RomyrTweaks texture pack in Minecraft 1.21.11, follow these steps
 This texture pack includes resources from the following texture packs:
 
 - [Vanilla Tweaks](https://vanillatweaks.net/) by Xisuma
-- [Piglin-chan](https://modrinth.com/resourcepack/piglin-chan) by HexeChroma
-- [Simple Grass Flowers](https://modrinth.com/resourcepack/simple-grass-flowers) by 2DWisp
-- [Raven Phantoms](https://modrinth.com/resourcepack/raven-phantoms) by 2DWisp
-- [Wisp's Wonderful Wildflowers](https://modrinth.com/resourcepack/wisps-colourful-wildflowers) by 2DWisp
-- [Enchant Icons](https://modrinth.com/resourcepack/enchant-icons-countxd) by CountXD
-- [Enchantment Outlines](https://modrinth.com/resourcepack/glowing-glints) by tixul
-- [Better Lanterns](https://modrinth.com/resourcepack/better-lanterns) by Nico4play
-- [Armorstands Reimagined](https://modrinth.com/resourcepack/armorstands-reimagined) by Reijvi
-- [Eco Attire](https://modrinth.com/resourcepack/eco-attire) by MR_CHOO
-- [Even Better Enchants](https://modrinth.com/resourcepack/even-better-enchants) by mythitorium
-- [3D Crops](https://modrinth.com/resourcepack/3d-crops) by vexcenot
-- [Animated Items](https://modrinth.com/resourcepack/animated-items) by palettemc
-- [Ray's Better Sugarcane](https://modrinth.com/resourcepack/better-sugar-cane) by Restricted-Ray
-- [Fresh Flower Pots](https://modrinth.com/resourcepack/fresh-flower-pots) by BlueHDGaming
-- [Redstone Tweaks](https://modrinth.com/resourcepack/redstone-tweaks) by RexxStone
-- [Better Fences](https://modrinth.com/resourcepack/better-fences) by lolloxvii
+- [Piglin chan](https://modrinth.com/resourcepack/piglin-chan) by HexeChroma
+- [Simple grass flowers](https://modrinth.com/resourcepack/simple-grass-flowers) by 2DWisp
+- [Raven phantoms](https://modrinth.com/resourcepack/raven-phantoms) by 2DWisp
+- [Wisps wonderful wildflowers](https://modrinth.com/resourcepack/wisps-colourful-wildflowers) by 2DWisp
+- [Enchant icons](https://modrinth.com/resourcepack/enchant-icons-countxd) by CountXD
+- [Enchantment outlines](https://modrinth.com/resourcepack/glowing-glints) by tixul
+- [Better lanterns](https://modrinth.com/resourcepack/better-lanterns) by Nico4play
+- [Armorstands reimagined](https://modrinth.com/resourcepack/armorstands-reimagined) by Reijvi
+- [Eco attire](https://modrinth.com/resourcepack/eco-attire) by MR_CHOO
+- [Even better enchants](https://modrinth.com/resourcepack/even-better-enchants) by mythitorium
+- [Crops 3d](https://modrinth.com/resourcepack/3d-crops) by vexcenot
+- [Animated items](https://modrinth.com/resourcepack/animated-items) by palettemc
+- [Rays better sugarcane](https://modrinth.com/resourcepack/better-sugar-cane) by Restricted-Ray
+- [Fresh flower pots](https://modrinth.com/resourcepack/fresh-flower-pots) by BlueHDGaming
+- [Redstone tweaks](https://modrinth.com/resourcepack/redstone-tweaks) by RexxStone
+- [Better fences](https://modrinth.com/resourcepack/better-fences) by lolloxvii
+- [Bray cyber 3d enchanted books](https://modrinth.com/resourcepack/bray-cyber-3d-enchanted-books) by Braytonks
+- [Fresh music discs](https://modrinth.com/resourcepack/fresh-music-discs) by Team Disco
+- [Lively turtle helmet](https://modrinth.com/resourcepack/lively-turtle-helmet) by Angelos
