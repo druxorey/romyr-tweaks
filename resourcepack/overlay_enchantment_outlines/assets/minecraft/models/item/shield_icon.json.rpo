@@ -1,0 +1,6 @@
+{
+    condition: "enchantmentOutlines.shieldIcon.twoDee",
+    fallbacks: [
+	"assets/minecraft/models/item/3d_shield_icon.json"
+    ]
+}

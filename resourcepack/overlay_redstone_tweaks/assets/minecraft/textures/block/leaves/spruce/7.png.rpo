@@ -1,0 +1,4 @@
+{
+  "condition": "!style.leaves_show_7",
+  "fallback": "assets/minecraft/textures/block/leaves/spruce/7_alt.png"
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/vanillatweaks/tp/sword/e_short_sword",
+  "textures": {
+    "0": "minecraft:item/vanillatweaks/e_copper_sword",
+    "particle": "minecraft:item/vanillatweaks/e_copper_sword"
+  }
+}

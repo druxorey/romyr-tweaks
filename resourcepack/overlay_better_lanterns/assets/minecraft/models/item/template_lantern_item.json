@@ -1,0 +1,40 @@
+{
+    "parent": "minecraft:block/template_lantern",
+    "gui_light": "side",
+    "display": {
+		"thirdperson_righthand": {
+			"rotation": [70.5, 0, 0],
+			"translation": [0, -1.75, -1.25],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [70.5, 0, 0],
+			"translation": [0, -1.75, -1.25],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 2, 0]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, 2, 0]
+		},
+		"ground": {
+			"translation": [0, 3.5, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"translation": [0, 3.25, 0],
+			"scale": [1.2, 1.2, 1.2]
+		},
+		"head": {
+			"translation": [0, 16.25, 0],
+			"scale": [1.25, 1.25, 1.25]
+		},
+		"fixed": {
+			"rotation": [0, 90, 0],
+			"translation": [0, 3, 0],
+			"scale": [1.15, 1.15, 1.15]
+		}
+    }
+}

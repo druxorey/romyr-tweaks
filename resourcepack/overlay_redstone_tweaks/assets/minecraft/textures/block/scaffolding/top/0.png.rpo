@@ -1,0 +1,4 @@
+{
+  "condition": "!style.scaffolding_show_0",
+  "fallback": "assets/minecraft/textures/block/scaffolding/top/0_alt.png"
+}

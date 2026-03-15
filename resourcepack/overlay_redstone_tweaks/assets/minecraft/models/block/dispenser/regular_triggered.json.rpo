@@ -1,0 +1,4 @@
+{
+  "condition": "extra.droppers_triggered",
+  "fallback": "assets/minecraft/models/block/dispenser/no_indicator/regular_triggered.json"
+}

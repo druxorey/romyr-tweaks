@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/firstperson/shovel/enchanted_shovel",
+  "textures": {
+    "0": "minecraft:item/oxidizingcopper/shovel/weathered"
+  }
+}

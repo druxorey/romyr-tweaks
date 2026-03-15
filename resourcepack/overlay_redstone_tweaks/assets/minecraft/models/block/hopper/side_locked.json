@@ -1,0 +1,9 @@
+{
+	"parent": "minecraft:block/hopper/side",
+	"textures": {
+		"side_inside": "block/hopper/locked/side_inside",
+		"side": "block/hopper/locked/side",
+		"inside_side": "block/hopper/locked/inside_side",
+		"bottom_side": "block/hopper/locked/bottom_side"
+	}
+}

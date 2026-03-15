@@ -1,0 +1,4 @@
+{
+  "condition": "redstone.redstone_lamp",
+  "fallback": "assets/minecraft/textures/block/redstone_lamp_on.png"
+}

@@ -1,0 +1,4 @@
+{
+  "condition": "!style.plates_show_0",
+  "fallback": "assets/minecraft/textures/block/heavy_weighted_pressure_plate/0_alt.png"
+}

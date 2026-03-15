@@ -1,0 +1,6 @@
+{
+	"parent": "item/template_bars",
+	"textures": {
+		"texture": "block/weathered_copper_bars"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/flower_pots/tall_flower_pot/tall_flower_pot",
+	"textures": {
+		"plant": "minecraft:block/orange_tulip",
+		"soil": "minecraft:block/dirt"
+	}
+}

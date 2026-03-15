@@ -1,0 +1,16 @@
+{
+  "containers": "minecraft:hopper",
+  "textures": {
+    "minecraft:textures/gui/container/hopper.png": "optigui/gui/hopper/hopper_side.png"
+  },
+  "match": {
+    "@container": "minecraft:hopper",
+    "@block_state": {
+      "@Name": "minecraft:hopper",
+      "@Properties": {
+        "@facing": ["east", "west", "south", "north"],
+        "@enabled": "true"
+      }
+    }
+  }
+}

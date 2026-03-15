@@ -1,0 +1,241 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:range_dispatch",
+          "entries": [
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/15"
+              },
+              "threshold": 0.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/14"
+              },
+              "threshold": 1236.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/13"
+              },
+              "threshold": 2154.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/12"
+              },
+              "threshold": 2797.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/11"
+              },
+              "threshold": 3329.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/10"
+              },
+              "threshold": 3798.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/9"
+              },
+              "threshold": 4226.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/8"
+              },
+              "threshold": 4623.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/7"
+              },
+              "threshold": 5001.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/6"
+              },
+              "threshold": 5214.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/5"
+              },
+              "threshold": 5414.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/4"
+              },
+              "threshold": 5665.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/3"
+              },
+              "threshold": 5914.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/2"
+              },
+              "threshold": 6157.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/1"
+              },
+              "threshold": 6469.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/0"
+              },
+              "threshold": 6965.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/1"
+              },
+              "threshold": 17035.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/2"
+              },
+              "threshold": 17531.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/3"
+              },
+              "threshold": 17843.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/4"
+              },
+              "threshold": 18087.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/5"
+              },
+              "threshold": 18335.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/6"
+              },
+              "threshold": 18586.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/7"
+              },
+              "threshold": 18787.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/8"
+              },
+              "threshold": 19000.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/9"
+              },
+              "threshold": 19377.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/10"
+              },
+              "threshold": 19774.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/11"
+              },
+              "threshold": 20202.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/12"
+              },
+              "threshold": 20672.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/13"
+              },
+              "threshold": 21204.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/14"
+              },
+              "threshold": 21847.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:block/daylight_detector/15"
+              },
+              "threshold": 22764.0
+            }
+          ],
+          "property": "minecraft:time",
+          "wobble": false,
+          "scale": 24000.0,
+          "source": "daytime"
+        },
+        "when": "minecraft:overworld"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:block/daylight_detector/0"
+    },
+    "property": "minecraft:context_dimension"
+  }
+}

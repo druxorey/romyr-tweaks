@@ -1,0 +1,161 @@
+{
+	"model": {
+		"type": "minecraft:condition",
+		"property": "minecraft:has_component",
+		"component": "minecraft:enchantments",
+		"ignore_default": true,
+		"on_true": {
+			"type": "minecraft:select",
+			"property": "minecraft:display_context",
+			"cases": [
+				{
+					"when": [
+						"gui"
+					],
+					"model": {
+						"type": "minecraft:range_dispatch",
+						"property": "minecraft:damage",
+						"entries": [
+							{
+								"threshold": 0,
+								"model": {
+									"type": "minecraft:model",
+									"model": "minecraft:item/copper_sword"
+								}
+							},
+							{
+								"threshold": 0.25,
+								"model": {
+									"type": "minecraft:model",
+									"model": "minecraft:item/exposed_sword"
+								}
+							},
+							{
+								"threshold": 0.5,
+								"model": {
+									"type": "minecraft:model",
+									"model": "minecraft:item/weathered_sword"
+								}
+							},
+							{
+								"threshold": 0.75,
+								"model": {
+									"type": "minecraft:model",
+									"model": "minecraft:item/oxidized_sword"
+								}
+							}
+						]
+					}
+				},
+				{
+					"when": [
+						"firstperson_righthand",
+						"firstperson_lefthand"
+					],
+					"model": {
+						"type": "minecraft:range_dispatch",
+						"property": "minecraft:damage",
+						"entries": [
+							{
+								"threshold": 0,
+								"model": {
+									"type": "minecraft:model",
+									"model": "item/firstperson/enchanted_copper_sword"
+								}
+							},
+							{
+								"threshold": 0.25,
+								"model": {
+									"type": "minecraft:model",
+									"model": "item/oxidizingcopper/firstperson/sword/exposed"
+								}
+							},
+							{
+								"threshold": 0.5,
+								"model": {
+									"type": "minecraft:model",
+									"model": "item/oxidizingcopper/firstperson/sword/weathered"
+								}
+							},
+							{
+								"threshold": 0.75,
+								"model": {
+									"type": "minecraft:model",
+									"model": "item/oxidizingcopper/firstperson/sword/oxidized"
+								}
+							}
+						]
+					}
+				}
+			],
+			"fallback": {
+				"type": "minecraft:range_dispatch",
+				"property": "minecraft:damage",
+				"entries": [
+					{
+						"threshold": 0,
+						"model": {
+							"type": "minecraft:model",
+							"model": "item/thirdperson/enchanted_copper_sword"
+						}
+					},
+					{
+						"threshold": 0.25,
+						"model": {
+							"type": "minecraft:model",
+							"model": "item/oxidizingcopper/thirdperson/sword/exposed"
+						}
+					},
+					{
+						"threshold": 0.5,
+						"model": {
+							"type": "minecraft:model",
+							"model": "item/oxidizingcopper/thirdperson/sword/weathered"
+						}
+					},
+					{
+						"threshold": 0.75,
+						"model": {
+							"type": "minecraft:model",
+							"model": "item/oxidizingcopper/thirdperson/sword/oxidized"
+						}
+					}
+				]
+			}
+		},
+		"on_false": {
+			"type": "minecraft:range_dispatch",
+			"property": "minecraft:damage",
+			"entries": [
+				{
+					"threshold": 0,
+					"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/copper_sword"
+					}
+				},
+				{
+					"threshold": 0.25,
+					"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/exposed_sword"
+					}
+				},
+				{
+					"threshold": 0.5,
+					"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/weathered_sword"
+					}
+				},
+				{
+					"threshold": 0.75,
+					"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/oxidized_sword"
+					}
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,4 @@
+{
+  "condition": "style.droppers_indicator.centered",
+  "fallback": "assets/minecraft/textures/block/dropper/triggered/back_indicator_alt.png"
+}

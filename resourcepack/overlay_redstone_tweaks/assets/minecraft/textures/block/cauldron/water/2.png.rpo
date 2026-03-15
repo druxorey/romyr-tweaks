@@ -1,0 +1,7 @@
+{
+  "condition": "style.cauldron.animated",
+  fallbacks: [
+    "assets/minecraft/textures/block/cauldron/water/alt1/2.png",
+    "assets/minecraft/textures/block/cauldron/water/alt2/2.png"
+  ]
+}

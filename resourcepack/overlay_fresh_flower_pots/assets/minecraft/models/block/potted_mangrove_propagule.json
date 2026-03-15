@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/flower_pots/big_flower_pot/big_flower_pot_mangrove",
+	"textures": {
+		"plant": "minecraft:block/mangrove_propagule",
+		"soil": "minecraft:block/mud"
+	}
+}

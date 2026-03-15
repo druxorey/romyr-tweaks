@@ -1,0 +1,161 @@
+{
+	"model": {
+		"type": "minecraft:condition",
+		"property": "minecraft:has_component",
+		"component": "minecraft:enchantments",
+		"ignore_default": true,
+		"on_true": {
+			"type": "minecraft:select",
+			"property": "minecraft:display_context",
+			"cases": [
+				{
+					"when": [
+						"gui"
+					],
+					"model": {
+						"type": "minecraft:range_dispatch",
+						"property": "minecraft:damage",
+						"entries": [
+							{
+								"threshold": 0,
+								"model": {
+									"type": "minecraft:model",
+									"model": "minecraft:item/copper_shovel"
+								}
+							},
+							{
+								"threshold": 0.25,
+								"model": {
+									"type": "minecraft:model",
+									"model": "minecraft:item/exposed_shovel"
+								}
+							},
+							{
+								"threshold": 0.5,
+								"model": {
+									"type": "minecraft:model",
+									"model": "minecraft:item/weathered_shovel"
+								}
+							},
+							{
+								"threshold": 0.75,
+								"model": {
+									"type": "minecraft:model",
+									"model": "minecraft:item/oxidized_shovel"
+								}
+							}
+						]
+					}
+				},
+				{
+					"when": [
+						"firstperson_righthand",
+						"firstperson_lefthand"
+					],
+					"model": {
+						"type": "minecraft:range_dispatch",
+						"property": "minecraft:damage",
+						"entries": [
+							{
+								"threshold": 0,
+								"model": {
+									"type": "minecraft:model",
+									"model": "item/firstperson/enchanted_copper_shovel"
+								}
+							},
+							{
+								"threshold": 0.25,
+								"model": {
+									"type": "minecraft:model",
+									"model": "item/oxidizingcopper/firstperson/shovel/exposed"
+								}
+							},
+							{
+								"threshold": 0.5,
+								"model": {
+									"type": "minecraft:model",
+									"model": "item/oxidizingcopper/firstperson/shovel/weathered"
+								}
+							},
+							{
+								"threshold": 0.75,
+								"model": {
+									"type": "minecraft:model",
+									"model": "item/oxidizingcopper/firstperson/shovel/oxidized"
+								}
+							}
+						]
+					}
+				}
+			],
+			"fallback": {
+				"type": "minecraft:range_dispatch",
+				"property": "minecraft:damage",
+				"entries": [
+					{
+						"threshold": 0,
+						"model": {
+							"type": "minecraft:model",
+							"model": "item/thirdperson/enchanted_copper_shovel"
+						}
+					},
+					{
+						"threshold": 0.25,
+						"model": {
+							"type": "minecraft:model",
+							"model": "item/oxidizingcopper/thirdperson/shovel/exposed"
+						}
+					},
+					{
+						"threshold": 0.5,
+						"model": {
+							"type": "minecraft:model",
+							"model": "item/oxidizingcopper/thirdperson/shovel/weathered"
+						}
+					},
+					{
+						"threshold": 0.75,
+						"model": {
+							"type": "minecraft:model",
+							"model": "item/oxidizingcopper/thirdperson/shovel/oxidized"
+						}
+					}
+				]
+			}
+		},
+		"on_false": {
+			"type": "minecraft:range_dispatch",
+			"property": "minecraft:damage",
+			"entries": [
+				{
+					"threshold": 0,
+					"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/copper_shovel"
+					}
+				},
+				{
+					"threshold": 0.25,
+					"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/exposed_shovel"
+					}
+				},
+				{
+					"threshold": 0.5,
+					"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/weathered_shovel"
+					}
+				},
+				{
+					"threshold": 0.75,
+					"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/oxidized_shovel"
+					}
+				}
+			]
+		}
+	}
+}

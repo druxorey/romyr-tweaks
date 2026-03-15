@@ -1,0 +1,31 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": [
+          "firstperson_lefthand",
+          "firstperson_righthand"
+        ],
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/firstperson/enchanted_apple"
+        }
+      },
+      {
+        "when": [
+          "gui"
+        ],
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/enchanted_golden_apple"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "item/thirdperson/enchanted_apple"
+    }
+  }
+}

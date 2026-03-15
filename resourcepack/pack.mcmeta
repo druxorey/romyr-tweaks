@@ -1,7 +1,127 @@
 {
-  "pack": {
-    "pack_format": 15,
-    "supported_formats": [15, 99],
-    "description": "■ §7For Minecraft 1.21.8           ■ Made by §dDruxorey"
-  }
+	"pack": {
+		"pack_format": 34,
+	"min_format": 34,
+	"max_format": 75,
+		"supported_formats": {"min_inclusive": 34, "max_inclusive": 75},
+		"description": "■ §7For Minecraft 1.21.11          ■ Made by §dDruxorey"
+	},
+	"overlays": {
+		"entries": [
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_piglin_chan"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_raven_phantoms"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_wisps_wonderful_wildflowers"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_enchant_icons"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_eco_attire"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_crops_3d"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_rays_better_sugarcane"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_fresh_flower_pots"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_redstone_tweaks"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_knight_armor"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_vanilla_tweeks"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_better_fences"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_enchantment_outlines"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_even_better_enchants"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_chest_reimagined"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_simple_grass_flowers"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_better_lanterns"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_armorstands_reimagined"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_custom"
+			}
+		]
+	}
 }

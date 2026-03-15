@@ -1,0 +1,4 @@
+{
+  "condition": "!style.target_show_0",
+  "fallback": "assets/minecraft/textures/block/target/side/0_alt.png"
+}

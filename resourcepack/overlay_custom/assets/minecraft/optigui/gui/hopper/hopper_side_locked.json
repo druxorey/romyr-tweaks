@@ -1,0 +1,15 @@
+{
+  "containers": "minecraft:hopper",
+  "textures": {
+    "minecraft:textures/gui/container/hopper.png": "optigui/gui/hopper/hopper_side_locked.png"
+  },
+  "match": {
+    "@container": "minecraft:hopper",
+    "@block_state": {
+      "@Name": "minecraft:hopper",
+      "@Properties": {
+        "@enabled": "false"
+      }
+    }
+  }
+}

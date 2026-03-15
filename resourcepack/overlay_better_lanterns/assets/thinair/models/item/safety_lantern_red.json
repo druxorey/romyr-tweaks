@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/template_lantern_item",
+  "textures": {
+    "lantern": "thinair:block/safety_lantern_red"
+  }
+}

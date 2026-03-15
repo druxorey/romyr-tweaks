@@ -1,0 +1,29 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/shears"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "damaged": 1,
+                "damage": 0.85
+            },
+            "model": "item/shears_damaged0"
+        },
+        {
+            "predicate": {
+                "damaged": 1,
+                "damage": 0.9
+            },
+            "model": "item/shears_damaged1"
+        },
+        {
+            "predicate": {
+                "damaged": 1,
+                "damage": 0.95
+            },
+            "model": "item/shears_damaged2"
+        }
+    ]
+}

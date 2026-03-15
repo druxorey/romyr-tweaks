@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_fence_gate_wall",
+  "textures": {
+    "post": "minecraft:block/oak_log",
+    "side": "minecraft:block/oak_planks"
+  }
+}

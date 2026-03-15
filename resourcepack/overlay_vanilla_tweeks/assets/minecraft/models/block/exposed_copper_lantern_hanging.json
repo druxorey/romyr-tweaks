@@ -1,0 +1,7 @@
+{
+	"parent": "block/template_hanging_lantern",
+	"textures": {
+		"chain": "block/exposed_copper_chain",
+		"lantern": "block/exposed_copper_lantern"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/flower_pots/medium_flower_pot/medium_flower_pot_tinted",
+	"textures": {
+		"plant": "minecraft:block/fern",
+		"soil": "minecraft:block/podzol_top"
+	}
+}

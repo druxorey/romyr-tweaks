@@ -1,0 +1,4 @@
+{
+  "condition": "extra.hopper_locked",
+  "fallback": "assets/minecraft/models/block/hopper/no_indicator/side_locked.json"
+}

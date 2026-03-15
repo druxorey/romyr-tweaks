@@ -1,0 +1,8 @@
+{
+  "condition": "style.composter.light & !style.composter_show_0",
+  fallbacks: [
+    "assets/minecraft/textures/block/composter/alt/0.png",
+    "assets/minecraft/textures/block/composter/alt/0_alt.png",
+    "assets/minecraft/textures/block/composter/0_alt.png"
+  ]
+}

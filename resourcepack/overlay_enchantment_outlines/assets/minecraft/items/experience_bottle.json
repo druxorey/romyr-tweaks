@@ -1,0 +1,31 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": [
+          "firstperson_lefthand",
+          "firstperson_righthand"
+        ],
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/firstperson/exp_bottle"
+        }
+      },
+      {
+        "when": [
+          "gui"
+        ],
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/experience_bottle"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "item/thirdperson/exp_bottle"
+    }
+  }
+}

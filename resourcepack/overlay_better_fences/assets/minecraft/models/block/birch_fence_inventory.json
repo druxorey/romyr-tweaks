@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "side": "minecraft:block/birch_planks",
+    "post": "minecraft:block/birch_log"
+  }
+}

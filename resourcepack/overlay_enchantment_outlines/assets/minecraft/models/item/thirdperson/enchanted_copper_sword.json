@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/thirdperson/sword/enchanted_sword",
+  "textures": {
+    "0": "minecraft:item/copper/e_copper_sword",
+    "particle": "minecraft:item/copper/e_copper_sword"
+  }
+}

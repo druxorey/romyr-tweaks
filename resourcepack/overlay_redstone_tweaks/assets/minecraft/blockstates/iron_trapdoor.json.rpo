@@ -1,0 +1,4 @@
+{
+  "condition": "!extra.trapdoor_lamps",
+  "fallback": "assets/minecraft/blockstates/disabled_features/iron_trapdoor_lamp.json"
+}

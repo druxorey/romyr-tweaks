@@ -1,0 +1,4 @@
+{
+  "condition": "!extra.hide_map_icons",
+  "fallback": "assets/minecraft/textures/map/decorations/empty.png"
+}

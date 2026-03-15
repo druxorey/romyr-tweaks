@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/thirdperson/spear/spear_dropped",
+  "textures": {
+    "0": "minecraft:item/oxidizingcopper/spear/oxidized",
+	"particle": "minecraft:item/oxidizingcopper/spear/oxidized"
+  }
+}

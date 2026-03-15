@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": {
+    "lantern": "arcanelanterns:block/cloud_lantern",
+    "particle": "arcanelanterns:block/cloud_lantern"
+  }
+}

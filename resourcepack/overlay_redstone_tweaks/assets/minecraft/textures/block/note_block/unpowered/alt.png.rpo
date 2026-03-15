@@ -1,0 +1,3 @@
+{
+  "condition": "!style.note_block_note & style.note_block_power.small"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/template_lantern_item",
+  "textures": {
+    "lantern": "arcanelanterns:block/love_lantern"
+  }
+}

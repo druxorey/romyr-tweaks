@@ -1,0 +1,262 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"1": "item/thirdperson/book_outlinee"
+	},
+	"elements": [
+		{
+			"name": "enchanted_book_0_outline",
+			"from": [11.2, 15.2, 8.7],
+			"to": [7.8, 2.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [0, 0, 0.75, 3], "texture": "#1"},
+				"east": {"uv": [2.75, 3.5, 3, 6.5], "texture": "#1"},
+				"south": {"uv": [1, 0, 1.75, 3], "texture": "#1"},
+				"west": {"uv": [4, 2.25, 4.25, 5.25], "texture": "#1"},
+				"up": {"uv": [7.75, 1.75, 7, 1.5], "texture": "#1"},
+				"down": {"uv": [7.75, 2, 7, 2.25], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_1_outline",
+			"from": [8.2, 14.2, 8.7],
+			"to": [5.8, 0.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [2, 0, 2.5, 3.25], "texture": "#1"},
+				"east": {"uv": [2.25, 3.5, 2.5, 6.75], "texture": "#1"},
+				"south": {"uv": [2.75, 0, 3.25, 3.25], "texture": "#1"},
+				"west": {"uv": [3.5, 2.25, 3.75, 5.5], "texture": "#1"},
+				"up": {"uv": [7.5, 2.75, 7, 2.5], "texture": "#1"},
+				"down": {"uv": [7.5, 3, 7, 3.25], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_2_outline",
+			"from": [12.2, 14.2, 8.7],
+			"to": [10.8, 2.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [4.5, 0, 4.75, 2.75], "texture": "#1"},
+				"east": {"uv": [4.5, 3, 4.75, 5.75], "texture": "#1"},
+				"south": {"uv": [5, 0, 5.25, 2.75], "texture": "#1"},
+				"west": {"uv": [5, 3, 5.25, 5.75], "texture": "#1"},
+				"up": {"uv": [6.25, 7.5, 6, 7.25], "texture": "#1"},
+				"down": {"uv": [7.75, 1, 7.5, 1.25], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_3_outline",
+			"from": [6.2, 13.2, 8.7],
+			"to": [3.8, 1.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [0, 3.25, 0.5, 6], "texture": "#1"},
+				"east": {"uv": [5.5, 0, 5.75, 2.75], "texture": "#1"},
+				"south": {"uv": [0.75, 3.25, 1.25, 6], "texture": "#1"},
+				"west": {"uv": [5.5, 3, 5.75, 5.75], "texture": "#1"},
+				"up": {"uv": [7.5, 3.75, 7, 3.5], "texture": "#1"},
+				"down": {"uv": [7.5, 4, 7, 4.25], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_4_outline",
+			"from": [13.2, 13.2, 8.7],
+			"to": [11.8, 3.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [4, 5.5, 4.25, 7.75], "texture": "#1"},
+				"east": {"uv": [6, 0, 6.25, 2.25], "texture": "#1"},
+				"south": {"uv": [6, 2.5, 6.25, 4.75], "texture": "#1"},
+				"west": {"uv": [4.5, 6, 4.75, 8.25], "texture": "#1"},
+				"up": {"uv": [7.75, 6.75, 7.5, 6.5], "texture": "#1"},
+				"down": {"uv": [2.25, 7.75, 2, 8], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_5_outline",
+			"from": [4.2, 12.2, 8.7],
+			"to": [1.8, 3.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [3.5, 0, 4, 2], "texture": "#1"},
+				"east": {"uv": [5, 6, 5.25, 8], "texture": "#1"},
+				"south": {"uv": [1.5, 3.5, 2, 5.5], "texture": "#1"},
+				"west": {"uv": [6, 5, 6.25, 7], "texture": "#1"},
+				"up": {"uv": [7.5, 4.75, 7, 4.5], "texture": "#1"},
+				"down": {"uv": [7.5, 5, 7, 5.25], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_6_outline",
+			"from": [14.2, 12.2, 8.7],
+			"to": [12.8, 3.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [5.5, 6, 5.75, 8], "texture": "#1"},
+				"east": {"uv": [0, 6.25, 0.25, 8.25], "texture": "#1"},
+				"south": {"uv": [0.5, 6.25, 0.75, 8.25], "texture": "#1"},
+				"west": {"uv": [1, 6.25, 1.25, 8.25], "texture": "#1"},
+				"up": {"uv": [8, 2.75, 7.75, 2.5], "texture": "#1"},
+				"down": {"uv": [8, 3, 7.75, 3.25], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_7_outline",
+			"from": [2.2, 11.2, 8.7],
+			"to": [-0.2, 5.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [1.5, 5.75, 2, 7], "texture": "#1"},
+				"east": {"uv": [2.75, 6.75, 3, 8], "texture": "#1"},
+				"south": {"uv": [3.25, 5.75, 3.75, 7], "texture": "#1"},
+				"west": {"uv": [7, 0, 7.25, 1.25], "texture": "#1"},
+				"up": {"uv": [7.5, 5.75, 7, 5.5], "texture": "#1"},
+				"down": {"uv": [7.5, 6, 7, 6.25], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_8_outline",
+			"from": [15.2, 11.2, 8.7],
+			"to": [13.8, 4.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [6.5, 0, 6.75, 1.5], "texture": "#1"},
+				"east": {"uv": [6.5, 1.75, 6.75, 3.25], "texture": "#1"},
+				"south": {"uv": [6.5, 3.5, 6.75, 5], "texture": "#1"},
+				"west": {"uv": [6.5, 5.25, 6.75, 6.75], "texture": "#1"},
+				"up": {"uv": [3.5, 8, 3.25, 7.75], "texture": "#1"},
+				"down": {"uv": [8, 3.5, 7.75, 3.75], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_9_outline",
+			"from": [16.2, 10.2, 8.7],
+			"to": [14.8, 8.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [7.75, 4, 8, 4.25], "texture": "#1"},
+				"east": {"uv": [7.75, 4.5, 8, 4.75], "texture": "#1"},
+				"south": {"uv": [7.75, 5, 8, 5.25], "texture": "#1"},
+				"west": {"uv": [7.75, 5.5, 8, 5.75], "texture": "#1"},
+				"up": {"uv": [6.25, 8, 6, 7.75], "texture": "#1"},
+				"down": {"uv": [8, 6, 7.75, 6.25], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_10_outline",
+			"from": [16.2, 7.2, 8.7],
+			"to": [14.8, 4.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [2.25, 7, 2.5, 7.5], "texture": "#1"},
+				"east": {"uv": [6.5, 7, 6.75, 7.5], "texture": "#1"},
+				"south": {"uv": [7, 6.5, 7.25, 7], "texture": "#1"},
+				"west": {"uv": [1.5, 7.25, 1.75, 7.75], "texture": "#1"},
+				"up": {"uv": [6.75, 8, 6.5, 7.75], "texture": "#1"},
+				"down": {"uv": [7.25, 7.75, 7, 8], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_11_outline",
+			"from": [2.2, 6.2, 8.7],
+			"to": [0.8, 4.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [7.75, 7, 8, 7.25], "texture": "#1"},
+				"east": {"uv": [7.5, 7.75, 7.75, 8], "texture": "#1"},
+				"south": {"uv": [8, 1, 8.25, 1.25], "texture": "#1"},
+				"west": {"uv": [1.5, 8, 1.75, 8.25], "texture": "#1"},
+				"up": {"uv": [8.25, 1.75, 8, 1.5], "texture": "#1"},
+				"down": {"uv": [8.25, 2, 8, 2.25], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_12_outline",
+			"from": [4.2, 4.2, 8.7],
+			"to": [2.8, 2.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [3.75, 8, 4, 8.25], "texture": "#1"},
+				"east": {"uv": [8, 6.5, 8.25, 6.75], "texture": "#1"},
+				"south": {"uv": [8, 7.5, 8.25, 7.75], "texture": "#1"},
+				"west": {"uv": [8, 8, 8.25, 8.25], "texture": "#1"},
+				"up": {"uv": [8.5, 0.25, 8.25, 0], "texture": "#1"},
+				"down": {"uv": [8.5, 0.5, 8.25, 0.75], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_13_outline",
+			"from": [10.2, 3.2, 8.7],
+			"to": [7.8, 1.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [3.25, 7.25, 3.75, 7.5], "texture": "#1"},
+				"east": {"uv": [2, 8.25, 2.25, 8.5], "texture": "#1"},
+				"south": {"uv": [7, 7.25, 7.5, 7.5], "texture": "#1"},
+				"west": {"uv": [2.5, 8.25, 2.75, 8.5], "texture": "#1"},
+				"up": {"uv": [8, 0.25, 7.5, 0], "texture": "#1"},
+				"down": {"uv": [8, 0.5, 7.5, 0.75], "texture": "#1"}
+			}
+		},
+		{
+			"name": "enchanted_book_14_outline",
+			"from": [6.2, 2.2, 8.7],
+			"to": [4.8, 0.8, 7.3],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.1, 0.1, 7.6]},
+			"faces": {
+				"north": {"uv": [8.25, 2.5, 8.5, 2.75], "texture": "#1"},
+				"east": {"uv": [3, 8.25, 3.25, 8.5], "texture": "#1"},
+				"south": {"uv": [8.25, 3, 8.5, 3.25], "texture": "#1"},
+				"west": {"uv": [8.25, 3.5, 8.5, 3.75], "texture": "#1"},
+				"up": {"uv": [8.5, 4.25, 8.25, 4], "texture": "#1"},
+				"down": {"uv": [8.5, 4.5, 8.25, 4.75], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"ground": {
+			"translation": [0, 2, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"fixed": {
+			"rotation": [0, -180, 0]
+		}
+	}
+}

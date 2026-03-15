@@ -1,0 +1,6 @@
+{
+  "containers": "inmis:ender_pouch",
+  "textures": {
+    "minecraft:textures/gui/container/generic_54.png": "minecraft:optifine/gui/container/chests/ender.png"
+  }
+}

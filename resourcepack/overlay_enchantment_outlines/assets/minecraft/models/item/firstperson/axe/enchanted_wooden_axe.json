@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/firstperson/axe/enchanted_axe",
+  "textures": {
+    "0": "minecraft:item/wooden/axe"
+  }
+}

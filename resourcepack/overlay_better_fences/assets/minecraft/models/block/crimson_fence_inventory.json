@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "side": "minecraft:block/crimson_planks",
+    "post": "minecraft:block/crimson_stem"
+  }
+}

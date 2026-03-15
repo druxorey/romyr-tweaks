@@ -1,0 +1,4 @@
+{
+  "condition": "style.redstone_wire_numbers.show_1_15 | style.redstone_wire_numbers.hidden",
+  "fallback": "assets/minecraft/textures/block/redstone_dust/0_alt.png"
+}

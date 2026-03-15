@@ -1,0 +1,4 @@
+{
+  "condition": "!redstone.blast_furnace",
+  "fallback": "assets/minecraft/items/disabled_features/blast_furnace.json"
+}

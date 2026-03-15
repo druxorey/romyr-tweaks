@@ -1,0 +1,4 @@
+{
+  "condition": "!extra.trapdoor_lamps",
+  "fallback": "assets/minecraft/sounds/block/iron_trapdoor/silence.ogg"
+}

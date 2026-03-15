@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/firstperson/pickaxe/enchanted_pickaxe",
+  "textures": {
+    "0": "minecraft:item/oxidizingcopper/pickaxe/weathered"
+  }
+}

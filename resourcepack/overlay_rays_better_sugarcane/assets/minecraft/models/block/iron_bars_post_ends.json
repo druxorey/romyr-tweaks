@@ -1,0 +1,26 @@
+{
+	"credit": "Made by StormDragon77",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/iron_bars",
+		"edge": "block/iron_bars"
+	},
+	"elements": [
+		{
+			"from": [7, 0.02, 7],
+			"to": [9, 0.02, 9],
+			"faces": {
+				"up": {"uv": [7, 7, 9, 9], "texture": "#edge"},
+				"down": {"uv": [7, 7, 9, 9], "texture": "#edge"}
+			}
+		},
+		{
+			"from": [7, 15.98, 7],
+			"to": [9, 15.98, 9],
+			"faces": {
+				"up": {"uv": [7, 7, 9, 9], "texture": "#edge"},
+				"down": {"uv": [7, 7, 9, 9], "texture": "#edge"}
+			}
+		}
+	]
+}

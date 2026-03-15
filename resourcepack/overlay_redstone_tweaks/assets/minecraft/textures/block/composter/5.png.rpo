@@ -1,0 +1,4 @@
+{
+  "condition": "style.composter.light",
+  "fallback": "assets/minecraft/textures/block/composter/alt/5.png"
+}

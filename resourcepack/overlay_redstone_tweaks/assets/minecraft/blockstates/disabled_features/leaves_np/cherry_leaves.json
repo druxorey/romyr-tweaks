@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "distance=1": {
+      "model": "minecraft:block/leaves/cherry/1"
+    },
+    "distance=2": {
+      "model": "minecraft:block/leaves/cherry/2"
+    },
+    "distance=3": {
+      "model": "minecraft:block/leaves/cherry/3"
+    },
+    "distance=4": {
+      "model": "minecraft:block/leaves/cherry/4"
+    },
+    "distance=5": {
+      "model": "minecraft:block/leaves/cherry/5"
+    },
+    "distance=6": {
+      "model": "minecraft:block/leaves/cherry/6"
+    },
+    "distance=7": {
+      "model": "minecraft:block/leaves/cherry/7"
+    }
+  }
+}

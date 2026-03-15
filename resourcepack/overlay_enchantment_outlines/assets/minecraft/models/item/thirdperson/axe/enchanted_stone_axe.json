@@ -1,0 +1,2 @@
+{"parent": "minecraft:item/thirdperson/axe/enchanted_axe", "textures": {"0": "minecraft:item/thirdperson/enchanted_stone_axe",
+    "particle": "minecraft:item/copper/enchanted_stone_axe"}}

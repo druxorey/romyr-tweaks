@@ -1,0 +1,6 @@
+{
+    condition: "enchantmentOutlines.compatibility.sword.vanilla",
+    fallbacks: [
+	"assets/minecraft/models/item/vanillatweaks/tp/sword/e_iron_sword.json"
+    ]
+}

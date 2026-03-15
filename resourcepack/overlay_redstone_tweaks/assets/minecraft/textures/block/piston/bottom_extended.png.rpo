@@ -1,0 +1,8 @@
+{
+  "condition": "style.pistons_indicator.metallic",
+  fallbacks: [
+    "assets/minecraft/textures/block/piston/alt1/bottom_extended.png",
+    "assets/minecraft/textures/block/piston/alt2/bottom_extended.png",
+    "assets/minecraft/textures/block/piston/alt3/bottom_extended.png"
+  ]
+}

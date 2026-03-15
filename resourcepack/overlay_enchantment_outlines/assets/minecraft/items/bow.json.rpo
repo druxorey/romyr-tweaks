@@ -1,0 +1,6 @@
+{
+    condition: "enchantmentOutlines.bow.threeDee",
+    fallbacks: [
+	"assets/minecraft/items/respackopts_bow.json"
+    ]
+}

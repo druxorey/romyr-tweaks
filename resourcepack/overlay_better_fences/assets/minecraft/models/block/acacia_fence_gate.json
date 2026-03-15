@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_fence_gate",
+  "textures": {
+    "side": "minecraft:block/acacia_planks",
+    "post": "minecraft:block/acacia_log"
+  }
+}

@@ -1,0 +1,6 @@
+{
+    condition: "enchantmentOutlines.compatibility.copperTools.vanilla",
+    fallbacks: [
+	"assets/minecraft/items/oxidizing_shovel.json"
+    ]
+}

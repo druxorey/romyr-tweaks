@@ -1,0 +1,10 @@
+{
+  "condition": "style.note_block_note & style.note_block_power.glow",
+  fallbacks: [
+    "assets/minecraft/textures/block/note_block/powered/alt/1.png",
+    "assets/minecraft/textures/block/note_block/powered/alt.png",
+    "assets/minecraft/textures/block/note_block/powered.png",
+    "assets/minecraft/textures/block/note_block/unpowered/1.png",
+    "assets/minecraft/textures/block/note_block/unpowered.png",
+  ]
+}

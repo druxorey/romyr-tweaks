@@ -1,0 +1,41 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:has_component",
+    "component": "minecraft:enchantments",
+    "ignore_default": true,
+    "on_true": {
+      "type": "minecraft:select",
+      "property": "minecraft:display_context",
+      "cases": [
+        {
+          "when": [
+            "firstperson_lefthand",
+            "firstperson_righthand"
+          ],
+          "model": {
+            "type": "minecraft:model",
+            "model": "item/firstperson/rod/enchanted_warped_stick"
+          }
+        },
+        {
+          "when": [
+            "gui"
+          ],
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/warped_fungus_on_a_stick"
+          }
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "item/thirdperson/rod/enchanted_warped_stick"
+      }
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/warped_fungus_on_a_stick"
+    }
+  }
+}

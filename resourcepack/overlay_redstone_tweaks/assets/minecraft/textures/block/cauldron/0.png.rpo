@@ -1,0 +1,4 @@
+{
+  "condition": "!style.cauldron_show_0",
+  "fallback": "assets/minecraft/textures/block/cauldron/0_alt.png"
+}

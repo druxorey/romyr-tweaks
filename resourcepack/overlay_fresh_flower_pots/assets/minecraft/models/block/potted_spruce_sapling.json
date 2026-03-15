@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/flower_pots/big_flower_pot/big_flower_pot",
+	"textures": {
+		"plant": "minecraft:block/spruce_sapling",
+		"soil": "minecraft:block/podzol_top"
+	}
+}

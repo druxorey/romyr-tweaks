@@ -1,0 +1,48 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "block_state_property": "honey_level",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:block/bee_nest/1"
+        },
+        "when": "1"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:block/bee_nest/2"
+        },
+        "when": "2"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:block/bee_nest/3"
+        },
+        "when": "3"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:block/bee_nest/4"
+        },
+        "when": "4"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:block/bee_nest/5"
+        },
+        "when": "5"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:block/bee_nest/0"
+    },
+    "property": "minecraft:block_state"
+  }
+}

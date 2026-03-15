@@ -1,0 +1,6 @@
+{
+	"parent": "block/template_bars_side_alt",
+	"textures": {
+		"bars": "block/iron_bars"
+	}
+}

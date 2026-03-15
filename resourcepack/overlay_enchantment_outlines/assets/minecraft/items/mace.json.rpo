@@ -1,0 +1,6 @@
+{
+    condition: "enchantmentOutlines.mace.threeDee",
+    fallbacks: [
+	"assets/minecraft/items/respackopts_mace.json"
+    ]
+}

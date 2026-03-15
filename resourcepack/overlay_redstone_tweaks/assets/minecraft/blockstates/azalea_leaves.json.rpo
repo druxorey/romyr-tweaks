@@ -1,0 +1,4 @@
+{
+  "condition": "redstone.leaves & extra.leaves_persistent_only",
+  "fallback": "assets/minecraft/blockstates/disabled_features/leaves_np/azalea_leaves.json"
+}

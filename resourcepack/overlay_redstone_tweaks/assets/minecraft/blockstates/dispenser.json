@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "facing=down,triggered=false": {
+      "model": "minecraft:block/dispenser/vertical",
+      "x": 180
+    },
+    "facing=east,triggered=false": {
+      "model": "minecraft:block/dispenser/regular",
+      "y": 90
+    },
+    "facing=north,triggered=false": {
+      "model": "minecraft:block/dispenser/regular"
+    },
+    "facing=south,triggered=false": {
+      "model": "minecraft:block/dispenser/regular",
+      "y": 180
+    },
+    "facing=up,triggered=false": {
+      "model": "minecraft:block/dispenser/vertical"
+    },
+    "facing=west,triggered=false": {
+      "model": "minecraft:block/dispenser/regular",
+      "y": 270
+    },
+    "facing=down,triggered=true": {
+      "model": "minecraft:block/dispenser/vertical_triggered",
+      "x": 180
+    },
+    "facing=east,triggered=true": {
+      "model": "minecraft:block/dispenser/regular_triggered",
+      "y": 90
+    },
+    "facing=north,triggered=true": {
+      "model": "minecraft:block/dispenser/regular_triggered"
+    },
+    "facing=south,triggered=true": {
+      "model": "minecraft:block/dispenser/regular_triggered",
+      "y": 180
+    },
+    "facing=up,triggered=true": {
+      "model": "minecraft:block/dispenser/vertical_triggered"
+    },
+    "facing=west,triggered=true": {
+      "model": "minecraft:block/dispenser/regular_triggered",
+      "y": 270
+    }
+  }
+}

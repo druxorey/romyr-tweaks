@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/firstperson/sword/enchanted_sword",
+  "textures": {
+    "0": "minecraft:item/golden/sword"
+  }
+}

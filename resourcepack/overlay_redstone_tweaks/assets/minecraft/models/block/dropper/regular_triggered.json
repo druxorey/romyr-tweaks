@@ -1,0 +1,25 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"side": "block/dropper/triggered/side",
+		"top": "block/dropper/triggered/top_arrow",
+		"particle": "block/dropper/triggered/front",
+		"front": "block/dropper/triggered/front",
+		"back": "block/dropper/triggered/back_indicator"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#front", "cullface": "north"},
+				"east": {"uv": [16, 0, 0, 16], "texture": "#side", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#back", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#top", "cullface": "up"},
+				"down": {"uv": [16, 16, 0, 0], "texture": "#top", "cullface": "down"}
+			}
+		}
+	]
+}

@@ -1,0 +1,55 @@
+{
+	"credit": "BlueHDGaming",
+	"ambientocclusion": false,
+	"textures": {
+		"flowerpot": "minecraft:block/small_flower_pot",
+		"particle": "minecraft:block/break_particle/flower_pot"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 4, 11],
+			"faces": {
+				"north": {"uv": [0, 12, 6, 16], "texture": "#flowerpot"},
+				"east": {"uv": [0, 12, 6, 16], "texture": "#flowerpot"},
+				"south": {"uv": [0, 12, 6, 16], "texture": "#flowerpot"},
+				"west": {"uv": [0, 12, 6, 16], "texture": "#flowerpot"},
+				"up": {"uv": [6, 4, 12, 10], "texture": "#flowerpot"},
+				"down": {"uv": [0, 4, 6, 10], "texture": "#flowerpot", "cullface": "down"}
+			}
+		},
+		{
+			"from": [5.5, 4, 5.5],
+			"to": [10.5, 5, 10.5],
+			"faces": {
+				"north": {"uv": [0.5, 11, 5.5, 12], "texture": "#flowerpot"},
+				"east": {"uv": [0.5, 11, 5.5, 12], "texture": "#flowerpot"},
+				"south": {"uv": [0.5, 11, 5.5, 12], "texture": "#flowerpot"},
+				"west": {"uv": [0.5, 11, 5.5, 12], "texture": "#flowerpot"}
+			}
+		},
+		{
+			"from": [5, 5, 5],
+			"to": [11, 6, 11],
+			"faces": {
+				"north": {"uv": [0, 10, 6, 11], "texture": "#flowerpot"},
+				"east": {"uv": [0, 10, 6, 11], "texture": "#flowerpot"},
+				"south": {"uv": [0, 10, 6, 11], "texture": "#flowerpot"},
+				"west": {"uv": [0, 10, 6, 11], "texture": "#flowerpot"},
+				"up": {"uv": [6, 4, 12, 10], "texture": "#flowerpot"},
+				"down": {"uv": [6, 4, 12, 10], "texture": "#flowerpot"}
+			}
+		},
+		{
+			"from": [10, 1, 6],
+			"to": [6, 6, 10],
+			"faces": {
+				"north": {"uv": [1, 10, 5, 15], "texture": "#flowerpot"},
+				"east": {"uv": [1, 10, 5, 15], "texture": "#flowerpot"},
+				"south": {"uv": [1, 10, 5, 15], "texture": "#flowerpot"},
+				"west": {"uv": [1, 10, 5, 15], "texture": "#flowerpot"},
+				"down": {"uv": [1, 5, 5, 9], "texture": "#flowerpot"}
+			}
+		}
+	]
+}

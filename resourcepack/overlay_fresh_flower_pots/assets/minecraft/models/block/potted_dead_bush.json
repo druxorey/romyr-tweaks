@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/flower_pots/medium_flower_pot/medium_flower_pot",
+	"textures": {
+		"plant": "minecraft:block/dead_bush",
+		"soil": "minecraft:block/sand"
+	}
+}

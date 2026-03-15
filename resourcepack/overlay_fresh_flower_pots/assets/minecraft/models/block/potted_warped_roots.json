@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/flower_pots/nether_flower_pot/nether_flower_pot",
+	"textures": {
+		"plant": "minecraft:block/warped_roots_pot",
+		"soil": "minecraft:block/warped_nylium"
+	}
+}

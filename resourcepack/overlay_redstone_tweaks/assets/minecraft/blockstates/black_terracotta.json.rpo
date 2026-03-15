@@ -1,0 +1,4 @@
+{
+  "condition": "!outlines.terracotta",
+  "fallback": "assets/minecraft/blockstates/disabled_features/black_terracotta.json"
+}

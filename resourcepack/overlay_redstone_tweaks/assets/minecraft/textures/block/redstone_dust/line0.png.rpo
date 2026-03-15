@@ -1,0 +1,4 @@
+{
+  "condition": "style.redstone_wire.vanilla",
+  "fallback": "assets/minecraft/textures/block/redstone_dust/alt/line0.png"
+}

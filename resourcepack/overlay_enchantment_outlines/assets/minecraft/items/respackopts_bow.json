@@ -1,0 +1,203 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:has_component",
+    "component": "minecraft:enchantments",
+    "ignore_default": true,
+    "on_true": {
+      "type": "minecraft:select",
+      "property": "minecraft:display_context",
+      "cases": [
+        {
+          "when": [
+            "firstperson_righthand",
+            "firstperson_lefthand"
+          ],
+          "model": {
+            "type": "minecraft:range_dispatch",
+            "property": "minecraft:use_duration",
+            "scale": 0.05,
+            "entries": [
+              {
+                "threshold": 0.1,
+                "model": {
+                  "type": "minecraft:model",
+                  "model": "item/respackopts/fp/bow/enchanted_bow_pulling_0"
+                }
+              },
+              {
+                "threshold": 0.65,
+                "model": {
+                  "type": "minecraft:model",
+                  "model": "item/respackopts/fp/bow/enchanted_bow_pulling_1"
+                }
+              },
+              {
+                "threshold": 0.9,
+                "model": {
+                  "type": "minecraft:model",
+                  "model": "item/respackopts/fp/bow/enchanted_bow_pulling_2"
+                }
+              }
+            ],
+            "fallback": {
+              "type": "minecraft:model",
+              "model": "item/firstperson/bow/enchanted_bow"
+            }
+          }
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:select",
+        "property": "minecraft:display_context",
+        "cases": [
+          {
+            "when": "gui",
+            "model": {
+              "type": "minecraft:range_dispatch",
+              "property": "minecraft:use_duration",
+              "scale": 0.05,
+              "entries": [
+                {
+                  "threshold": 0.1,
+                  "model": {
+                    "type": "minecraft:model",
+                    "model": "minecraft:item/bow_pulling_0"
+                  }
+                },
+                {
+                  "threshold": 0.65,
+                  "model": {
+                    "type": "minecraft:model",
+                    "model": "minecraft:item/bow_pulling_1"
+                  }
+                },
+                {
+                  "threshold": 0.9,
+                  "model": {
+                    "type": "minecraft:model",
+                    "model": "minecraft:item/bow_pulling_2"
+                  }
+                }
+              ],
+              "fallback": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/bow"
+              }
+            }
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:range_dispatch",
+          "property": "minecraft:use_duration",
+          "scale": 0.05,
+          "entries": [
+            {
+              "threshold": 0.1,
+              "model": {
+                "type": "minecraft:model",
+                "model": "item/respackopts/tp/bow/enchanted_bow_pulling_0"
+              }
+            },
+            {
+              "threshold": 0.65,
+              "model": {
+                "type": "minecraft:model",
+                "model": "item/respackopts/tp/bow/enchanted_bow_pulling_1"
+              }
+            },
+            {
+              "threshold": 0.9,
+              "model": {
+                "type": "minecraft:model",
+                "model": "item/respackopts/tp/bow/enchanted_bow_pulling_2"
+              }
+            }
+          ],
+          "fallback": {
+            "type": "minecraft:model",
+            "model": "item/thirdperson/bow/enchanted_bow"
+          }
+        }
+      }
+    },
+    "on_false": {
+      "type": "minecraft:select",
+      "property": "minecraft:display_context",
+      "cases": [
+        {
+          "when": [
+            "thirdperson_lefthand",
+            "thirdperson_righthand",
+            "firstperson_righthand",
+            "firstperson_lefthand"
+          ],
+          "model": {
+            "type": "minecraft:range_dispatch",
+            "property": "minecraft:use_duration",
+            "scale": 0.05,
+            "entries": [
+              {
+                "threshold": 0.1,
+                "model": {
+                  "type": "minecraft:model",
+                  "model": "minecraft:item/bow_pulling_0"
+                }
+              },
+              {
+                "threshold": 0.65,
+                "model": {
+                  "type": "minecraft:model",
+                  "model": "minecraft:item/bow_pulling_1"
+                }
+              },
+              {
+                "threshold": 0.9,
+                "model": {
+                  "type": "minecraft:model",
+                  "model": "minecraft:item/bow_pulling_2"
+                }
+              }
+            ],
+            "fallback": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/bow"
+            }
+          }
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:range_dispatch",
+        "property": "minecraft:use_duration",
+        "scale": 0.05,
+        "entries": [
+          {
+            "threshold": 0.1,
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/bow_pulling_0"
+            }
+          },
+          {
+            "threshold": 0.65,
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/bow_pulling_1"
+            }
+          },
+          {
+            "threshold": 0.9,
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/bow_pulling_2"
+            }
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/bow"
+        }
+      }
+    }
+  }
+}

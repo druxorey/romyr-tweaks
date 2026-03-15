@@ -1,0 +1,15 @@
+{
+  "containers": "minecraft:crafter",
+  "textures": {
+    "minecraft:textures/gui/container/crafter.png": "optigui/gui/crafter/crafter_triggered.png"
+  },
+  "match": {
+    "@container": "minecraft:crafter",
+    "@block_state": {
+      "@Name": "minecraft:crafter",
+      "@Properties": {
+        "@triggered": "true"
+      }
+    }
+  }
+}

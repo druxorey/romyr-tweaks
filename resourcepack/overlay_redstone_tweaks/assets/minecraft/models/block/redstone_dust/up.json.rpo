@@ -1,0 +1,4 @@
+{
+  "condition": "style.redstone_wire.vanilla",
+  "fallback": "assets/minecraft/models/block/redstone_dust/up_clean.json"
+}

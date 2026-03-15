@@ -1,0 +1,6 @@
+{
+	"parent": "block/template_bars_cap_alt",
+	"textures": {
+		"edge": "block/iron_bars"
+	}
+}

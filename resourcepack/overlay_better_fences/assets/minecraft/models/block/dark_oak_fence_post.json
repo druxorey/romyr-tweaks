@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "side": "minecraft:block/dark_oak_planks",
+    "post": "minecraft:block/dark_oak_log"
+  }
+}

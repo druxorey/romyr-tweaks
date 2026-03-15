@@ -1,0 +1,6 @@
+{
+    condition: "enchantmentOutlines.compatibility.bottleOEnchanting.vanilla",
+    fallbacks: [
+	"assets/minecraft/items/vanillatweaks/e_bottle.json"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/flower_pots/small_flower_pot/small_flower_pot_emissive",
+	"textures": {
+		"plant": "minecraft:block/open_eyeblossom",
+		"plant_emissive": "minecraft:block/open_eyeblossom_emissive",
+		"soil": "minecraft:block/pale_moss_block"
+	}
+}

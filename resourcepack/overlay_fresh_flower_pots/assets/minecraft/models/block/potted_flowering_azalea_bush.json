@@ -1,0 +1,9 @@
+{
+	"parent": "minecraft:block/flower_pots/big_flower_pot/big_flower_pot_azalea",
+	"textures": {
+		"plant": "minecraft:block/potted_flowering_azalea_bush_plant",
+		"plant_side": "minecraft:block/potted_flowering_azalea_bush_side",
+		"plant_top": "minecraft:block/potted_flowering_azalea_bush_top",
+		"soil": "minecraft:block/moss_block"
+	}
+}

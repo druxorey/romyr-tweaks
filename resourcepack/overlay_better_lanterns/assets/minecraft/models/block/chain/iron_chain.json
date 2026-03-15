@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/template_chain",
+	"textures": {
+	  "chain": "minecraft:block/iron_chain",
+	  "particle": "minecraft:block/iron_chain"
+	}
+}

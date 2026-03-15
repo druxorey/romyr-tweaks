@@ -1,0 +1,6 @@
+{
+  "containers": "minecraft:written_book",
+  "textures": {
+    "minecraft:textures/gui/book.png": "optigui:gui/book/written_book.png"
+  }
+}

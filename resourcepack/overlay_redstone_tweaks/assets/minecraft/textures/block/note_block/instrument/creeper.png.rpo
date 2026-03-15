@@ -1,0 +1,4 @@
+{
+  "condition": "style.note_block_instrument",
+  "fallback": "assets/minecraft/textures/block/note_block/unpowered.png"
+}

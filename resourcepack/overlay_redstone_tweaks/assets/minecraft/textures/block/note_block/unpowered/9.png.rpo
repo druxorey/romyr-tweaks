@@ -1,0 +1,8 @@
+{
+  "condition": "style.note_block_note & !style.note_block_power.small",
+  fallbacks: [
+    "assets/minecraft/textures/block/note_block/unpowered/alt/9.png",
+    "assets/minecraft/textures/block/note_block/unpowered/alt.png",
+    "assets/minecraft/textures/block/note_block/unpowered.png",
+  ]
+}

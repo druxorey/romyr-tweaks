@@ -1,0 +1,8 @@
+{
+	"parent": "minecraft:block/flower_pots/medium_flower_pot/medium_flower_pot_cactus",
+	"textures": {
+		"plant_side": "minecraft:block/cactus_side",
+		"plant_top": "minecraft:block/cactus_top",
+		"soil": "minecraft:block/sand"
+	}
+}

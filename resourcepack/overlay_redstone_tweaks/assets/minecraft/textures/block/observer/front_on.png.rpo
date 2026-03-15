@@ -1,0 +1,13 @@
+{
+  "condition": "style.observer_face.normal",
+  fallbacks: [
+    "assets/minecraft/textures/block/observer/front_alt/owobserver.png",
+    "assets/minecraft/textures/block/observer/front_alt/pogserver.png",
+    "assets/minecraft/textures/block/observer/front_alt/glasses.png",
+    "assets/minecraft/textures/block/observer/front_alt/eyebrow.png",
+    "assets/minecraft/textures/block/observer/front_alt/think.png",
+    "assets/minecraft/textures/block/observer/front_alt/scream.png",
+    "assets/minecraft/textures/block/observer/front_alt/rage.png",
+    "assets/minecraft/textures/block/observer/front_alt/hmmmm.png"
+  ]
+}

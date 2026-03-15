@@ -1,0 +1,4 @@
+{
+  "condition": "style.comparator.red",
+  "fallback": "assets/minecraft/textures/block/comparator/alt/on_subtract_bottom.png"
+}

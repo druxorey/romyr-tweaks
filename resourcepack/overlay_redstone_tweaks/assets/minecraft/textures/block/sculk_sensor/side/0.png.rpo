@@ -1,0 +1,4 @@
+{
+  "condition": "!style.sculk_sensors_show_0",
+  "fallback": "assets/minecraft/textures/block/sculk_sensor/side/0_alt.png"
+}

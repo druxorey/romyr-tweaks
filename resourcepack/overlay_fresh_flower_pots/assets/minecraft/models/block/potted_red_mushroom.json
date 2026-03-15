@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/flower_pots/small_flower_pot/small_flower_pot",
+	"textures": {
+		"plant": "minecraft:block/red_mushroom",
+		"soil": "minecraft:block/mycelium_top"
+	}
+}

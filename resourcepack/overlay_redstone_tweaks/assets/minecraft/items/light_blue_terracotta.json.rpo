@@ -1,0 +1,4 @@
+{
+  "condition": "!outlines.terracotta",
+  "fallback": "assets/minecraft/items/disabled_features/light_blue_terracotta.json"
+}

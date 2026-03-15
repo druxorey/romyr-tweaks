@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"": {
+		"model": "minecraft:block/flower_pots/empty_flower_pot"
+		}
+	}
+}

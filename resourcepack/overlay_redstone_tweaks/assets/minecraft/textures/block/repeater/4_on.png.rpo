@@ -1,0 +1,4 @@
+{
+  "condition": "style.repeater.white",
+  "fallback": "assets/minecraft/textures/block/repeater/alt/4_on.png"
+}

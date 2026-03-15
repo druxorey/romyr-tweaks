@@ -1,0 +1,192 @@
+{
+  "multipart": [
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_1a"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1b"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1c"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1d"}
+      ],
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_1a", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1b", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1c", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1d", "y":90}
+      ],
+      "when": {
+        "facing": "east"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_1a", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1b", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1c", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1d", "y":180}
+      ],
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_1a", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1b", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1c", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_1d", "y":270}
+      ],
+      "when": {
+        "facing": "west"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_2a"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2b"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2c"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2d"}
+      ],
+      "when": {
+        "facing": "north",
+        "flower_amount": "2|3|4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_2a", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2b", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2c", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2d", "y":90}
+      ],
+      "when": {
+        "facing": "east",
+        "flower_amount": "2|3|4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_2a", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2b", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2c", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2d", "y":180}
+      ],
+      "when": {
+        "facing": "south",
+        "flower_amount": "2|3|4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_2a", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2b", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2c", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_2d", "y":270}
+      ],
+      "when": {
+        "facing": "west",
+        "flower_amount": "2|3|4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_3a"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3b"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3c"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3d"}
+      ],
+      "when": {
+        "facing": "north",
+        "flower_amount": "3|4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_3a", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3b", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3c", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3d", "y":90}
+      ],
+      "when": {
+        "facing": "east",
+        "flower_amount": "3|4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_3a", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3b", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3c", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3d", "y":180}
+      ],
+      "when": {
+        "facing": "south",
+        "flower_amount": "3|4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_3a", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3b", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3c", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_3d", "y":270}
+      ],
+      "when": {
+        "facing": "west",
+        "flower_amount": "3|4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_4a"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4b"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4c"},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4d"}
+      ],
+      "when": {
+        "facing": "north",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_4a", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4b", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4c", "y":90},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4d", "y":90}
+      ],
+      "when": {
+        "facing": "east",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_4a", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4b", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4c", "y":180},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4d", "y":180}
+      ],
+      "when": {
+        "facing": "south",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": [
+		  {"model": "minecraft:block/wildflowers/wildflowers_4a", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4b", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4c", "y":270},
+		  {"model": "minecraft:block/wildflowers/wildflowers_4d", "y":270}
+      ],
+      "when": {
+        "facing": "west",
+        "flower_amount": "4"
+      }
+    }
+  ]
+}

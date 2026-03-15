@@ -1,7 +1,0 @@
-{
-    "parent": "block/ctm",
-    "textures": {
-        "all": "block/polished_andesite",
-        "base": "block/polished_andesite_borderless"
-    }
-}

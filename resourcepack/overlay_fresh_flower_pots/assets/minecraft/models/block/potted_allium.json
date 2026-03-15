@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/flower_pots/small_flower_pot/small_flower_pot",
+	"textures": {
+		"plant": "minecraft:block/allium",
+		"soil": "minecraft:block/dirt"
+	}
+}

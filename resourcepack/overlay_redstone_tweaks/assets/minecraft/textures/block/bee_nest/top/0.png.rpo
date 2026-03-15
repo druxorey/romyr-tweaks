@@ -1,0 +1,4 @@
+{
+  "condition": "!style.bees_show_0",
+  "fallback": "assets/minecraft/textures/block/bee_nest/top/0_alt.png"
+}

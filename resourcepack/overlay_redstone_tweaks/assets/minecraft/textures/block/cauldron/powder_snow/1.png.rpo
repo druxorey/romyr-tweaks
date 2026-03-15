@@ -1,0 +1,4 @@
+{
+  "condition": "style.cauldron.animated | style.cauldron.static",
+  "fallback": "assets/minecraft/textures/block/cauldron/powder_snow/alt/1.png"
+}

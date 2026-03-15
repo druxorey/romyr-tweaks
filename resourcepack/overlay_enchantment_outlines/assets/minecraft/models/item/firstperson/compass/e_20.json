@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/firstperson/compass/enchanted_compass",
+  "textures": {
+    "0": "minecraft:item/compass/e_20"
+  }
+}

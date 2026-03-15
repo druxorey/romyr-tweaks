@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "side": "minecraft:block/warped_planks",
+    "post": "minecraft:block/warped_stem"
+  }
+}

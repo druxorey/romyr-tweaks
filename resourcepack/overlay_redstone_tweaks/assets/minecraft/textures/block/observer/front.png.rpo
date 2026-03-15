@@ -1,0 +1,7 @@
+{
+  "condition": "style.observer_face.normal",
+  fallbacks: [
+    "assets/minecraft/textures/block/observer/front_alt/off.png",
+    "assets/minecraft/textures/block/observer/front_alt/hmmmm_off.png"
+  ]
+}

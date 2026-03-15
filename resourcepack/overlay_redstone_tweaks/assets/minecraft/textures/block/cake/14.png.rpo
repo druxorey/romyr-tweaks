@@ -1,0 +1,4 @@
+{
+  "condition": "!style.cake_show_14",
+  "fallback": "assets/minecraft/textures/block/cake/14_alt.png"
+}

@@ -1,0 +1,4 @@
+{
+  "condition": "!redstone.smoker",
+  "fallback": "assets/minecraft/blockstates/disabled_features/smoker.json"
+}

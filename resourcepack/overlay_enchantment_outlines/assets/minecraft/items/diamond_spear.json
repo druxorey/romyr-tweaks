@@ -1,0 +1,73 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": "gui",
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_spear"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:condition",
+      "property": "minecraft:has_component",
+      "component": "minecraft:enchantments",
+      "ignore_default": true,
+      "on_true": {
+        "type": "minecraft:select",
+        "property": "minecraft:display_context",
+        "cases": [
+          {
+            "when": [
+              "thirdperson_lefthand",
+              "thirdperson_righthand"
+            ],
+            "model": {
+              "type": "minecraft:model",
+              "model": "item/thirdperson/spear/held_diamond_spear"
+            }
+          },
+          {
+            "when": [
+              "firstperson_lefthand",
+              "firstperson_righthand"
+            ],
+            "model": {
+              "type": "minecraft:model",
+              "model": "item/firstperson/spear/held_diamond_spear"
+            }
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:model",
+          "model": "item/thirdperson/spear/diamond_spear_dropped"
+        }
+      },
+      "on_false": {
+        "type": "minecraft:select",
+        "property": "minecraft:display_context",
+        "cases": [
+          {
+            "when": [
+              "firstperson_righthand",
+              "firstperson_lefthand",
+              "thirdperson_righthand",
+              "thirdperson_lefthand"
+            ],
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/diamond_spear_in_hand"
+            }
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_spear"
+        }
+      }
+    }
+  }
+}
