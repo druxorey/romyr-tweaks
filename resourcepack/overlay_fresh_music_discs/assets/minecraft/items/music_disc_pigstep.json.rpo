@@ -1,0 +1,12 @@
+{
+    condition: "!freshMusicDiscs.useModelsWhen.ground & !freshMusicDiscs.useModelsWhen.itemFrames & !freshMusicDiscs.useModelsWhen.gui",
+    fallbacks: [
+        "assets/minecraft/items/alt/music_disc_pigstep/music_disc_pigstep1.json",
+        "assets/minecraft/items/alt/music_disc_pigstep/music_disc_pigstep2.json",
+        "assets/minecraft/items/alt/music_disc_pigstep/music_disc_pigstep3.json",
+        "assets/minecraft/items/alt/music_disc_pigstep/music_disc_pigstep4.json",
+        "assets/minecraft/items/alt/music_disc_pigstep/music_disc_pigstep5.json",
+        "assets/minecraft/items/alt/music_disc_pigstep/music_disc_pigstep6.json",
+        "assets/minecraft/items/alt/music_disc_pigstep/music_disc_pigstep7.json"
+    ]
+}

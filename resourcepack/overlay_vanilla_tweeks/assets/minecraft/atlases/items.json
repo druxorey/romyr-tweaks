@@ -2,7 +2,23 @@
     "sources": [
         {
             "type": "single",
-            "resource": "painting/back"
+            "resource": "block/copper_door_sides",
+            "sprite": "item/copper_door_sides"
+        },
+        {
+            "type": "single",
+            "resource": "block/exposed_copper_door_sides",
+            "sprite": "item/exposed_copper_door_sides"
+        },
+        {
+            "type": "single",
+            "resource": "block/weathered_copper_door_sides",
+            "sprite": "item/weathered_copper_door_sides"
+        },
+        {
+            "type": "single",
+            "resource": "block/oxidized_copper_door_sides",
+            "sprite": "item/oxidized_copper_door_sides"
         }
     ]
 }

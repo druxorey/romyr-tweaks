@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "minecraft:item/books/fire_aspect_2"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pommel:is_held": 1
+      },
+      "model": "minecraft:item/books_3d/fire_aspect_3d_open"
+    },
+    {
+      "predicate": {
+        "pommel:is_offhand": 1
+      },
+      "model": "minecraft:item/books_3d/fire_aspect_3d"
+    }
+  ]
+}

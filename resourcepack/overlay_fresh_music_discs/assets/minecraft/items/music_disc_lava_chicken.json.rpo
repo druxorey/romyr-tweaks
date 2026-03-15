@@ -1,0 +1,12 @@
+{
+    condition: "!freshMusicDiscs.useModelsWhen.ground & !freshMusicDiscs.useModelsWhen.itemFrames & !freshMusicDiscs.useModelsWhen.gui",
+    fallbacks: [
+        "assets/minecraft/items/alt/music_disc_lava_chicken/music_disc_lava_chicken1.json",
+        "assets/minecraft/items/alt/music_disc_lava_chicken/music_disc_lava_chicken2.json",
+        "assets/minecraft/items/alt/music_disc_lava_chicken/music_disc_lava_chicken3.json",
+        "assets/minecraft/items/alt/music_disc_lava_chicken/music_disc_lava_chicken4.json",
+        "assets/minecraft/items/alt/music_disc_lava_chicken/music_disc_lava_chicken5.json",
+        "assets/minecraft/items/alt/music_disc_lava_chicken/music_disc_lava_chicken6.json",
+        "assets/minecraft/items/alt/music_disc_lava_chicken/music_disc_lava_chicken7.json"
+    ]
+}

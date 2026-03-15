@@ -72,6 +72,18 @@
 				"formats": {"min_inclusive": 34, "max_inclusive": 75},
 				"min_format": 34,
 				"max_format": 75,
+				"directory": "overlay_lively_turtle_helmet"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_fresh_music_discs"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
 				"directory": "overlay_vanilla_tweeks"
 			},
 			{
@@ -90,7 +102,7 @@
 				"formats": {"min_inclusive": 34, "max_inclusive": 75},
 				"min_format": 34,
 				"max_format": 75,
-				"directory": "overlay_even_better_enchants"
+				"directory": "overlay_bray_cyber_3d_enchanted_books"
 			},
 			{
 				"formats": {"min_inclusive": 34, "max_inclusive": 75},

@@ -1,0 +1,162 @@
+{
+	"format_version": "1.21.6",
+	"credit": "cyberia was here",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "item/music_disc_5_3d"
+	},
+	"elements": [
+		{
+			"name": "inner2",
+			"from": [4.5, 0, 8.5],
+			"to": [11.5, 1, 11.5],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"north": {"uv": [0.5, 5.5, 4, 6], "texture": "#1"},
+				"up": {"uv": [4, 2.5, 0.5, 1], "texture": "#1"},
+				"down": {"uv": [4, 1, 0.5, 2.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "inner3",
+			"from": [4.5, 0, 7.5],
+			"to": [7.5, 1, 8.5],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"east": {"uv": [2, 5.5, 2.5, 6], "texture": "#1"},
+				"up": {"uv": [4, 3, 2.5, 2.5], "texture": "#1"},
+				"down": {"uv": [4, 2.5, 2.5, 3], "texture": "#1"}
+			}
+		},
+		{
+			"name": "inner4",
+			"from": [4.5, 0, 4.5],
+			"to": [11.5, 1, 7.5],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"south": {"uv": [0.5, 5.5, 4, 6], "texture": "#1"},
+				"up": {"uv": [4, 4.5, 0.5, 3], "texture": "#1"},
+				"down": {"uv": [4, 3, 0.5, 4.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "inner5",
+			"from": [8.5, 0, 7.5],
+			"to": [11.5, 1, 8.5],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"west": {"uv": [2, 5.5, 2.5, 6], "texture": "#1"},
+				"up": {"uv": [2, 3, 0.5, 2.5], "texture": "#1"},
+				"down": {"uv": [2, 2.5, 0.5, 3], "texture": "#1"}
+			}
+		},
+		{
+			"name": "outer2",
+			"from": [4.5, 0, 11.5],
+			"to": [11.5, 1, 12.5],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"east": {"uv": [2, 2.5, 2.5, 3], "texture": "#1"},
+				"south": {"uv": [0.5, 0, 4, 0.5], "texture": "#1"},
+				"west": {"uv": [2, 2.5, 2.5, 3], "texture": "#1"},
+				"up": {"uv": [4, 1, 0.5, 0.5], "texture": "#1"},
+				"down": {"uv": [4, 0.5, 0.5, 1], "texture": "#1"}
+			}
+		},
+		{
+			"name": "outer3",
+			"from": [3.5, 0, 4.5],
+			"to": [4.5, 1, 11.5],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"north": {"uv": [2, 2.5, 2.5, 3], "texture": "#1"},
+				"south": {"uv": [2, 2.5, 2.5, 3], "texture": "#1"},
+				"west": {"uv": [0.5, 0, 4, 0.5], "texture": "#1"},
+				"up": {"uv": [4.5, 4.5, 4, 1], "texture": "#1"},
+				"down": {"uv": [4.5, 1, 4, 4.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "outer4",
+			"from": [4.5, 0, 3.5],
+			"to": [11.5, 1, 4.5],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"north": {"uv": [0.5, 5, 4, 5.5], "texture": "#1"},
+				"east": {"uv": [2, 2.5, 2.5, 3], "texture": "#1"},
+				"west": {"uv": [2, 2.5, 2.5, 3], "texture": "#1"},
+				"up": {"uv": [4, 5, 0.5, 4.5], "texture": "#1"},
+				"down": {"uv": [4, 4.5, 0.5, 5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "outer5",
+			"from": [11.5, 0, 4.5],
+			"to": [12.5, 1, 11.5],
+			"light_emission": 15,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"north": {"uv": [2, 2.5, 2.5, 3], "texture": "#1"},
+				"east": {"uv": [0.5, 5, 4, 5.5], "texture": "#1"},
+				"south": {"uv": [2, 2.5, 2.5, 3], "texture": "#1"},
+				"up": {"uv": [0.5, 4.5, 0, 1], "texture": "#1"},
+				"down": {"uv": [0.5, 1, 0, 4.5], "texture": "#1"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [90, 90, 0],
+			"translation": [0, 3, 6.75],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [90, 90, 0],
+			"translation": [0, 3, 6.75],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 40, 28],
+			"translation": [-4, 7.5, 5.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 40, 28],
+			"translation": [-4, 7.5, 5.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"translation": [0, 3.75, 0],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"gui": {
+			"rotation": [35, 45, 0],
+			"translation": [0, 7.5, 0],
+			"scale": [1.25, 1.25, 1.25]
+		},
+		"head": {
+			"translation": [0, 14.25, 0]
+		},
+		"fixed": {
+			"rotation": [-90, -180, 0],
+			"translation": [0, 0, -13],
+			"scale": [1.75, 1.75, 1.75]
+		}
+	},
+	"groups": [
+		{
+			"name": "music_disc_5",
+			"origin": [9.5, 0, 0.5],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6, 7]
+		}
+	]
+}

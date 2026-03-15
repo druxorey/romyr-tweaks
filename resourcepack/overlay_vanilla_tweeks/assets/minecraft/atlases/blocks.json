@@ -21,17 +21,42 @@
             "prefix": "entity/chest_boat/"
         },
         {
-            "type": "directory",
-            "source": "entity/end_crystal",
-            "prefix": "entity/end_crystal/"
-        },
-        {
             "type": "single",
             "resource": "entity/minecart"
         },
         {
             "type": "single",
-            "resource": "painting/back"
+            "resource": "item/wax",
+            "sprite": "block/wax"
+        },
+        {
+            "type": "single",
+            "resource": "item/waxed_copper_door_outline",
+            "sprite": "block/waxed_copper_door_outline"
+        },
+        {
+            "type": "single",
+            "resource": "entity/end_crystal/end_crystal"
+        },
+        {
+            "type": "single",
+            "resource": "block/copper_door_sides",
+            "sprite": "item/copper_door_sides"
+        },
+        {
+            "type": "single",
+            "resource": "block/exposed_copper_door_sides",
+            "sprite": "item/exposed_copper_door_sides"
+        },
+        {
+            "type": "single",
+            "resource": "block/weathered_copper_door_sides",
+            "sprite": "item/weathered_copper_door_sides"
+        },
+        {
+            "type": "single",
+            "resource": "block/oxidized_copper_door_sides",
+            "sprite": "item/oxidized_copper_door_sides"
         }
     ]
 }

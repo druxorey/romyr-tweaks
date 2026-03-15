@@ -1,0 +1,12 @@
+{
+    condition: "!freshMusicDiscs.useModelsWhen.ground & !freshMusicDiscs.useModelsWhen.itemFrames & !freshMusicDiscs.useModelsWhen.gui",
+    fallbacks: [
+        "assets/minecraft/items/alt/music_disc_far/music_disc_far1.json",
+        "assets/minecraft/items/alt/music_disc_far/music_disc_far2.json",
+        "assets/minecraft/items/alt/music_disc_far/music_disc_far3.json",
+        "assets/minecraft/items/alt/music_disc_far/music_disc_far4.json",
+        "assets/minecraft/items/alt/music_disc_far/music_disc_far5.json",
+        "assets/minecraft/items/alt/music_disc_far/music_disc_far6.json",
+        "assets/minecraft/items/alt/music_disc_far/music_disc_far7.json"
+    ]
+}

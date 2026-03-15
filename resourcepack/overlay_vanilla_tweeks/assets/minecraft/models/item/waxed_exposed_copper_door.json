@@ -1,0 +1,11 @@
+{
+	"credit": "Created by Stridey",
+	"parent": "item/waxed_copper_door",
+	"textures": {
+		"sides": "block/exposed_copper_door_sides",
+		"blank": "block/exposed_copper_door_blank",
+		"particle": "block/exposed_copper_door_top",
+		"top": "block/exposed_copper_door_top",
+		"bottom": "block/exposed_copper_door_bottom"
+	}
+}

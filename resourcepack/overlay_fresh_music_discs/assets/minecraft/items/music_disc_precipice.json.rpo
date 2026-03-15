@@ -1,0 +1,12 @@
+{
+    condition: "!freshMusicDiscs.useModelsWhen.ground & !freshMusicDiscs.useModelsWhen.itemFrames & !freshMusicDiscs.useModelsWhen.gui",
+    fallbacks: [
+        "assets/minecraft/items/alt/music_disc_precipice/music_disc_precipice1.json",
+        "assets/minecraft/items/alt/music_disc_precipice/music_disc_precipice2.json",
+        "assets/minecraft/items/alt/music_disc_precipice/music_disc_precipice3.json",
+        "assets/minecraft/items/alt/music_disc_precipice/music_disc_precipice4.json",
+        "assets/minecraft/items/alt/music_disc_precipice/music_disc_precipice5.json",
+        "assets/minecraft/items/alt/music_disc_precipice/music_disc_precipice6.json",
+        "assets/minecraft/items/alt/music_disc_precipice/music_disc_precipice7.json"
+    ]
+}

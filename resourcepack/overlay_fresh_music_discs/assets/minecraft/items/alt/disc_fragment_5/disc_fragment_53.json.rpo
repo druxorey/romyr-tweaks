@@ -1,0 +1,3 @@
+{
+    condition: "!freshMusicDiscs.useModelsWhen.ground & !freshMusicDiscs.useModelsWhen.itemFrames & freshMusicDiscs.useModelsWhen.gui"
+}

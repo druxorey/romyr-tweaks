@@ -1,0 +1,141 @@
+{
+	"credit": "Bray + Cyberia were here",
+	"parent": "minecraft:item/books_3d/template_book_open",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "item/books_3d/respiration_3d",
+		"1": "item/books_3d/respiration_bubble_3d",
+		"particle": "item/books_3d/respiration_bubble_3d"
+	},
+	"elements": [
+		{
+			"name": "cover_left_rotation",
+			"from": [8.06427, 3, 5.48283],
+			"to": [15.56427, 13, 6.55783],
+			"light_emission": 4,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8.11192, 8, 7.91853]},
+			"faces": {
+				"north": {"uv": [0, 0, 4, 5], "texture": "#0"},
+				"east": {"uv": [11.5, 0, 12, 5], "texture": "#0"},
+				"south": {"uv": [10, 5, 6, 10], "texture": "#0"},
+				"up": {"uv": [6, 11.5, 10, 12], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [0, 11.5, 4, 12], "texture": "#0"}
+			}
+		},
+		{
+			"name": "cover_right_rotation",
+			"from": [0.43763, 3, 5.4924],
+			"to": [7.93763, 13, 6.5674],
+			"light_emission": 4,
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [7.86498, 8, 7.9281]},
+			"faces": {
+				"north": {"uv": [6, 0, 10, 5], "texture": "#0"},
+				"south": {"uv": [0, 5, 4, 10], "texture": "#0"},
+				"west": {"uv": [10, 0, 10.5, 5], "texture": "#0"},
+				"up": {"uv": [6, 10, 10, 10.5], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [0, 10, 4, 10.5], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "cover_right_rotation",
+			"from": [0.43763, 3, 5.4924],
+			"to": [7.93763, 13, 5.4924],
+			"light_emission": 4,
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [7.86498, 8, 7.9281]},
+			"faces": {
+				"north": {"uv": [12, 0, 16, 5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "spine_rotation",
+			"from": [7.001, 3.001, 5.651],
+			"to": [8.999, 12.999, 6.649],
+			"light_emission": 4,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [4.5, 0, 5.5, 5], "texture": "#0"},
+				"south": {"uv": [10.5, 0, 11.5, 5], "texture": "#0"},
+				"up": {"uv": [9.5, 10.5, 10, 11.5], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 10.5, 0.5, 11.5], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"name": "page_left_rotation",
+			"from": [7.6528, 4, 6.157],
+			"to": [14.5778, 12, 7.157],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [15.5, 12, 16, 16], "texture": "#0"},
+				"south": {"uv": [12.5, 8, 16, 12], "texture": "#0"},
+				"west": {"uv": [12.5, 12, 13, 16], "texture": "#0"},
+				"up": {"uv": [16, 12.5, 12.5, 12], "texture": "#0"},
+				"down": {"uv": [16, 15.5, 12.5, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "page_right_rotation",
+			"from": [1.4222, 4, 6.157],
+			"to": [8.3472, 12, 7.157],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [12, 12, 12.5, 16], "texture": "#0"},
+				"south": {"uv": [5.5, 12, 9, 16], "texture": "#0"},
+				"west": {"uv": [9, 12, 9.5, 16], "texture": "#0"},
+				"up": {"uv": [12.5, 12.5, 9, 12], "texture": "#0"},
+				"down": {"uv": [12.5, 15.5, 9, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "flip_left_rotation",
+			"from": [7.69967, 3.99, 7.18707],
+			"to": [14.71967, 12.01, 7.20707],
+			"rotation": {"angle": -45, "axis": "y", "origin": [7.98825, 8, 7.49585]},
+			"faces": {
+				"north": {"uv": [5.5, 12, 9, 16], "texture": "#0"},
+				"south": {"uv": [16, 12, 12.5, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "flip_right_rotation",
+			"from": [1.42176, 3.99, 7.12849],
+			"to": [8.44176, 12.01, 7.14849],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8.15318, 8, 7.63729]},
+			"faces": {
+				"north": {"uv": [5.5, 12, 9, 16], "texture": "#0"},
+				"south": {"uv": [9, 12, 12.5, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [-1, 2, 5.25],
+			"to": [6, 9, 5.25],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8.25, 10.25, 8.25]},
+			"faces": {
+				"north": {"uv": [0, 0, 7, 7], "rotation": 180, "texture": "#1"},
+				"south": {"uv": [0, 0, 7, 7], "texture": "#1"}
+			}
+		},
+		{
+			"from": [3, 8, 5.25],
+			"to": [9, 14, 5.25],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8.25, 10.25, 8.25]},
+			"faces": {
+				"north": {"uv": [0, 7, 6, 13], "rotation": 180, "texture": "#1"},
+				"south": {"uv": [0, 7, 6, 13], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "open_book",
+			"origin": [8.1625, 8, 5.53317],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6, 7]
+		},
+		{
+			"name": "group",
+			"origin": [7, 10.25, 8],
+			"color": 0,
+			"children": [8, 9]
+		}
+	]
+}

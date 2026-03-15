@@ -1,0 +1,17 @@
+{
+	"format_version": "1.21.6",
+	"credit": "cyberia was here",
+	"parent": "minecraft:item/music_disc_13_3d",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "item/music_disc_far_3d"
+	},
+	"groups": [
+		{
+			"name": "music_disc_wait",
+			"origin": [9.5, 0, 0.5],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6, 7]
+		}
+	]
+}
