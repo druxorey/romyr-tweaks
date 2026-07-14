@@ -1,8 +1,0 @@
-{	
-	"animation": {},
-	"overlay": 
-		{
-			"texture": "minecraft:textures/entity/chest/ender_2e.png",
-			"emissive": true
-		}
-}

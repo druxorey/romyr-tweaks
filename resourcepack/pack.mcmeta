@@ -108,12 +108,6 @@
 				"formats": {"min_inclusive": 34, "max_inclusive": 75},
 				"min_format": 34,
 				"max_format": 75,
-				"directory": "overlay_chest_reimagined"
-			},
-			{
-				"formats": {"min_inclusive": 34, "max_inclusive": 75},
-				"min_format": 34,
-				"max_format": 75,
 				"directory": "overlay_simple_grass_flowers"
 			},
 			{
