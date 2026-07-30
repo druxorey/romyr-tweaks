@@ -43,7 +43,9 @@ This texture pack includes resources from the following texture packs:
 - [Better fences](https://modrinth.com/resourcepack/better-fences) by lolloxvii
 - [Better lanterns](https://modrinth.com/resourcepack/better-lanterns) by Nico4play
 - [Bray cyber 3d enchanted books](https://modrinth.com/resourcepack/bray-cyber-3d-enchanted-books) by Braytonks
+- [Chests Reimagined](https://modrinth.com/resourcepack/chests-reimagined) by Reijvi
 - [Crops 3d](https://modrinth.com/resourcepack/3d-crops) by vexcenot
+- [Dimanic Beds](https://modrinth.com/resourcepack/dimanic-beds) by FellowDiman
 - [Eco attire](https://modrinth.com/resourcepack/eco-attire) by MR_CHOO
 - [Enchant icons](https://modrinth.com/resourcepack/enchant-icons-countxd) by CountXD
 - [Enchantment outlines](https://modrinth.com/resourcepack/glowing-glints) by tixul
