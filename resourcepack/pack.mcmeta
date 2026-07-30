@@ -12,7 +12,7 @@
 				"formats": {"min_inclusive": 34, "max_inclusive": 75},
 				"min_format": 34,
 				"max_format": 75,
-				"directory": "overlay_chests_reimagined"
+				"directory": "overlay_bees_reimagined"
 			},
 			{
 				"formats": {"min_inclusive": 34, "max_inclusive": 75},
@@ -133,6 +133,24 @@
 				"min_format": 34,
 				"max_format": 75,
 				"directory": "overlay_armorstands_reimagined"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_chests_reimagined"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_fresh_animations"
+			},
+			{
+				"formats": {"min_inclusive": 34, "max_inclusive": 75},
+				"min_format": 34,
+				"max_format": 75,
+				"directory": "overlay_detailed_animations"
 			},
 			{
 				"formats": {"min_inclusive": 34, "max_inclusive": 75},

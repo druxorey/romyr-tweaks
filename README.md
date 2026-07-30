@@ -38,25 +38,30 @@ To install the RomyrTweaks texture pack in Minecraft 1.21.11, follow these steps
 
 This texture pack includes resources from the following texture packs:
 
-- [Animated items](https://modrinth.com/resourcepack/animated-items) by palettemc
-- [Armorstands reimagined](https://modrinth.com/resourcepack/armorstands-reimagined) by Reijvi
-- [Better fences](https://modrinth.com/resourcepack/better-fences) by lolloxvii
-- [Better lanterns](https://modrinth.com/resourcepack/better-lanterns) by Nico4play
-- [Bray cyber 3d enchanted books](https://modrinth.com/resourcepack/bray-cyber-3d-enchanted-books) by Braytonks
+- [Animated Items](https://modrinth.com/resourcepack/animated-items) by palettemc
+- [Armorstands Reimagined](https://modrinth.com/resourcepack/armorstands-reimagined) by Reijvi
+- [Better Fences](https://modrinth.com/resourcepack/better-fences) by lolloxvii
+- [Better Lanterns](https://modrinth.com/resourcepack/better-lanterns) by Nico4play
+- [BetterVanillaBuilding](https://modrinth.com/resourcepack/bettervanillabuilding) by stefanJ2
+- [Bray Cyber 3d Enchanted Books](https://modrinth.com/resourcepack/bray-cyber-3d-enchanted-books) by Braytonks
 - [Chests Reimagined](https://modrinth.com/resourcepack/chests-reimagined) by Reijvi
 - [Crops 3d](https://modrinth.com/resourcepack/3d-crops) by vexcenot
+- [Detailed Animations](https://modrinth.com/resourcepack/detailed-animations) by Cymock
 - [Dimanic Beds](https://modrinth.com/resourcepack/dimanic-beds) by FellowDiman
-- [Eco attire](https://modrinth.com/resourcepack/eco-attire) by MR_CHOO
-- [Enchant icons](https://modrinth.com/resourcepack/enchant-icons-countxd) by CountXD
-- [Enchantment outlines](https://modrinth.com/resourcepack/glowing-glints) by tixul
-- [Even better enchants](https://modrinth.com/resourcepack/even-better-enchants) by mythitorium
-- [Fresh flower pots](https://modrinth.com/resourcepack/fresh-flower-pots) by BlueHDGaming
-- [Fresh music discs](https://modrinth.com/resourcepack/fresh-music-discs) by Team Disco
-- [Lively turtle helmet](https://modrinth.com/resourcepack/lively-turtle-helmet) by Angelos
-- [Piglin chan](https://modrinth.com/resourcepack/piglin-chan) by HexeChroma
-- [Raven phantoms](https://modrinth.com/resourcepack/raven-phantoms) by 2DWisp
-- [Rays better sugarcane](https://modrinth.com/resourcepack/better-sugar-cane) by Restricted-Ray
-- [Redstone tweaks](https://modrinth.com/resourcepack/redstone-tweaks) by RexxStone
-- [Simple grass flowers](https://modrinth.com/resourcepack/simple-grass-flowers) by 2DWisp
-- [Vanilla tweaks](https://vanillatweaks.net/) by Xisuma
-- [Wisps wonderful wildflowers](https://modrinth.com/resourcepack/wisps-colourful-wildflowers) by 2DWisp
+- [Eco Attire](https://modrinth.com/resourcepack/eco-attire) by MR_CHOO
+- [Enchant Icons](https://modrinth.com/resourcepack/enchant-icons-countxd) by CountXD
+- [Enchantment Outlines](https://modrinth.com/resourcepack/glowing-glints) by tixul
+- [Even Better Enchants](https://modrinth.com/resourcepack/even-better-enchants) by mythitorium
+- [Faithless](https://modrinth.com/resourcepack/faithless) by StitchSprites
+- [Fresh Animations](https://modrinth.com/resourcepack/fresh-animations) by FreshLX
+- [Fresh Flower pots](https://modrinth.com/resourcepack/fresh-flower-pots) by BlueHDGaming
+- [Fresh Music Discs](https://modrinth.com/resourcepack/fresh-music-discs) by Team Disco
+- [Lively Turtle Helmet](https://modrinth.com/resourcepack/lively-turtle-helmet) by Angelos
+- [Piglin Chan](https://modrinth.com/resourcepack/piglin-chan) by HexeChroma
+- [Raven Phantoms](https://modrinth.com/resourcepack/raven-phantoms) by 2DWisp
+- [RAY's 3D Ladders](https://modrinth.com/resourcepack/rays-3d-ladders) by xR4YM0ND
+- [Ray's Better Sugarcane](https://modrinth.com/resourcepack/better-sugar-cane) by Restricted-Ray
+- [Redstone Tweaks](https://modrinth.com/resourcepack/redstone-tweaks) by RexxStone
+- [Simple Grass Flowers](https://modrinth.com/resourcepack/simple-grass-flowers) by 2DWisp
+- [Vanilla Tweaks](https://vanillatweaks.net/) by Xisuma
+- [Wisps Wonderful Wildflowers](https://modrinth.com/resourcepack/wisps-colourful-wildflowers) by 2DWisp
