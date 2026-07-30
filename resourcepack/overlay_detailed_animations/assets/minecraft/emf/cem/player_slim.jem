@@ -1,0 +1,1249 @@
+{
+	"credit": "by Cymock & MapleTape",
+	"textureSize": [64, 64],
+	"models": [
+		{
+			"part": "cloak",
+			"id": "cloak",
+			"invertAxis": "xy",
+			"translate": [0, -24, -1],
+			"boxes": [
+				{
+					"coordinates": [-5, 8, 1, 10, 16, 1],
+					"uvNorth": [1, 2, 11, 34],
+					"uvEast": [0, 2, 1, 34],
+					"uvSouth": [12, 2, 22, 34],
+					"uvWest": [11, 2, 12, 34],
+					"uvUp": [11, 2, 1, 0],
+					"uvDown": [21, 0, 11, 2]
+				}
+			],
+			"animations": [
+				{
+					"var.NewFrame": "if(var.LastFrameCount == frame_counter, 0, 1) * if(is_paused, 0, 1)",
+					"var.Age": "if(var.NewFrame > 0, age, var.LastAge)",
+					"var.AD": "(var.Age - var.LastAge)",
+					"var.TD": "frame_time * 60 * var.NewFrame",
+					"var.Counter": "var.Counter + var.NewFrame",
+					"var.DT": "clamp(var.TD * if(var.TD > 4, 0.00000000001, 1),0,10)",
+					"var.PDT": "var.DT",
+					"var.PosY": "if(var.NewFrame > 0, pos_y, var.PosY)",
+					"var.PosZ": "if(var.NewFrame > 0, pos_z, var.PosZ)",
+					"var.PosX": "if(var.NewFrame > 0, pos_x, var.PosX)",
+					"var.RotY": "if(var.NewFrame > 0, rot_y, var.RotY)",
+					"var.RotX": "if(var.NewFrame > 0, rot_x, var.RotX)",
+					"var.HeightAboveGround": "if(var.NewFrame > 0, height_above_ground, var.HeightAboveGround)",
+					"var.is_on_ground": "if(is_on_ground, 1, 0)",
+					"var.Speed": "if(var.NewFrame > 0, sqrt((var.LastPosX - var.PosX) * (var.LastPosX - var.PosX) + (var.LastPosZ - var.PosZ) * (var.LastPosZ - var.PosZ)) / var.DT, var.Speed)",
+					"var.DistanceMoved": "if(var.NewFrame > 0, var.DistanceMoved + var.Speed * var.DT, var.DistanceMoved)",
+					"var.AvgSpeed": "var.AvgSpeed + (var.Speed - var.AvgSpeed) / 2 * var.DT",
+					"var.move_direction_y": "atan((var.LastPosX - var.PosX)/(var.LastPosZ - var.PosZ)) + if((var.LastPosZ - var.PosZ) < 0, 180, 0)",
+					"var.move_forward": "var.move_forward + (move_forward - var.move_forward) / 5 * var.DT",
+					"var.move_strafing": "var.move_strafing + (move_strafing - var.move_strafing) / 5 * var.DT",
+					"var.Forward": "if(move_forward < 0, -1, if(move_forward > 0, 1, var.Forward)) + if(var.Forward == 0, 1, 0)",
+					"var.Strafing": "if(move_strafing < 0, -1, if(move_strafing > 0, 1, var.Strafing))",
+					"var.SwingProgress": "if(var.NewFrame > 0, swing_progress, var.SwingProgress)",
+					"var.VelocityY": "if(var.NewFrame > 0, (var.LastPosY - var.PosY) / var.DT, var.VelocityY)",
+					"var.AvgVelocityY": "var.AvgVelocityY + (var.VelocityY - var.AvgVelocityY) / 4 * var.DT",
+					"var.VelocityYDifference": "(var.LastVelocityY - var.VelocityY) / var.DT",
+					"var.VelocityYJump": "if(abs(if(var.VelocityY == 0, 0, abs(var.VelocityY) / var.VelocityY)) > 0, if(var.VelocityY == 0, 0, abs(var.VelocityY) / var.VelocityY), var.VelocityYJump)",
+					"var.has_jumped": "if(var.VelocityYJump != var.LastVelocityYJump && var.VelocityY < 0 && var.is_on_ground > 0, 1, 0)",
+					"var.Jump_Height": "if(var.has_jumped > 0 || age < 1 || var.is_on_ground > 0, var.PosY, var.Jump_Height)",
+					"var.is_jumping": "if((pos_y - var.Jump_Height) > 0.1, 1, 0)",
+					"var.VelocityHead_Yaw": "if(var.NewFrame > 0, (var.LastHead_Yaw - head_yaw) / var.DT, var.VelocityHead_Yaw)",
+					"var.VelocityHead_Pitch": "if(var.NewFrame > 0, (var.LastHead_Pitch - head_pitch) / var.DT, var.VelocityHead_Pitch)",
+					"var.VelocityRotY": "if(var.NewFrame > 0, (var.LastRotY - var.RotY) / var.DT, var.VelocityRotY)",
+					"var.AvgVelocityRotY": "var.AvgVelocityRotY + (var.VelocityRotY - var.AvgVelocityRotY) / 3 * var.DT",
+					"var.RandomEntityOffset": "if(frame_counter < 5, random() * pi * 8.1349, var.RandomEntityOffset)"
+				},
+				{
+					"var.SleepingPose": "if(nbt(SleepingX, exists:true), 1, 0)",
+					"var.SleepingPoseStrength": "var.SleepingPoseStrength + (var.SleepingPose - var.SleepingPoseStrength) / 4 * var.DT",
+					"var.OnGroundPose": "if(var.is_on_ground > 0, 1, 0)",
+					"var.OnGroundPoseStrength": "var.OnGroundPoseStrength + (var.OnGroundPose - var.OnGroundPoseStrength) / 3 * var.DT",
+					"var.InWaterPose": "clamp(fluid_depth_up - abs(floor(var.PosY) - var.PosY), 0, 1) * if(fluid_depth_up > 1, 0 + abs(floor(var.PosY) - var.PosY) * if(fluid_depth_up > 2, 0, 1), 1) * (1 - var.SwimPose) + if(var.is_on_ground > 0 && fluid_depth_up > 2, 1, 0)",
+					"var.InWaterPoseStrength": "var.InWaterPoseStrength + (var.InWaterPose * (1 - var.BoatRidePose) - var.InWaterPoseStrength) / 8 * var.DT",
+					"var.InsideWaterPose": "if((fluid_depth_up - abs(floor(var.PosY) - var.PosY)) > 0.8 && var.OnGroundPose < 1 && var.SwimPose < 1 && var.WalkingStrength < 0.025, 1, 0)",
+					"var.InsideWaterPoseStrength": "var.InsideWaterPoseStrength + ((var.InsideWaterPose + clamp(var.VelocityY, -0.1, 0.1) * var.InsideWaterPose * 8) * (1 - var.BoatRidePose) - var.InsideWaterPoseStrength) / 28 * var.DT",
+					"var.InsideWaterTimer": "var.InsideWaterTimer + var.DT * 0.02 * var.NewFrame",
+					"var.MovingInsideWaterPose": "if((fluid_depth_up - abs(floor(var.PosY) - var.PosY)) > 0.8 && var.OnGroundPose < 1 && var.SwimPose < 1 && var.WalkingStrength > 0.025, 1, 0)",
+					"var.MovingInsideWaterPoseStrength": "var.MovingInsideWaterPoseStrength + ((var.MovingInsideWaterPose + clamp(var.VelocityY, -0.1, 0.1) * var.MovingInsideWaterPose * 8) - var.MovingInsideWaterPoseStrength) / 28 * var.DT",
+					"var.MovingInsideWaterPoseTimer": "if(var.MovingInsideWaterPoseStrength > 0.05, var.MovingInsideWaterPoseTimer + var.DT * 0.02, 0)",
+
+					"var.FallingPose": "if(var.VelocityY > 0 && var.HopRunPose < 1 && var.ClimbPose < 1 && var.SwimPose < 1 && var.InsideWaterPose < 1, 1, 0)",
+					"var.FallPose": "if(var.LastFallingPose < 1 && var.FallingPose > 0, 1, 0)",
+					"var.AccidentalFall": "if(abs(var.LastHeightAboveGround - var.HeightAboveGround) > 2 && var.FallPose > 0, 1, if(var.FallingPose < 1, 0, var.AccidentalFall))",
+					"var.FallingPoseHeight": "if(var.FallPose > 0, var.HeightAboveGround, var.FallingPoseHeight)",
+					"var.FallingPoseTimer": "if(if(var.FallingPose > 0, 1, round(var.NormalFallingPoseStrength * 4) / 4) > 0, var.FallingPoseTimer + var.DT, 0)",
+					"var.NormalFallingPose": "if(var.FallingPose > 0 && var.FallingPoseTimer > 15, 1, 0)",
+					"var.NormalFallingPoseStrength": "var.NormalFallingPoseStrength + (var.NormalFallingPose - var.NormalFallingPoseStrength) / 8 * var.DT",
+					"var.FreeFallingPose": "if(var.FallingPose > 0 && var.FallingPoseHeight > 20, 1, 0)",
+					"var.FreeFallingPoseStrength": "var.FreeFallingPoseStrength + (var.FreeFallingPose - var.FreeFallingPoseStrength) / 32 * var.DT",
+					"var.TumbleFallPose": "if(var.FreeFallingPose > 0 && var.AccidentalFall > 0, 1, 0)",
+					"var.TumbleFallPoseStrength": "var.TumbleFallPoseStrength + (var.TumbleFallPose - var.TumbleFallPoseStrength) / 32 * var.DT",
+					"var.HopRunTimer": "if(var.HopRunningPose > 0, var.HopRunTimer, round(var.WalkingTimer / torad(180)) * torad(180) + var.has_jumped * torad(180))",
+					"var.HopRunPose": "if(var.is_jumping > 0 && is_sprinting && var.SneakingPose < 1 && var.MovingInsideWaterPose < 1, 1, 0)",
+					"var.HopRunPoseStrength": "var.HopRunPoseStrength + (var.HopRunPose - var.HopRunPoseStrength) / 3 * var.DT",
+					"var.IdlePose": "if(limb_speed < 0.1, 1, 0) * var.OnGroundPose * (1 - var.CrawlPose) * (1 - var.SleepingPose)",
+					"var.IdlePoseStrength": "var.IdlePoseStrength + (var.IdlePose - var.IdlePoseStrength) / 7 * var.DT * var.NewFrame",
+					"var.IdlePoseTimer": "if(var.IdlePoseStrength > 0.1, var.IdlePoseTimer + var.DT, 0)",
+					"var.IdleTimer": "age + var.RandomEntityOffset * pi",
+					"var.IdleRY": "var.IdleRY + (head_yaw * if(var.is_on_ground > 0, 1, 0) - var.IdleRY) / 8 * var.DT * var.NewFrame",
+					"var.IdleRX": "var.IdleRX + (head_pitch * if(var.is_on_ground > 0, 1, 0) - var.IdleRX) / 8 * var.DT * var.NewFrame",
+					"var.AirPose": "if(var.is_on_ground < 1, 1, 0)",
+					"var.AirPoseStrength": "var.AirPoseStrength + (var.AirPose - var.AirPoseStrength) / 7 * var.DT",
+					"var.SneakingPose": "if(is_sneaking, 1, 0)",
+					"var.SneakingPoseStrength": "var.SneakingPoseStrength + ((var.SneakingPose * (0.25 + var.OnGroundPoseStrength * 0.75)) - var.SneakingPoseStrength) / 2 * var.DT",
+					"var.SneakingLegPoseStrength": "var.SneakingLegPoseStrength + (var.SneakingPoseStrength * (1 - clamp(abs(move_forward) + abs(move_strafing), 0, 1)) - var.SneakingLegPoseStrength) / 4 * var.DT",
+					"var.SneakingTimer": "if(var.SneakingPoseStrength > 0.1, var.SneakingTimer + var.DT * 3, 0)",
+					"var.WalkingTimer": "lerp(1 - var.HopRunPoseStrength, var.WalkingTimer + ((var.HopRunTimer + torad(90) - 0.05) - var.WalkingTimer) / 12 * var.DT, if(var.SneakingPose > 0 && limb_speed < 0.1, var.WalkingTimerAbsolute, var.WalkingTimer + (1 + abs(var.VelocityY) * torad(180)) * var.DT * 0.18 / (1 + var.InWaterPoseStrength * 1) * (1 - var.HopRunningPoseStrength) * (1 + var.SprintPoseStrength * 0.1) * abs(move_forward + 0.1) / (move_forward + 0.1) / (1 + var.SneakingPoseStrength) / (1 + var.MovingInsideWaterPoseStrength)))",
+					"var.WalkingRightTimer": "var.WalkingTimer",
+					"var.WalkingLeftTimer": "var.WalkingTimer + torad(180)",
+					"var.WalkingStrength": "limb_speed * (1 + var.InWaterPoseStrength * 1) * (1 + var.SneakingPoseStrength * var.SprintPoseStrength) * (1 + var.SneakingPoseStrength) * (1 - var.AirPoseStrength * 0.75) * (1 + var.HopRunPoseStrength * 4) * (1 - var.SwimPoseStrength) * (1 + var.MovingInsideWaterPoseStrength) * (1 - var.CrawlPoseStrength) * (1 - var.NormalFallingPoseStrength) * (1 - var.SleepingPoseStrength)",
+					"var.WalkingArmStrength": "var.WalkingStrength * (1 + var.InWaterPoseStrength * 0.5) / (1 + var.SneakingPoseStrength) * (1 - var.RightArmCarryStrength) * (1 - var.LeftArmCarryStrength)",
+					"var.WalkingTimerAbsolute": "if(limb_speed > 0.2, floor(var.WalkingTimer / torad(180)) * torad(180), var.WalkingTimerAbsolute)",
+					"var.SprintPose": "if(is_sprinting && !is_sneaking, 1, 0)",
+					"var.SprintPoseStrength": "var.SprintPoseStrength + (var.SprintPose - var.SprintPoseStrength) / 4 * var.DT",
+					"var.IdleWatchingPose": "if(var.IdlePose > 0 || var.InsideWaterPose > 0, 1, 0) * (1 - var.SleepingPose) * if(var.SwingPoseTimer < 50, 0, 1)",
+					"var.IdleWatchingPoseStrength": "var.IdleWatchingPoseStrength + (var.IdleWatchingPose - var.IdleWatchingPoseStrength) / 32 * var.DT",
+					"var.IdleWatchingTimer": "var.IdleTimer",
+					"var.IdleWatchingRY": "sin(var.IdleWatchingTimer * 0.1 + sin(var.IdleWatchingTimer * 0.2) * 1) * (0.5 - clamp(cos(var.IdleWatchingTimer * 0.01 + cos(var.IdleWatchingTimer * 0.02) * 4), -1, 1)) * var.IdleWatchingPoseStrength * 0.1",
+					"var.IdleWatchingRX": "cos(var.IdleWatchingTimer * 0.05 + cos(var.IdleWatchingTimer * 0.1) * 1) * (0.5 - clamp(sin(var.IdleWatchingTimer * 0.005 + sin(var.IdleWatchingTimer * 0.01) * 4), -1, 1)) * var.IdleWatchingPoseStrength * 0.1",
+					"var.HeadTurningPose": "if(abs(var.VelocityHead_Yaw) + abs(var.VelocityHead_Pitch) > 0, 1, 0)",
+					"var.HeadTurningPoseStrength": "var.HeadTurningPoseStrength + (var.HeadTurningPose - var.HeadTurningPoseStrength) / 8 * var.DT",
+					"var.BoatRidePose": "if(nbt(RootVehicle.Entity.id,raw:iregex:.*\\_boat), 1, 0)",
+					"var.BoatRidePoseStrength": "var.BoatRidePoseStrength + (var.BoatRidePose - var.BoatRidePoseStrength) / 4 * var.DT",
+					"var.TurnPose": "if(abs(var.VelocityRotY) > 0 && var.WalkingStrength < 0.1 && var.OnGroundPose > 0 && var.CrawlPose < 1, 1, 0)",
+					"var.TurnDirection": "if(var.VelocityRotY == 0, 0, abs(var.VelocityRotY) / var.VelocityRotY)",
+					"var.TurnTimer": "if(var.TurnPose > 0, var.TurnTimer + var.DT * 3 * abs(var.AvgVelocityRotY), 0)",
+					"var.TurnPoseStrength": "var.TurnPoseStrength + (var.TurnPose * clamp(var.TurnTimer, 0, 1) - var.TurnPoseStrength) / 4 * var.DT",
+					"var.TurnPoseTimer": "if(var.TurnPoseStrength > 0.01, var.TurnPoseTimer + var.DT * 3 * abs(var.AvgVelocityRotY) * var.TurnDirection, 0)"
+				},
+				{
+					"var.brx": "clamp(var.WalkingStrength, 0, 1) * 0.15 * var.move_forward * (1 - var.SneakingPoseStrength * 0.1) + cos(var.WalkingTimer * 2 - 0.5) * clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength * 0.1) * 0.025 * (1 + var.SprintPoseStrength * 0.35) + var.SprintPoseStrength * 0.2 + var.SneakingPoseStrength * 0.7 - var.SneakingLegPoseStrength * 0.1 * (1 + var.WalkingStrength * 0.1) + var.VerticalTotalForce * 1 + sin(var.IdleTimer * 0.1) * var.IdlePoseStrength * 0.025 - var.IdlePoseStrength * 0.01 + var.IdleRX / 240 * var.IdlePoseStrength + var.IdleWatchingRX * 0.5 + sin(var.InsideWaterTimer) * var.InsideWaterPoseStrength * 0.1 - var.InsideWaterPoseStrength * 0.05 - clamp(var.WalkingStrength, 0, 1) * 2 * var.move_forward * var.MovingInsideWaterPoseStrength * 0.2 + abs(var.RightLegTurnStep * 0.05 + var.LeftLegTurnStep * 0.05) * var.LegTurnPoseStrength + var.GenericRidePoseStrength * -0.05 - clamp(var.AvgSpeed, 0, 0.25) * var.GenericRidePoseStrength * 1.75 * var.move_forward + sin(var.TurnPoseTimer * 2) * var.TurnPoseStrength * 0.01 + var.TurnPoseStrength * 0.01",
+					"var.bry": "clamp(var.WalkingStrength, 0, 1) * -0.15  * var.move_strafing * (1 - var.SneakingPoseStrength * 0.25) + sin(var.WalkingTimer + sin(var.WalkingTimer * 2) * 0.1) * clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength) * 0.2 + sin(var.WalkingTimerAbsolute + cos(var.WalkingTimerAbsolute * 2)) * var.SneakingLegPoseStrength * -0.2 + sin(var.WalkingTimer + cos(var.WalkingTimer * 2) * 0.1) * (var.SneakingPoseStrength - var.SneakingLegPoseStrength) * -0.3 - cos(var.WalkingTimerAbsolute) * var.IdlePoseStrength * 0.05 + var.IdleRY / 240 * var.IdlePoseStrength +  + cos(var.WalkingTimerAbsolute) * clamp(var.IdlePoseTimer * 0.1 - 0.5, 0, 1) * -0.1 * if(var.IdlePose < 1, var.IdlePoseStrength, 1) - sin(var.WalkingLeftTimer - 0.6) * var.MovingInsideWaterPoseStrength * 0.1 + cos(var.TurnPoseTimer + cos(var.TurnPoseTimer * 2) * 0.25) * var.TurnPoseStrength * 0.1",
+					"var.brz": "clamp(var.WalkingStrength, 0, 1) * -0.15 * var.move_strafing * (1 - var.SneakingPoseStrength * 0.25) + sin(var.WalkingTimer + sin(var.WalkingTimer) * 0.1) * clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength) * -0.02 - var.IdleWatchingRY * 0.2 + var.RightLegTurnStep * 0.01 - var.LeftLegTurnStep * 0.01 + clamp(var.AvgSpeed, 0, 0.1) * var.GenericRidePoseStrength * 1.75 * var.move_strafing",
+					"var.btx": "sin(var.IdleTimer * 0.05) * var.IdlePoseStrength * 0.25",
+					"var.bty": "abs(sin(var.WalkingTimer + sin(var.WalkingTimer * 2) * 0.1)) * (1 - var.MovingInsideWaterPoseStrength) * clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength) * -1.5 + var.WalkingStrength * 0.5 + var.SneakingPoseStrength * 2 + var.SneakingLegPoseStrength * 0.5 + var.SprintPoseStrength * 0.25 + cos(var.IdleTimer * 0.1) * var.IdlePoseStrength * 0.1 + var.GenericRidePoseStrength - cos(var.TurnPoseTimer * 2) * var.TurnPoseStrength * 0.25",
+					"var.btz": "var.SneakingPoseStrength * 4 + (var.SneakingPoseStrength - var.SneakingLegPoseStrength) * -0.1 - cos(var.IdleTimer * 0.1) * var.IdlePoseStrength * 0.25 + cos(var.WalkingTimer * 2 - 1) * (var.SneakingPoseStrength * var.WalkingStrength * 0.5)  + (1 - var.SneakingLegPoseStrength) * 1 * var.SneakingPoseStrength + var.IdleRX / 48 * var.IdlePoseStrength"
+				},
+				{
+					"var.llrx": "sin(var.WalkingRightTimer - 0.2) * clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength) * 0.85 + clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength) * 0.15 + var.SneakingLegPoseStrength * 0.3 * cos(var.WalkingTimerAbsolute) + var.SneakingPoseStrength * 0.2 + var.SprintPoseStrength * var.WalkingStrength * 0.1 + abs(clamp(cos(var.WalkingTimerAbsolute), 0, 1)) * var.IdlePoseStrength * 0.05 + cos(var.IdleTimer * 0.1) * var.IdlePoseStrength * 0.025 + (var.SneakingPoseStrength * 0.2) + (1 - var.SneakingLegPoseStrength) * 0.1 * var.SneakingPoseStrength + abs(clamp(cos(var.WalkingTimerAbsolute), 0, 1)) * clamp(var.IdlePoseTimer * 0.1 - 0.5, 0, 1) * 0.1 * if(var.IdlePose < 1, var.IdlePoseStrength, 1) + sin(var.InsideWaterTimer * 4) * var.InsideWaterPoseStrength * 0.1 + var.InsideWaterPoseStrength * 0.05 + clamp(var.WalkingStrength, 0, 1) * 2 * var.move_forward * var.MovingInsideWaterPoseStrength * 0.2 - var.GenericRidePoseStrength * torad(90) + cos(var.TurnPoseTimer) * var.TurnPoseStrength * 0.1 * abs(clamp(var.TurnDirection, -1, 0))",
+					"var.llry": "var.SneakingLegPoseStrength * -0.1 - var.IdlePoseStrength * 0.1 - var.GenericRidePoseStrength * 0.1 - cos(var.TurnPoseTimer) * var.TurnPoseStrength * 0.4",
+					"var.llrz": "var.IdlePoseStrength * -0.02 - abs(clamp(cos(var.WalkingTimerAbsolute), -1, 0)) * (var.GenericRidePoseStrength - var.IdleWatchingRX) * -0.2 * (1 / (clamp(var.AvgSpeed * 20, 0, 10) + 1))",
+					"var.llty": "cos(var.WalkingRightTimer + cos(var.WalkingRightTimer * 2) * 0.1) * clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength) * 3 * (1 - var.HopRunPoseStrength * 0.5) - var.HopRunPoseStrength - sin(clamp(var.IdlePoseTimer * 0.2 - 0.5, 0, torad(180))) * 0.5 * abs(clamp(cos(var.WalkingTimerAbsolute), 0, 1)) * if(var.IdlePose < 1, var.IdlePoseStrength, 1) - sin(clamp(var.SneakingTimer * 0.1 + torad(90), 0, torad(180))) * 2 * abs(clamp(cos(var.WalkingTimerAbsolute), 0, 1)) * if(var.SneakingPose < 1, var.SneakingPoseStrength, 1) + cos(var.InsideWaterTimer * 4) * var.InsideWaterPoseStrength * 0.5 - var.GenericRidePoseStrength * 0.75 - abs(clamp(cos(var.WalkingTimerAbsolute), -1, 0)) * (var.GenericRidePoseStrength - var.IdleWatchingRX * 0.25) * 3 * (1 / (clamp(var.AvgSpeed * 20, 0, 10) + 1)) + clamp(var.AvgSpeed, 0, 0.1) * var.GenericRidePoseStrength * 10 * var.move_strafing + clamp(sin(var.TurnPoseTimer) * var.TurnPoseStrength, -10, 0)",
+					"var.lltx": "var.SneakingLegPoseStrength * 0.25",
+					"var.lltz": "cos(var.WalkingRightTimer + 0.1 + cos(var.WalkingRightTimer * 2) * 0.1) * var.WalkingStrength - var.SneakingPoseStrength * 3 - abs(clamp(cos(var.WalkingTimerAbsolute), -1, 0)) * var.IdlePoseStrength * 0.15 - cos(var.IdleTimer * 0.1) * var.IdlePoseStrength * 0.25 + (var.GenericRidePoseStrength - var.IdleWatchingRX * 0.25) * 1 * (1 / (clamp(var.AvgSpeed * 20, 0, 10) + 1)) + var.GenericRidePoseStrength + abs(clamp(cos(var.WalkingTimerAbsolute), 0, 1)) * var.GenericRidePoseStrength * -4 * (1 / (clamp(var.AvgSpeed * 20, 0, 10) + 1))"
+				},
+				{
+					"var.rlrx": "sin(var.WalkingLeftTimer - 0.2) * clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength) * 0.85 + clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength) * 0.15 - var.SneakingLegPoseStrength * 0.3 * cos(var.WalkingTimerAbsolute) + var.SneakingPoseStrength * 0.2 + var.SprintPoseStrength * var.WalkingStrength * 0.1 + abs(clamp(cos(var.WalkingTimerAbsolute), -1, 0)) * var.IdlePoseStrength * 0.05 + cos(var.IdleTimer * 0.1) * var.IdlePoseStrength * 0.025 + (var.SneakingPoseStrength * 0.2) + (1 - var.SneakingLegPoseStrength) * 0.1 * var.SneakingPoseStrength + abs(clamp(cos(var.WalkingTimerAbsolute), -1, 0)) * clamp(var.IdlePoseTimer * 0.1 - 0.5, 0, 1) * 0.1 * if(var.IdlePose < 1, var.IdlePoseStrength, 1) - sin(var.InsideWaterTimer * 4) * var.InsideWaterPoseStrength * 0.1 + var.InsideWaterPoseStrength * 0.05 + clamp(var.WalkingStrength, 0, 1) * 2 * var.move_forward * var.MovingInsideWaterPoseStrength * 0.2 - var.GenericRidePoseStrength * torad(90) + cos(var.TurnPoseTimer) * var.TurnPoseStrength * 0.1 * abs(clamp(var.TurnDirection, 0, 1))",
+					"var.rlry": "var.SneakingLegPoseStrength * 0.1 + var.IdlePoseStrength * 0.1 + var.GenericRidePoseStrength * 0.1 + cos(var.TurnPoseTimer) * var.TurnPoseStrength * 0.4",
+					"var.rlrz": "var.IdlePoseStrength * 0.02 + abs(clamp(cos(var.WalkingTimerAbsolute), 0, 1)) * (var.GenericRidePoseStrength - var.IdleWatchingRX) * -0.2 * (1 / (clamp(var.AvgSpeed * 20, 0, 10) + 1))",
+					"var.rlty": "cos(var.WalkingLeftTimer + cos(var.WalkingLeftTimer * 2) * 0.1) * clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength) * 3 * (1 - var.HopRunPoseStrength * 0.5) - var.HopRunPoseStrength - sin(clamp(var.IdlePoseTimer * 0.2 - 0.5, 0, torad(180))) * 0.5 * abs(clamp(cos(var.WalkingTimerAbsolute), -1, 0)) * if(var.IdlePose < 1, var.IdlePoseStrength, 1) - sin(clamp(var.SneakingTimer * 0.1 + torad(90), 0, torad(180))) * 2 * abs(clamp(cos(var.WalkingTimerAbsolute), -1, 0)) * if(var.SneakingPose < 1, var.SneakingPoseStrength, 1) - cos(var.InsideWaterTimer * 4) * var.InsideWaterPoseStrength * 0.5 - var.GenericRidePoseStrength * 0.75 - abs(clamp(cos(var.WalkingTimerAbsolute), 0, 1)) * (var.GenericRidePoseStrength - var.IdleWatchingRX * 0.25) * 3 * (1 / (clamp(var.AvgSpeed * 20, 0, 10) + 1)) - clamp(var.AvgSpeed, 0, 0.1) * var.GenericRidePoseStrength * 10 * var.move_strafing - clamp(sin(var.TurnPoseTimer) * var.TurnPoseStrength, 0, 10)",
+					"var.rltx": "var.SneakingLegPoseStrength * -0.25",
+					"var.rltz": "cos(var.WalkingLeftTimer + 0.1 + cos(var.WalkingLeftTimer * 2) * 0.1) * var.WalkingStrength - var.SneakingPoseStrength * 3 - abs(clamp(cos(var.WalkingTimerAbsolute), 0, 1)) * var.IdlePoseStrength * 0.15 - cos(var.IdleTimer * 0.1) * var.IdlePoseStrength * 0.25 + (var.GenericRidePoseStrength - var.IdleWatchingRX * 0.25) * 1 * (1 / (clamp(var.AvgSpeed * 20, 0, 10) + 1)) + var.GenericRidePoseStrength + abs(clamp(cos(var.WalkingTimerAbsolute), -1, 0)) * var.GenericRidePoseStrength * -4 * (1 / (clamp(var.AvgSpeed * 20, 0, 10) + 1))"
+				},
+				{
+					"var.hrx": "head_pitch / 60 * (1 - var.SwimPoseStrength * 0.75) * (1 - var.ClimbPoseStrength * 0.1) - cos(var.IdleTimer * 0.1 - 1) * var.IdlePoseStrength * 0.01 - abs(sin((var.WalkingTimer - 0.5) + sin((var.WalkingTimer - 0.5) * 2) * 0.1)) * (1 - var.MovingInsideWaterPoseStrength) * clamp(var.WalkingStrength, 0, 1 - var.SneakPoseStrength) * 0.15 + var.IdleWatchingRX - sin(var.InsideWaterTimer * 3 - 1) * var.InsideWaterPoseStrength * 0.01",
+					"var.hry": "head_yaw / 60 * (1 - var.CrawlPoseStrength * 0.9) + var.IdleWatchingRY - sin(var.WalkingLeftTimer - 0.9) * var.MovingInsideWaterPoseStrength * 0.01",
+					"var.hrz": "head_yaw / -60 * var.CrawlPoseStrength + var.IdleWatchingRX * var.IdleWatchingRY * -2",
+					"var.htx": "0",
+					"var.hty": "0",
+					"var.htz": "0"
+				},
+				{
+					"var.rarx": "sin(var.WalkingRightTimer - 0.4 + sin(var.WalkingRightTimer * 2) * 0.2) * var.WalkingArmStrength * 0.7 * (1 + var.SprintPoseStrength * 0.35) + var.WalkingArmStrength * 0.05 - sin(var.WalkingTimer + sin(var.WalkingTimer * 2) * 0.1) * var.WalkingStrength * 0.1 + var.SneakingPoseStrength * 0.25 + var.SprintPoseStrength * 0.1 - sin(var.InsideWaterTimer * 1.5) * var.InsideWaterPoseStrength * 0.2 + clamp(var.WalkingStrength, 0, 1) * 2 * var.move_forward * var.MovingInsideWaterPoseStrength * 0.4 - var.GenericRidePoseStrength * 0.2 - var.IdleWatchingRY * 0.02 + var.IdleWatchingRX * 0.5 - clamp(var.AvgSpeed, 0, 0.25) * var.GenericRidePoseStrength * 1.75 * var.move_forward",
+					"var.rary": "sin(var.WalkingRightTimer - 0.6 + sin(var.WalkingRightTimer * 2) * 0.1) * var.WalkingArmStrength * 0.15 * (1 - var.HopRunPoseStrength * 0.5) * (1 + var.SprintPoseStrength * 1) + var.IdlePoseStrength * 0.1 + var.IdleRY / 180 * var.IdlePoseStrength - sin(var.InsideWaterTimer * 1.5 - 1) * var.InsideWaterPoseStrength * 0.1",
+					"var.rarz": "var.SneakingPoseStrength * 0.1 + var.IdlePoseStrength * 0.01 + cos(var.IdleTimer * 0.1 - 0.5 * 2) * var.IdlePoseStrength * 0.02 + var.IdlePoseStrength * 0.02 + var.InWaterPoseStrength + var.InsideWaterPoseStrength * 0.3 + sin(var.InsideWaterTimer * 3) * var.InsideWaterPoseStrength * 0.1 + clamp(var.WalkingStrength, 0, 1) * 2 * var.MovingInsideWaterPoseStrength * 0.4 + cos(var.WalkingRightTimer) * var.WalkingArmStrength * var.MovingInsideWaterPoseStrength * 0.4 - var.IdleWatchingRY * 0.1 + var.IdleWatchingRY * -0.1 + var.GenericRidePoseStrength * 0.4 + clamp(var.AvgSpeed, 0, 0.1) * var.GenericRidePoseStrength * 1.75 * var.move_strafing",
+					"var.ratx": "0",
+					"var.raty": "var.IdlePoseStrength * 0.1 + sin(var.WalkingRightTimer + sin(var.WalkingRightTimer * 2) * 0.1) * var.WalkingArmStrength * 0.4 + cos(var.IdleTimer * 0.1 - 0.5) * var.IdlePoseStrength * 0.2 - var.InWaterPoseStrength * 0.5",
+					"var.ratz": "sin(var.WalkingRightTimer + var.SprintPoseStrength * 0.25 - 0.2 + sin(var.WalkingRightTimer * 2) * 0.1) * var.WalkingArmStrength * 1.4 + var.SneakingPoseStrength + sin(var.IdleTimer * 0.1) * var.IdlePoseStrength * 0.2 + var.IdlePoseStrength * 0.1"
+				},
+				{
+					"var.larx": "sin(var.WalkingLeftTimer - 0.4 + sin(var.WalkingLeftTimer * 2) * 0.2) * var.WalkingArmStrength * 0.7 * (1 + var.SprintPoseStrength * 0.35) + var.WalkingArmStrength * 0.05 + sin(var.WalkingTimer + sin(var.WalkingTimer * 2) * 0.1) * var.WalkingStrength * 0.1 + var.SneakingPoseStrength * 0.25 + var.SprintPoseStrength * 0.1 + sin(var.InsideWaterTimer * 1.5) * var.InsideWaterPoseStrength * 0.2 + clamp(var.WalkingStrength, 0, 1) * 2 * var.move_forward * var.MovingInsideWaterPoseStrength * 0.4 - var.GenericRidePoseStrength * 0.2 + var.IdleWatchingRY * 0.02 + var.IdleWatchingRX * 0.5 - clamp(var.AvgSpeed, 0, 0.25) * var.GenericRidePoseStrength * 1.75 * var.move_forward",
+					"var.lary": "sin(var.WalkingLeftTimer - 0.6 + sin(var.WalkingLeftTimer * 2) * 0.2) * var.WalkingArmStrength * -0.15 * (1 - var.HopRunPoseStrength * 0.5) * (1 + var.SprintPoseStrength * 1) - var.IdlePoseStrength * 0.1 + var.IdleRY / 180 * var.IdlePoseStrength - sin(var.InsideWaterTimer * 1.5 - 1) * var.InsideWaterPoseStrength * 0.1",
+					"var.larz": "var.SneakingPoseStrength * -0.1 - var.IdlePoseStrength * 0.01 - cos(var.IdleTimer * 0.1 - 0.5 * 2) * var.IdlePoseStrength * 0.02 - var.IdlePoseStrength * 0.02 - var.InWaterPoseStrength - var.InsideWaterPoseStrength * 0.3 - sin(var.InsideWaterTimer * 3) * var.InsideWaterPoseStrength * 0.1 - clamp(var.WalkingStrength, 0, 1) * 2 * var.MovingInsideWaterPoseStrength * 0.4 + cos(var.WalkingRightTimer) * var.WalkingArmStrength * var.MovingInsideWaterPoseStrength * 0.4 - var.IdleWatchingRY * 0.1 + var.IdleWatchingRY * -0.1 - var.GenericRidePoseStrength * 0.4 + clamp(var.AvgSpeed, 0, 0.1) * var.GenericRidePoseStrength * 1.75 * var.move_strafing",
+					"var.latx": "0",
+					"var.laty": "var.IdlePoseStrength * 0.1 + sin(var.WalkingLeftTimer + sin(var.WalkingLeftTimer * 2) * 0.1) * var.WalkingArmStrength * 0.4 + cos(var.IdleTimer * 0.1 - 0.5) * var.IdlePoseStrength * 0.2 - var.InWaterPoseStrength * 0.5",
+					"var.latz": "sin(var.WalkingLeftTimer + var.SprintPoseStrength * 0.25 - 0.2 + sin(var.WalkingLeftTimer * 2) * 0.1) * var.WalkingArmStrength * 1.4 + var.SneakingPoseStrength + sin(var.IdleTimer * 0.1) * var.IdlePoseStrength * 0.2 + var.IdlePoseStrength * 0.1"
+				},
+				{
+					"var.rrx": "sin(var.InsideWaterTimer - 1) * var.InsideWaterPoseStrength * 0.05 - var.InsideWaterPoseStrength * 0.05 + clamp(var.WalkingStrength, 0, 1) * 2 * var.move_forward * var.MovingInsideWaterPoseStrength * 0.2 + var.AvgVelocityY * 10 * var.SwimPoseStrength * abs(cos(head_pitch / 60))",
+					"var.rry": "head_yaw * -0.01 * var.SwimPoseStrength",
+					"var.rtx": "0",
+					"var.rty": "sin(var.InsideWaterTimer) * var.InsideWaterPoseStrength + sin(var.MovingInsideWaterPoseTimer * 2) * var.MovingInsideWaterPoseStrength * 0.5 - var.GenericRidePoseStrength",
+					"var.rtz": "0"
+				}
+			]
+		},
+		{
+			"part": "ear",
+			"id": "ear",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-3, 24, -1, 6, 6, 1], "textureOffset": [24, 0]}
+			]
+		},
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-4, 24, -4, 8, 8, 8], "textureOffset": [0, 0]}
+			],
+			"animations": [
+				{
+					"var.SWIMMING": "0",
+					"var.SwimPose": "if(is_swimming, 1, 0)",
+					"var.SwimPoseStrength": "var.SwimPoseStrength + (var.SwimPose - var.SwimPoseStrength) / 8 * var.DT",
+					"var.SwimRawTimer": "limb_swing * 0.35",
+					"var.SwimTimer": "var.SwimRawTimer + cos(var.SwimRawTimer) * 0.75"
+				},
+				{
+					"var.swbrx": "sin(var.SwimTimer + sin(var.SwimTimer * 2) * 1) * var.SwimPoseStrength * -0.1",
+					"var.swbry": "clamp(sin(var.SwimTimer), 0, 1) * sin(var.SwimRawTimer * 4) * var.SwimPoseStrength * -0.05",
+					"var.swbrz": "0",
+					"var.swbtx": "0",
+					"var.swbty": "sin(var.SwimTimer) * var.SwimPoseStrength * -2 + var.SwimPoseStrength * 2",
+					"var.swbtz": "sin(var.SwimTimer + 0.75 + sin(var.SwimTimer * 2 + 0.75) * 0.25) * var.SwimPoseStrength * -1"
+				},
+				{
+					"var.swllrx": "sin(var.SwimTimer + 0.1 + sin(var.SwimTimer * 2 + 0.1) * 0.8) * var.SwimPoseStrength * -0.1 + var.SwimPoseStrength * 0.1 - clamp(sin(var.SwimTimer), 0, 1) * sin(var.SwimRawTimer * 3) * var.SwimPoseStrength * 0.1 + sin(var.SwimTimer - 0.1) * var.SwimPoseStrength * 0.05",
+					"var.swllry": "sin(var.SwimTimer + sin(var.SwimTimer * 2) * 0.8) * var.SwimPoseStrength * 0.05 + var.SwimPoseStrength * -0.05",
+					"var.swllrz": "clamp(cos(var.SwimTimer + sin(var.SwimTimer * 2) * 0.5), 0, 1) * var.SwimPoseStrength * -0.05 - clamp(cos(var.SwimTimer - 0.75), 0, 1) * var.SwimPoseStrength * 0.1",
+					"var.swllty": "sin(var.SwimTimer + sin(var.SwimTimer * 2) * 0.7) * var.SwimPoseStrength * 0.75 - var.SwimPoseStrength * 0.75 + sin(var.SwimTimer - 0.1) * var.SwimPoseStrength * 0.5",
+					"var.swlltx": "clamp(cos(var.SwimTimer - 0.25 + sin(var.SwimTimer * 2 - 0.25) * 0.6), 0, 1) * var.SwimPoseStrength * 1 + clamp(1 - sin(var.SwimTimer), 0, 1) * sin(var.SwimTimer) * var.SwimPoseStrength * -0.5 + clamp(sin(var.SwimTimer), -1, 0.25) * var.SwimPoseStrength * -0.5",
+					"var.swlltz": "sin(var.SwimTimer + sin(var.SwimTimer * 2) * 0.9) * var.SwimPoseStrength * 0.4 - var.SwimPoseStrength * 0.75"
+				},
+				{
+					"var.swrlrx": "sin(var.SwimTimer + 0.1 + sin(var.SwimTimer * 2 + 0.1) * 0.8) * var.SwimPoseStrength * -0.1 + var.SwimPoseStrength * 0.1 + clamp(sin(var.SwimTimer), 0, 1) * sin(var.SwimRawTimer * 3) * var.SwimPoseStrength * 0.1 + sin(var.SwimTimer - 0.1) * var.SwimPoseStrength * 0.05",
+					"var.swrlry": "sin(var.SwimTimer + sin(var.SwimTimer * 2) * 0.8) * var.SwimPoseStrength * -0.05 + var.SwimPoseStrength * 0.05",
+					"var.swrlrz": "clamp(cos(var.SwimTimer + sin(var.SwimTimer * 2) * 0.5), 0, 1) * var.SwimPoseStrength * 0.05 + clamp(cos(var.SwimTimer - 0.75), 0, 1) * var.SwimPoseStrength * 0.1",
+					"var.swrlty": "sin(var.SwimTimer + sin(var.SwimTimer * 2) * 0.7) * var.SwimPoseStrength * 0.75 - var.SwimPoseStrength * 0.75 + sin(var.SwimTimer - 0.1) * var.SwimPoseStrength * 0.5",
+					"var.swrltx": "clamp(cos(var.SwimTimer - 0.25 + sin(var.SwimTimer * 2 - 0.25) * 0.6), 0, 1) * var.SwimPoseStrength * -1 + clamp(1 - sin(var.SwimTimer), 0, 1) * sin(var.SwimTimer) * var.SwimPoseStrength * 0.5 + clamp(sin(var.SwimTimer), -1, 0.25) * var.SwimPoseStrength * 0.5",
+					"var.swrltz": "sin(var.SwimTimer + sin(var.SwimTimer * 2) * 0.9) * var.SwimPoseStrength * 0.4 - var.SwimPoseStrength * 0.75"
+				},
+				{
+					"var.swhrx": "sin(var.SwimTimer + 1.5 + sin(var.SwimTimer * 2 + 1.5) * 0.1) * var.SwimPoseStrength * -0.1 - var.SwimPoseStrength * 1",
+					"var.swhry": "0",
+					"var.swhrz": "0",
+					"var.swhtx": "0",
+					"var.swhty": "0",
+					"var.swhtz": "0"
+				},
+				{
+					"var.swrarx": "sin(var.SwimTimer) * var.SwimPoseStrength * torad(90) - var.SwimPoseStrength * torad(90)",
+					"var.swrary": "cos(var.SwimTimer + 0.5 + cos(var.SwimTimer * 2 + 0.5) * 0.25) * var.SwimPoseStrength * torad(90) * clamp(cos(var.SwimTimer * 1), 0, 1)",
+					"var.swrarz": "sin(var.SwimTimer * 2) * -0.05 * var.SwimPoseStrength",
+					"var.swratx": "cos(var.SwimTimer + 0.5) * var.SwimPoseStrength * -0.25",
+					"var.swraty": "sin(var.SwimTimer + 0.25) * var.SwimPoseStrength * 2 - var.SwimPoseStrength",
+					"var.swratz": "0"
+				},
+				{
+					"var.swlarx": "sin(var.SwimTimer) * var.SwimPoseStrength * torad(90) - var.SwimPoseStrength * torad(90)",
+					"var.swlary": "cos(var.SwimTimer + 0.5 + cos(var.SwimTimer * 2 + 0.5) * 0.25) * var.SwimPoseStrength * torad(-90) * clamp(cos(var.SwimTimer * 1), 0, 1)",
+					"var.swlarz": "sin(var.SwimTimer * 2) * 0.05 * var.SwimPoseStrength",
+					"var.swlatx": "cos(var.SwimTimer + 0.5) * var.SwimPoseStrength * 0.25",
+					"var.swlaty": "sin(var.SwimTimer + 0.25) * var.SwimPoseStrength * 2 - var.SwimPoseStrength",
+					"var.swlatz": "0"
+				},
+				{
+					"var.CRAWLING": "0",
+					"var.CrawlPose": "if(is_crawling, 1, 0)",
+					"var.CrawlPoseStrength": "var.CrawlPoseStrength + (var.CrawlPose - var.CrawlPoseStrength) / 7* var.DT",
+					"var.CrawlingPose": "if(var.CrawlPose > 0 && limb_speed > 0.1, 1, 0)",
+					"var.CrawlingPoseStrength": "var.CrawlingPoseStrength + (var.CrawlingPose - var.CrawlingPoseStrength) / 7 * var.DT",
+					"var.CrawlPoseTurn": "var.CrawlPoseTurn + (head_yaw * (1 - abs(var.move_strafing)) * abs(var.move_forward + 0.1) / (var.move_forward + 0.1) - var.CrawlPoseTurn) / 2 * var.DT * clamp(limb_speed * 4, 0, 1)",
+					"var.CrawlPoseTimer": "var.CrawlPoseTimer + var.DT * abs(var.move_forward + 0.1) / (var.move_forward + 0.1) * 0.4 * limb_speed * abs(cos(var.CrawlPoseTurn / 45))"
+				},
+				{
+					"var.crbrx": "cos(var.CrawlPoseTimer * 2) * var.CrawlPoseStrength * 0.025 - var.CrawlingPoseStrength * 0.1",
+					"var.crbry": "sin(var.CrawlPoseTimer) * var.CrawlPoseStrength * 0.2",
+					"var.crbrz": "0",
+					"var.crbtx": "0",
+					"var.crbty": "abs(sin(var.CrawlPoseTimer)) * var.CrawlPoseStrength * 0.5",
+					"var.crbtz": "var.CrawlPoseStrength * -2 + cos(var.CrawlPoseTimer * 2) * var.CrawlPoseStrength * 0.5"
+				},
+				{
+					"var.crllrx": "clamp(cos(var.CrawlPoseTimer - 0.5), -1, 0) * var.CrawlingPoseStrength * -0.15",
+					"var.crllry": "0",
+					"var.crllrz": "var.CrawlPoseTurn * 0.01 * var.CrawlPoseStrength + var.CrawlPoseStrength * -0.02",
+					"var.crllty": "var.CrawlPoseTurn * 0.05 * var.CrawlPoseStrength + var.CrawlPoseStrength * -4 + sin(var.CrawlPoseTimer) * var.CrawlPoseStrength * 3.1",
+					"var.crlltx": "0",
+					"var.crlltz": "var.CrawlPoseStrength * -5 - clamp(cos(var.CrawlPoseTimer), -1, 0) * var.CrawlingPoseStrength * 2",
+					"var.crlltry": "0"
+				},
+				{
+					"var.crrlrx": "clamp(cos(var.CrawlPoseTimer - 0.5), 0, 1) * var.CrawlingPoseStrength * 0.15",
+					"var.crrlry": "0",
+					"var.crrlrz": "var.CrawlPoseTurn * 0.01 * var.CrawlPoseStrength + var.CrawlPoseStrength * 0.02",
+					"var.crrlty": "var.CrawlPoseTurn * -0.05 * var.CrawlPoseStrength + var.CrawlPoseStrength * -4 - sin(var.CrawlPoseTimer) * var.CrawlPoseStrength * 3.1",
+					"var.crrltx": "0",
+					"var.crrltz": "var.CrawlPoseStrength * -5 + clamp(cos(var.CrawlPoseTimer), 0, 1) * var.CrawlingPoseStrength * 2",
+					"var.crrltry": "0"
+				},
+				{
+					"var.crhrx": "var.CrawlPoseStrength * -0.9 + cos(var.CrawlPoseTimer * 2) * var.CrawlPoseStrength * 0.05",
+					"var.crhry": "var.CrawlPoseTurn * 0.01 * var.CrawlPoseStrength + sin((var.CrawlPoseTimer - 0.2) + sin((var.CrawlPoseTimer - 0.2) * 2) * 0.25) * var.CrawlingPoseStrength * -0.05",
+					"var.crhrz": "sin((var.CrawlPoseTimer - 0.2) + sin((var.CrawlPoseTimer - 0.2) * 2) * 0.25) * var.CrawlPoseStrength * -0.05",
+					"var.crhtx": "0",
+					"var.crhty": "0",
+					"var.crhtz": "var.CrawlPoseStrength * 0.5"
+				},
+				{
+					"var.crrarx": "clamp(sin(var.CrawlPoseTimer), -1, 0) * var.CrawlingPoseStrength * 0.2 + clamp(cos(var.CrawlPoseTimer), -1, 0) * var.CrawlingPoseStrength * -0.4",
+					"var.crrary": "var.CrawlPoseStrength * torad(-180) + sin(var.CrawlPoseTimer - 1) * var.CrawlPoseStrength * 0.1",
+					"var.crrarz": "var.CrawlPoseStrength * torad(-170) + cos(var.CrawlPoseTimer + cos(var.CrawlPoseTimer * 2) * 0.25) * var.CrawlPoseStrength * -0.3 + var.CrawlPoseStrength * 0.15 + var.CrawlPoseTurn * -0.0075 * var.CrawlPoseStrength",
+					"var.crratx": "cos(var.CrawlPoseTimer + cos(var.CrawlPoseTimer * 2) * 0.25) * var.CrawlPoseStrength * 0.5",
+					"var.crraty": "var.CrawlPoseStrength + cos(var.CrawlPoseTimer) * var.CrawlPoseStrength * -3.5",
+					"var.crratz": "var.CrawlPoseStrength * -5 - clamp(sin(var.CrawlPoseTimer), -1, 0) * var.CrawlingPoseStrength * 3 - clamp(cos(var.CrawlPoseTimer), -1, 0) * var.CrawlingPoseStrength * 4"
+				},
+				{
+					"var.crlarx": "clamp(sin(var.CrawlPoseTimer), 0, 1) * var.CrawlingPoseStrength * -0.2 + clamp(cos(var.CrawlPoseTimer), 0, 1) * var.CrawlingPoseStrength * 0.4",
+					"var.crlary": "var.CrawlPoseStrength * torad(180) + sin(var.CrawlPoseTimer - 1) * var.CrawlPoseStrength * 0.1",
+					"var.crlarz": "var.CrawlPoseStrength * torad(170) + cos(var.CrawlPoseTimer + cos(var.CrawlPoseTimer * 2) * 0.25) * var.CrawlPoseStrength * -0.3 - var.CrawlPoseStrength * 0.15 + var.CrawlPoseTurn * -0.0075 * var.CrawlPoseStrength",
+					"var.crlatx": "cos(var.CrawlPoseTimer + cos(var.CrawlPoseTimer * 2) * 0.25) * var.CrawlPoseStrength * 0.5",
+					"var.crlaty": "var.CrawlPoseStrength + cos(var.CrawlPoseTimer) * var.CrawlPoseStrength * 3.5",
+					"var.crlatz": "var.CrawlPoseStrength * -5 + clamp(sin(var.CrawlPoseTimer), 0, 1) * var.CrawlingPoseStrength * 3 + clamp(cos(var.CrawlPoseTimer), 0, 1) * var.CrawlingPoseStrength * 4"
+				},
+				{
+					"var.CLIMBING": "0",
+					"var.ClimbPose": "if(is_climbing, 1, 0)",
+					"var.ClimbPoseStrength": "var.ClimbPoseStrength + (var.ClimbPose - var.ClimbPoseStrength) / 4 * var.DT",
+					"var.ClimbTimer": "if(var.ClimbPose > 0, var.ClimbTimer + var.DT, 0)",
+					"var.ClimbingPose": "if(is_climbing, 1, 0)",
+					"var.ClimbingPoseStrength": "var.ClimbingPoseStrength + (var.ClimbingPose - var.ClimbingPoseStrength) / 4 * var.DT",
+					"var.ClimbingTimerRaw": "if(abs(var.VelocityY) > 0, var.PosY * pi * 1.1, var.ClimbingTimerRaw + ((floor(var.ClimbingTimerRaw / pi) * pi + pi * 0.5) - var.ClimbingTimerRaw) / 8 * var.DT * var.NewFrame)",
+					"var.ClimbingPitch": "var.ClimbingPitch + (var.VelocityY - var.ClimbingPitch) / 4 * var.DT",
+					"var.ClimbingTimer": "var.ClimbingTimerRaw + sin(var.ClimbingTimerRaw * 2) * 0.05"
+				},
+				{
+					"var.clbrx": "var.ClimbPoseStrength * 0.1 + cos((var.ClimbingTimer + 0.2) * 2 + cos((var.ClimbingTimer + 0.2) * 4) * 0.1) * var.ClimbPoseStrength * 0.025 + var.ClimbingPitch * -1 * var.ClimbPoseStrength",
+					"var.clbry": "0",
+					"var.clbrz": "sin((var.ClimbingTimer + 0.75) + sin((var.ClimbingTimer + 0.75) * 2) * 0.25) * var.ClimbPoseStrength * 0.05",
+					"var.clbtx": "sin((var.ClimbingTimer + 0.75) + sin((var.ClimbingTimer + 0.75) * 2) * 0.25) * var.ClimbPoseStrength * 0.5",
+					"var.clbty": "var.ClimbPoseStrength * 2 - cos((var.ClimbingTimer + 0.2) * 2 + cos((var.ClimbingTimer + 0.2) * 4) * 0.1) * var.ClimbPoseStrength * 0.75",
+					"var.clbtz": "var.ClimbPoseStrength * -2"
+				},
+				{
+					"var.clllrx": "var.ClimbPoseStrength * -0.1 - cos(var.ClimbingTimer + cos(var.ClimbingTimer * 2) * 0.5) * var.ClimbPoseStrength * 0.1",
+					"var.clllry": "var.ClimbPoseStrength * 0.1 * cos(var.ClimbingTimer + cos(var.ClimbingTimer * 2) * 0.25)",
+					"var.clllrz": "var.ClimbPoseStrength * 0.01 * cos(var.ClimbingTimer + cos(var.ClimbingTimer * 2) * 0.25)",
+					"var.clllty": "var.ClimbPoseStrength * -2 + sin(var.ClimbingTimer) * var.ClimbPoseStrength * 4.5",
+					"var.cllltx": "0",
+					"var.cllltz": "var.ClimbPoseStrength * -5 - cos((var.ClimbingTimer + 0.5) + cos((var.ClimbingTimer + 0.5) * 2) * 1) * var.ClimbPoseStrength * 1",
+					"var.cllltry": "0"
+				},
+				{
+					"var.clrlrx": "var.ClimbPoseStrength * -0.1 + cos(var.ClimbingTimer + cos(var.ClimbingTimer * 2) * 0.5) * var.ClimbPoseStrength * 0.1",
+					"var.clrlry": "var.ClimbPoseStrength * 0.1 * cos(var.ClimbingTimer + cos(var.ClimbingTimer * 2) * 0.25)",
+					"var.clrlrz": "var.ClimbPoseStrength * 0.01 * cos(var.ClimbingTimer + cos(var.ClimbingTimer * 2) * 0.25)",
+					"var.clrlty": "var.ClimbPoseStrength * -2 - sin(var.ClimbingTimer) * var.ClimbPoseStrength * 4.5",
+					"var.clrltx": "0",
+					"var.clrltz": "var.ClimbPoseStrength * -5 + cos((var.ClimbingTimer + 0.5) + cos((var.ClimbingTimer + 0.5) * 2) * 1) * var.ClimbPoseStrength * 1",
+					"var.clrltry": "0"
+				},
+				{
+					"var.clhrx": "var.ClimbingPitch * 8 * var.ClimbPoseStrength - var.ClimbPoseStrength * 0.5",
+					"var.clhry": "0",
+					"var.clhrz": "sin(var.ClimbingTimer) * var.ClimbPoseStrength * -0.1",
+					"var.clhtx": "0",
+					"var.clhty": "0",
+					"var.clhtz": "0"
+				},
+				{
+					"var.clrarx": "var.ClimbPoseStrength * -pi + var.ClimbPoseStrength * 0.35 + sin((var.ClimbingTimer - 0.5) + sin((var.ClimbingTimer - 0.5) * 2) * 0.1) * var.ClimbPoseStrength * 0.1 - clamp(cos(var.ClimbingTimer - 0.25), -1, 0) * var.ClimbPoseStrength * -0.5",
+					"var.clrary": "clamp(cos(var.ClimbingTimer - 0.25), -1, 0) * var.ClimbPoseStrength * 0.3",
+					"var.clrarz": "var.ClimbPoseStrength * 0.1 + sin(var.ClimbingTimer - 0.25) * var.ClimbPoseStrength * 0.1 + clamp(cos(var.ClimbingTimer - 0.25), -1, 0) * var.ClimbPoseStrength * 0.2",
+					"var.clratx": "var.ClimbPoseStrength * 0.5 - sin(var.ClimbingTimer - 0.25) * var.ClimbPoseStrength * 1",
+					"var.clraty": "sin(var.ClimbingTimer - 0.1) * var.ClimbPoseStrength * 4",
+					"var.clratz": "-sin(var.ClimbingTimer - 0.1) * var.ClimbPoseStrength * 1.25 + var.ClimbPoseStrength * -3.5 + sin((var.ClimbingTimer - 0.5) + sin((var.ClimbingTimer - 0.5) * 2) * 0.1) * var.ClimbPoseStrength * 2"
+				},
+				{
+					"var.cllarx": "var.ClimbPoseStrength * -pi + var.ClimbPoseStrength * 0.35 - sin((var.ClimbingTimer - 0.5) + sin((var.ClimbingTimer - 0.5) * 2) * 0.1) * var.ClimbPoseStrength * 0.1 + clamp(cos(var.ClimbingTimer - 0.25), 0, 1) * var.ClimbPoseStrength * -0.5",
+					"var.cllary": "clamp(cos(var.ClimbingTimer - 0.25), 0, 1) * var.ClimbPoseStrength * 0.3",
+					"var.cllarz": "var.ClimbPoseStrength * -0.1 + sin(var.ClimbingTimer - 0.25) * var.ClimbPoseStrength * 0.1 + clamp(cos(var.ClimbingTimer - 0.25), 0, 1) * var.ClimbPoseStrength * 0.2",
+					"var.cllatx": "var.ClimbPoseStrength * -0.5 - sin(var.ClimbingTimer - 0.25) * var.ClimbPoseStrength * 1",
+					"var.cllaty": "-sin(var.ClimbingTimer - 0.1) * var.ClimbPoseStrength * 4",
+					"var.cllatz": "sin(var.ClimbingTimer - 0.1) * var.ClimbPoseStrength * 1.25 + var.ClimbPoseStrength * -3.5 - sin((var.ClimbingTimer - 0.5) + sin((var.ClimbingTimer - 0.5) * 2) * 0.1) * var.ClimbPoseStrength * 2"
+				},
+				{
+					"var.SWING_BASIC_INFO": "0",
+					"var.TargetSwingVariant" :"1",
+					"var.SwingPose": "if(var.NewFrame > 0, if(ceil(var.SwingProgress) > ceil(var.LastSwingProgress) || var.SwingProgress < var.LastSwingProgress && var.SwingProgress > 0, 1, 0), var.SwingPose)",
+					"var.MiningPose": "if(var.SwingPose > 0 && var.SwingPoseTimer > 10 && var.SwingPoseTimer < 15, 1, if(var.SwingProgress == var.LastSwingProgress, 0, var.MiningPose))",
+					"var.MiningPoseStrength": "var.MiningPoseStrength + (var.MiningPose - var.MiningPoseStrength) / 4 * var.DT",
+				    "var.SwingPoseTimer": "if(var.SwingPose > 0, 0, var.SwingPoseTimer + var.DT * 0.925)",
+				    "var.MiningPoseTimer": "if(var.MiningPose > 0, var.MiningPoseTimer + var.DT * 0.925, var.SwingPoseTimer)",
+				    "var.SwingSide": "if(is_right_handed, 1, -1)"
+				},
+				{
+					"var.TargetSwingVariant": "if(nbt(SelectedItem.id, raw:iregex:.*\\_pickaxe), 2, var.TargetSwingVariant)",
+				    "var.SwingVariant": "if(var.SwingPose > 0, var.TargetSwingVariant, var.SwingVariant)"
+				},
+				{
+					"var.DEFAULT_SWING": "0",
+				    "var.DefaultSwingPoseStrength": "sin(clamp(var.SwingPoseTimer * 0.2, 0, torad(180))) * if(var.SwingVariant == 1, 1, 0)",
+				    "var.DefaultSwingPose": "ceil(round(var.DefaultSwingPoseStrength * 100) / 100)",
+				    "var.DefaultSwingPoseOverlapStrength": "sin(clamp(var.SwingPoseTimer * 0.125, 0, torad(180))) * if(var.SwingVariant == 1, 1, 0)"
+				},
+				{
+					"var.DefaultSwingPoseBodyStrength": "1",
+					"var.DefaultSwingPoseHeadStrength": "1",
+					"var.DefaultSwingPoseLeftArmStrength": "1",
+					"var.DefaultSwingPoseRightArmStrength": "(1 - var.GenericSwingPoseStrength)",
+					"var.DefaultSwingPoseLeftLegStrength": "1",
+					"var.DefaultSwingPoseRightLegStrength": "1",
+					"var.DefaultSwingPoseRootStrength": "1"
+				},
+				{
+				    "var.dfsbrx": "var.SwingPoseStrength * 0.1",
+				    "var.dfsbry": "sin(clamp(var.SwingPoseTimer * 0.2 - 0.1, 0, torad(270))) * -0.15 * var.DefaultSwingPoseOverlapStrength",
+				    "var.dfsbrz": "0",
+				    "var.dfsbtx": "0",
+				    "var.dfsbty": "0",
+				    "var.dfsbtz": "0"
+				},
+				{
+				    "var.dfsllrx": "0",
+				    "var.dfsllry": "0",
+				    "var.dfsllrz": "0",
+				    "var.dfsllty": "0",
+				    "var.dfslltx": "0",
+				    "var.dfslltz": "0"
+				},
+				{
+				    "var.dfsrlrx": "0",
+				    "var.dfsrlry": "0",
+				    "var.dfsrlrz": "0",
+				    "var.dfsrlty": "0",
+				    "var.dfsrltx": "0",
+				    "var.dfsrltz": "0"
+				},
+				{
+				    "var.dfshrx": "sin(clamp(var.SwingPoseTimer * 0.2 - 0.15, 0, torad(270))) * -0.05 * var.DefaultSwingPoseOverlapStrength",
+				    "var.dfshry": "sin(clamp(var.SwingPoseTimer * 0.4 - 0.15, 0, torad(270))) * 0.05 * var.DefaultSwingPoseOverlapStrength",
+				    "var.dfshrz": "0",
+				    "var.dfshtx": "0",
+				    "var.dfshty": "0",
+				    "var.dfshtz": "0"
+				},
+				{
+				    "var.dfsrarx": "cos(var.SwingPoseTimer * 0.1) * clamp(var.DefaultSwingPoseStrength * 1, 0, 1) * -2 + var.DefaultSwingPoseOverlapStrength * 0.1 + head_pitch / 60 * var.DefaultSwingPoseStrength",
+				    "var.dfsrary": "sin(var.SwingPoseTimer * 0.025) * clamp(var.DefaultSwingPoseStrength * 1, 0, 1) * -2",
+				    "var.dfsrarz": "0",
+				    "var.dfsratx": "0",
+				    "var.dfsraty": "0",
+				    "var.dfsratz": "0"
+				},
+				{
+				    "var.dfslarx": "0",
+				    "var.dfslary": "var.DefaultSwingPoseOverlapStrength * -0.1",
+				    "var.dfslarz": "var.DefaultSwingPoseStrength * -0.1",
+				    "var.dfslatx": "0",
+				    "var.dfslaty": "0",
+				    "var.dfslatz": "0"
+				},
+				{
+				    "var.dfsrrx": "0",
+				    "var.dfsrry": "0",
+				    "var.dfsrtx": "0",
+				    "var.dfsrty": "0",
+				    "var.dfsrtz": "0"
+				},
+				{
+					"var.PICKAXE_SWING": "0",
+				    "var.PickaxeSwingPoseStrength": "sin(clamp(var.SwingPoseTimer * 0.1, 0, torad(180 / (1 + var.MiningPoseStrength)))) * if(var.SwingVariant == 2, 1, 0)",
+				    "var.PickaxeSwingPose": "ceil(round(var.PickaxeSwingPoseStrength * 100) / 100)",
+				    "var.PickaxeSwingPoseOverlapStrength": "sin(clamp(var.SwingPoseTimer * 0.075, 0, torad(180 / (1 + var.MiningPoseStrength)))) * if(var.SwingVariant == 2, 1, 0)",
+				    "var.PickaxeMiningPoseTimer": "var.MiningPoseTimer * 0.75",
+				    "var.PickaxeSwingPoseTimer": "var.SwingPoseTimer * 0.75",
+				    "var.PickaxeAnimations": "if(var.SwingVariant == 2, 1, 0)"
+				},
+				{
+					"var.PickaxeSwingPoseBodyStrength": "1",
+					"var.PickaxeSwingPoseHeadStrength": "1",
+					"var.PickaxeSwingPoseLeftArmStrength": "1",
+					"var.PickaxeSwingPoseRightArmStrength": "(1 - var.PickaxeSwingPoseStrength)",
+					"var.PickaxeSwingPoseLeftLegStrength": "1",
+					"var.PickaxeSwingPoseRightLegStrength": "1",
+					"var.PickaxeSwingPoseRootStrength": "1"
+				},
+				{
+				    "var.pksbrx": "abs((sin(var.PickaxeSwingPoseTimer * 0.2))) * 0.1 * var.PickaxeSwingPoseOverlapStrength * (1 - var.MiningPoseStrength) + abs((sin(var.PickaxeMiningPoseTimer * 0.2))) * 0.1 * var.MiningPoseStrength * var.PickaxeAnimations + (var.MiningPose / (1 + var.PickaxeMiningPoseTimer)) * 0.5 * var.PickaxeAnimations",
+				    "var.pksbry": "sin(clamp((var.PickaxeSwingPoseTimer * 0.1 - 0.1), 0, torad(270)) + sin(clamp((var.PickaxeSwingPoseTimer * 0.1 - 0.1) * 2, 0, torad(540))) * 0.25) * -0.15 * var.PickaxeSwingPoseOverlapStrength * (1 - var.MiningPoseStrength) + abs(sin(max(var.PickaxeMiningPoseTimer * 0.1 - 0.1, 0) + sin(max((var.PickaxeMiningPoseTimer * 0.1 - 0.1) * 2, 0)) * 0.25)) * -0.15 * var.MiningPoseStrength * var.PickaxeAnimations - sin(((var.PickaxeSwingPoseStrength - var.PickaxeSwingPoseOverlapStrength) * 6) - 0.5) * (var.PickaxeSwingPoseStrength - var.PickaxeSwingPoseOverlapStrength) * 0.125",
+				    "var.pksbrz": "0",
+				    "var.pksbtx": "0",
+				    "var.pksbty": "0",
+				    "var.pksbtz": "0"
+				},
+				{
+				    "var.pksllrx": "0",
+				    "var.pksllry": "0",
+				    "var.pksllrz": "0",
+				    "var.pksllty": "0",
+				    "var.pkslltx": "0",
+				    "var.pkslltz": "0"
+				},
+				{
+				    "var.pksrlrx": "0",
+				    "var.pksrlry": "0",
+				    "var.pksrlrz": "0",
+				    "var.pksrlty": "0",
+				    "var.pksrltx": "0",
+				    "var.pksrltz": "0"
+				},
+				{
+				    "var.pkshrx": "abs(cos((var.PickaxeSwingPoseTimer - 3) * 0.125)) * var.PickaxeSwingPoseStrength * -0.25 * var.PickaxeSwingPoseOverlapStrength * (1 - var.MiningPoseStrength) + abs(cos(var.PickaxeMiningPoseTimer * 0.2 - 0.2)) * 0.15 * var.MiningPoseStrength * var.PickaxeAnimations - var.MiningPoseStrength * 0.1 * var.PickaxeAnimations - (var.MiningPose / (1 + var.PickaxeMiningPoseTimer)) * var.PickaxeAnimations",
+				    "var.pkshry": "sin(clamp(var.PickaxeSwingPoseTimer * 0.4 - 0.15, 0, torad(270))) * 0.05 * var.PickaxeSwingPoseOverlapStrength * (1 - var.MiningPoseStrength)",
+				    "var.pkshrz": "0",
+				    "var.pkshtx": "0",
+				    "var.pkshty": "0",
+				    "var.pkshtz": "0"
+				},
+				{
+				    "var.pksrarx": "abs(cos(var.PickaxeSwingPoseTimer * 0.125)) * -var.PickaxeSwingPoseStrength * 3 * (1 - var.MiningPoseStrength) - max(var.PickaxeSwingPoseStrength, var.PickaxeSwingPoseOverlapStrength, var.MiningPoseStrength * var.PickaxeAnimations) * 0.05 + head_pitch / 60 * max(var.PickaxeSwingPoseOverlapStrength, var.MiningPoseStrength * var.PickaxeAnimations) + abs(cos(var.PickaxeMiningPoseTimer * 0.3)) * -var.MiningPoseStrength * 1.5 * var.PickaxeAnimations - (var.MiningPose / (1 + var.PickaxeMiningPoseTimer)) * 10 * var.PickaxeAnimations - sin((var.PickaxeSwingPoseStrength - var.PickaxeSwingPoseOverlapStrength) * 6) * (var.PickaxeSwingPoseStrength - var.PickaxeSwingPoseOverlapStrength) * 0.25",
+				    "var.pksrary": "sin((var.PickaxeSwingPoseTimer + 1) * 0.025 + sin((var.PickaxeSwingPoseTimer + 1) * 0.05) * 0.5) * clamp(var.PickaxeSwingPoseStrength * 1, 0, 1) * -0.5",
+				    "var.pksrarz": "0",
+				    "var.pksratx": "0",
+				    "var.pksraty": "0",
+				    "var.pksratz": "0"
+				},
+				{
+				    "var.pkslarx": "var.PickaxeSwingPoseStrength * 0.25 * (1 - var.MiningPoseStrength) + abs(cos((var.PickaxeSwingPoseTimer - 1) * 0.125)) * var.PickaxeSwingPoseStrength * -0.1 * var.PickaxeSwingPoseOverlapStrength * (1 - var.MiningPoseStrength) + var.MiningPoseStrength * 0.25 * var.PickaxeAnimations + abs(cos((var.PickaxeMiningPoseTimer * 0.2)  - 0.5)) * -0.1 * var.MiningPoseStrength * var.PickaxeAnimations + (var.MiningPose / (1 + var.PickaxeMiningPoseTimer)) * 2.5 * var.PickaxeAnimations",
+				    "var.pkslary": "var.PickaxeSwingPoseOverlapStrength * -0.15 * (1 - var.MiningPoseStrength) - (var.MiningPose / (1 + var.PickaxeMiningPoseTimer)) * 1.5 * var.PickaxeAnimations",
+				    "var.pkslarz": "abs(cos((var.PickaxeSwingPoseTimer - 1) * 0.125)) * var.PickaxeSwingPoseStrength * -0.25 * var.PickaxeSwingPoseOverlapStrength * (1 - var.MiningPoseStrength) - (var.MiningPose / (1 + var.PickaxeMiningPoseTimer)) * 1.5 * var.PickaxeAnimations",
+				    "var.pkslatx": "0",
+				    "var.pkslaty": "0",
+				    "var.pkslatz": "0"
+				},
+				{
+				    "var.pksrrx": "0",
+				    "var.pksrry": "0",
+				    "var.pksrtx": "0",
+				    "var.pksrty": "0",
+				    "var.pksrtz": "0"
+				},
+				{
+					"var.ITEM_SPECIFIC_ANIMATIONS_INFO": "0",
+					"var.BlockingRight": "if(is_right_handed, if(nbt(SelectedItem.id, raw:minecraft:shield), 1, 0), if(nbt(equipment.offhand.id, minecraft:shield), 1, 0))",
+					"var.BowShootingRight": "if(is_right_handed, if(nbt(SelectedItem.id, raw:minecraft:bow), 1, 0), if(nbt(equipment.offhand.id, minecraft:bow), 1, 0))",
+					"var.ItemRight": "clamp(var.BlockingRight + var.BowShootingRight, 0, 1)"
+				},
+				{
+					"var.BlockingLeft": "if(!is_right_handed, if(nbt(SelectedItem.id, raw:minecraft:shield), 1, 0), if(nbt(equipment.offhand.id, minecraft:shield), 1, 0)) * (1 - var.ItemRight)",
+					"var.BowShootingLeft": "if(!is_right_handed, if(nbt(SelectedItem.id, raw:minecraft:bow), 1, 0), if(nbt(equipment.offhand.id, minecraft:bow), 1, 0)) * (1 - var.ItemRight)"
+				},
+				{
+					"var.BLOCKING_RIGHT": "0",
+					"var.BlockingRightPose": "if(is_using_item && var.BlockingRight > 0 && var.CrawlPose < 1, 1, 0)",
+					"var.BlockingRightPoseStrength": "(var.BlockingRightPoseStrength + (var.BlockingRightPose - var.BlockingRightPoseStrength) / 8 * var.DT) * var.BlockingRight",
+					"var.BlockingRightPoseStartTimer": "if(var.BlockingRightPose > 0, var.BlockingRightPoseStartTimer + var.DT, 0)",
+					"var.BlockingRightPoseEndTimer": "if(var.BlockingRightPose < 1, clamp(var.BlockingRightPoseEndTimer + var.DT * 1.25, 0, 10000), 0) + (1 - var.BlockingRight) * 10000"
+				},
+				{
+					"var.BlockingRightPoseBodyStrength": "1",
+					"var.BlockingRightPoseHeadStrength": "1",
+					"var.BlockingRightPoseLeftArmStrength": "1",
+					"var.BlockingRightPoseRightArmStrength": "(1 - var.BlockingRightPoseStrength)",
+					"var.BlockingRightPoseLeftLegStrength": "1",
+					"var.BlockingRightPoseRightLegStrength": "1",
+					"var.BlockingRightPoseRootStrength": "1"
+				},
+				{
+				    "var.blribrx": "0.1 * (1 - (1 / (1 + max(var.BlockingRightPoseStartTimer * 0.4 - 6, 0)))) + clamp(0.1 - var.BlockingRightPoseEndTimer * 0.01, 0, 0.25) * (1 - var.BlockingRightPose)",
+				    "var.blribry": "clamp(var.BlockingRightPoseStartTimer * 0.15, 0, 1) * -0.25 * (1 - (1 / (1 + var.BlockingRightPoseStartTimer * 0.25))) - clamp(0.25 - var.BlockingRightPoseEndTimer * 0.005, 0, 0.25) * (1 - var.BlockingRightPose) * cos(var.BlockingRightPoseEndTimer * 0.1)",
+				    "var.blribrz": "0",
+				    "var.blribtx": "0",
+				    "var.blribty": "1.6 * (1 - (1 / (1 + max(var.BlockingRightPoseStartTimer - 10, 0) * 0.3))) + clamp(1.6 - var.BlockingRightPoseEndTimer * 0.1, 0, 1.6) * (1 - var.BlockingRightPose)",
+				    "var.blribtz": "0"
+				},
+				{
+				    "var.blrillrx": "0",
+				    "var.blrillry": "0",
+				    "var.blrillrz": "0",
+				    "var.blrillty": "",
+				    "var.blrilltx": "0",
+				    "var.blrilltz": "0"
+				},
+				{
+				    "var.blrirlrx": "0",
+				    "var.blrirlry": "0",
+				    "var.blrirlrz": "0",
+				    "var.blrirlty": "0",
+				    "var.blrirltx": "0",
+				    "var.blrirltz": "0"
+				},
+				{
+				    "var.blrihrx": "-0.15 * (1 - (1 / (1 + max(var.BlockingRightPoseStartTimer * 0.4 - 6, 0)))) - clamp(0.15 - var.BlockingRightPoseEndTimer * 0.005, 0, 0.2) * (1 - var.BlockingRightPose) * cos(var.BlockingRightPoseEndTimer * 0.1)",
+				    "var.blrihry": "0",
+				    "var.blrihrz": "-0.075 * (1 - (1 / (1 + max(var.BlockingRightPoseStartTimer * 0.2, 0)))) - clamp(0.075 - var.BlockingRightPoseEndTimer * 0.001, 0, 0.2) * (1 - var.BlockingRightPose) * cos(var.BlockingRightPoseEndTimer * 0.1)",
+				    "var.blrihtx": "0",
+				    "var.blrihty": "0",
+				    "var.blrihtz": "0"
+				},
+				{
+				    "var.blrirarx": "(1 + sin(clamp(var.BlockingRightPoseStartTimer * 0.3, 0, torad(180))) * 0.5) * -(1 - (1 / (1 + var.BlockingRightPoseStartTimer * 1.2))) - var.SneakingPoseStrength * 0.25 * var.BlockingRightPoseStrength - clamp(1 - var.BlockingRightPoseEndTimer * 0.02, 0, 1) * (1 - var.BlockingRightPose) * cos(var.BlockingRightPoseEndTimer * 0.125)",
+				    "var.blrirary": "clamp(var.BlockingRightPoseStartTimer * 0.1, 0, 1) * -0.8 - clamp(0.8 - var.BlockingRightPoseEndTimer * 0.1, 0, 1.3) * (1 - var.BlockingRightPose) * cos(var.BlockingRightPoseEndTimer * 0.05)",
+				    "var.blrirarz": "clamp(var.BlockingRightPoseStartTimer * 0.4, 0, 1) * 0.8 / (1 + var.BlockingRightPoseStartTimer * 1.2) + clamp(0.8 - var.BlockingRightPoseEndTimer * 0.05, 0, 1.3) * (1 - var.BlockingRightPose) + sin(clamp(var.BlockingRightPoseEndTimer, 0, torad(90)) * 0.1) * (1 - var.BlockingRightPose) * 0.25",
+				    "var.blriratx": "0",
+				    "var.blriraty": "-2 * (1 - (1 / (1 + max(var.BlockingRightPoseStartTimer * 0.2, 0)))) - clamp(2 - var.BlockingRightPoseEndTimer * 0.1, 0, 2) * (1 - var.BlockingRightPose) * cos(var.BlockingRightPoseEndTimer * 0.1) + var.ClimbingPoseStrength * 4 * var.BlockingRightPoseStrength",
+				    "var.blriratz": "-1 * (1 - (1 / (1 + max(var.BlockingRightPoseStartTimer * 0.3, 0)))) - clamp(1 - var.BlockingRightPoseEndTimer * 0.05, 0, 1) * (1 - var.BlockingRightPose) * cos(var.BlockingRightPoseEndTimer * 0.1) - var.ClimbingPoseStrength * 4 * var.BlockingRightPoseStrength"
+				},
+				{
+				    "var.blrilarx": "clamp(var.BlockingRightPoseStartTimer * 0.1, 0, 1) * 0.4 * (1 - (1 / (1 + var.BlockingRightPoseStartTimer * 0.1))) + clamp(0.4 - var.BlockingRightPoseEndTimer * 0.01, 0, 0.4) * (1 - var.BlockingRightPose) * cos(var.BlockingRightPoseEndTimer * 0.1)",
+				    "var.blrilary": "clamp(var.BlockingRightPoseStartTimer * 0.075, 0, 1) * -0.4 * (1 - (1 / (1 + var.BlockingRightPoseStartTimer * 0.1))) - clamp(0.4 - var.BlockingRightPoseEndTimer * 0.03 + 0.5, 0, 0.4) * (1 - var.BlockingRightPose) * cos(var.BlockingRightPoseEndTimer * 0.1)",
+				    "var.blrilarz": "clamp(var.BlockingRightPoseStartTimer * 0.1, 0, 1) * -0.1 * clamp(var.BlockingRightPoseStartTimer * 0.1 - 0.5, 1, 2) * (1 - (1 / (1 + var.BlockingRightPoseStartTimer * 0.1))) - clamp(0.2 - var.BlockingRightPoseEndTimer * 0.025 + 0.25, 0, 0.2) * (1 - var.BlockingRightPose)",
+				    "var.blrilatx": "0",
+				    "var.blrilaty": "0",
+				    "var.blrilatz": "0"
+				},
+				{
+				    "var.blrirrx": "0",
+				    "var.blrirry": "0",
+				    "var.blrirtx": "0",
+				    "var.blrirty": "0",
+				    "var.blrirtz": "0"
+				},
+				{
+					"var.BLOCKING_LEFT": "0",
+					"var.BlockingLeftPose": "if(is_using_item && var.BlockingLeft > 0 && var.CrawlPose < 1, 1, 0)",
+					"var.BlockingLeftPoseStrength": "(var.BlockingLeftPoseStrength + (var.BlockingLeftPose - var.BlockingLeftPoseStrength) / 8 * var.DT) * var.BlockingLeft",
+					"var.BlockingLeftPoseStartTimer": "if(var.BlockingLeftPose > 0, var.BlockingLeftPoseStartTimer + var.DT, 0)",
+					"var.BlockingLeftPoseEndTimer": "if(var.BlockingLeftPose < 1, clamp(var.BlockingLeftPoseEndTimer + var.DT * 1.25, 0, 10000), 0) + (1 - var.BlockingLeft) * 10000"
+				},
+				{
+					"var.BlockingLeftPoseBodyStrength": "1",
+					"var.BlockingLeftPoseHeadStrength": "1",
+					"var.BlockingLeftPoseLeftArmStrength": "(1 - var.BlockingLeftPoseStrength)",
+					"var.BlockingLeftPoseRightArmStrength": "1",
+					"var.BlockingLeftPoseLeftLegStrength": "1",
+					"var.BlockingLeftPoseRightLegStrength": "1",
+					"var.BlockingLeftPoseRootStrength": "1"
+				},
+				{
+				    "var.bllibrx": "0.1 * (1 - (1 / (1 + max(var.BlockingLeftPoseStartTimer * 0.4 - 6, 0)))) + clamp(0.1 - var.BlockingLeftPoseEndTimer * 0.01, 0, 0.25) * (1 - var.BlockingLeftPose)",
+				    "var.bllibry": "clamp(var.BlockingLeftPoseStartTimer * 0.15, 0, 1) * 0.25 * (1 - (1 / (1 + var.BlockingLeftPoseStartTimer * 0.25))) + clamp(0.25 - var.BlockingLeftPoseEndTimer * 0.005, 0, 0.25) * (1 - var.BlockingLeftPose) * cos(var.BlockingLeftPoseEndTimer * 0.1)",
+				    "var.bllibrz": "0",
+				    "var.bllibtx": "0",
+				    "var.bllibty": "1.6 * (1 - (1 / (1 + max(var.BlockingLeftPoseStartTimer - 10, 0) * 0.3))) + clamp(1.6 - var.BlockingLeftPoseEndTimer * 0.1, 0, 1.6) * (1 - var.BlockingLeftPose)",
+				    "var.bllibtz": "0"
+				},
+				{
+				    "var.bllillrx": "0",
+				    "var.bllillry": "0",
+				    "var.bllillrz": "0",
+				    "var.bllillty": "0",
+				    "var.bllilltx": "0",
+				    "var.bllilltz": "0"
+				},
+				{
+				    "var.bllirlrx": "0",
+				    "var.bllirlry": "0",
+				    "var.bllirlrz": "0",
+				    "var.bllirlty": "0",
+				    "var.bllirltx": "0",
+				    "var.bllirltz": "0"
+				},
+				{
+				    "var.bllihrx": "-0.15 * (1 - (1 / (1 + max(var.BlockingLeftPoseStartTimer * 0.4 - 6, 0)))) - clamp(0.15 - var.BlockingLeftPoseEndTimer * 0.005, 0, 0.2) * (1 - var.BlockingLeftPose) * cos(var.BlockingLeftPoseEndTimer * 0.1)",
+				    "var.bllihry": "0",
+				    "var.bllihrz": "0.075 * (1 - (1 / (1 + max(var.BlockingLeftPoseStartTimer * 0.2, 0)))) + clamp(0.075 - var.BlockingLeftPoseEndTimer * 0.001, 0, 0.2) * (1 - var.BlockingLeftPose) * cos(var.BlockingLeftPoseEndTimer * 0.1)",
+				    "var.bllihtx": "0",
+				    "var.bllihty": "0",
+				    "var.bllihtz": "0"
+				},
+				{
+				    "var.bllirarx": "clamp(var.BlockingLeftPoseStartTimer * 0.1, 0, 1) * 0.4 * (1 - (1 / (1 + var.BlockingLeftPoseStartTimer * 0.1))) + clamp(0.4 - var.BlockingLeftPoseEndTimer * 0.01, 0, 0.4) * (1 - var.BlockingLeftPose) * cos(var.BlockingLeftPoseEndTimer * 0.1)",
+				    "var.bllirary": "clamp(var.BlockingLeftPoseStartTimer * 0.075, 0, 1) * 0.4 * (1 - (1 / (1 + var.BlockingLeftPoseStartTimer * 0.1))) + clamp(0.4 - var.BlockingLeftPoseEndTimer * 0.03 + 0.5, 0, 0.4) * (1 - var.BlockingLeftPose) * cos(var.BlockingLeftPoseEndTimer * 0.1)",
+				    "var.bllirarz": "clamp(var.BlockingLeftPoseStartTimer * 0.1, 0, 1) * 0.1 * clamp(var.BlockingLeftPoseStartTimer * 0.1 - 0.5, 1, 2) * (1 - (1 / (1 + var.BlockingLeftPoseStartTimer * 0.1))) + clamp(0.2 - var.BlockingLeftPoseEndTimer * 0.025 + 0.25, 0, 0.2) * (1 - var.BlockingLeftPose)",
+				    "var.blliratx": "0",
+				    "var.blliraty": "0",
+				    "var.blliratz": "0"
+				},
+				{
+				    "var.bllilarx": "(1 + sin(clamp(var.BlockingLeftPoseStartTimer * 0.3, 0, torad(180))) * 0.5) * -(1 - (1 / (1 + var.BlockingLeftPoseStartTimer * 1.2))) - var.SneakingPoseStrength * 0.25 * var.BlockingLeftPoseStrength - clamp(1 - var.BlockingLeftPoseEndTimer * 0.02, 0, 1) * (1 - var.BlockingLeftPose) * cos(var.BlockingLeftPoseEndTimer * 0.125)",
+				    "var.bllilary": "clamp(var.BlockingLeftPoseStartTimer * 0.1, 0, 1) * 0.8 + clamp(0.8 - var.BlockingLeftPoseEndTimer * 0.1, 0, 1.3) * (1 - var.BlockingLeftPose) * cos(var.BlockingLeftPoseEndTimer * 0.05)",
+				    "var.bllilarz": "clamp(var.BlockingLeftPoseStartTimer * 0.4, 0, 1) * -0.8 / (1 + var.BlockingLeftPoseStartTimer * 1.2) - clamp(0.8 - var.BlockingLeftPoseEndTimer * 0.05, 0, 1.3) * (1 - var.BlockingLeftPose) - sin(clamp(var.BlockingLeftPoseEndTimer, 0, torad(90)) * 0.1) * (1 - var.BlockingLeftPose) * 0.25",
+				    "var.bllilatx": "0",
+				    "var.bllilaty": "-2 * (1 - (1 / (1 + max(var.BlockingLeftPoseStartTimer * 0.2, 0)))) - clamp(2 - var.BlockingLeftPoseEndTimer * 0.1, 0, 2) * (1 - var.BlockingLeftPose) * cos(var.BlockingLeftPoseEndTimer * 0.1) + var.ClimbingPoseStrength * 4 * var.BlockingLeftPoseStrength",
+				    "var.bllilatz": "-1 * (1 - (1 / (1 + max(var.BlockingLeftPoseStartTimer * 0.3, 0)))) - clamp(1 - var.BlockingLeftPoseEndTimer * 0.05, 0, 1) * (1 - var.BlockingLeftPose) * cos(var.BlockingLeftPoseEndTimer * 0.1) - var.ClimbingPoseStrength * 4 * var.BlockingLeftPoseStrength"
+				},
+				{
+				    "var.bllirrx": "0",
+				    "var.bllirry": "0",
+				    "var.bllirtx": "0",
+				    "var.bllirty": "0",
+				    "var.bllirtz": "0"
+				},
+				{
+					"var.BOW_SHOOTING_RIGHT": "0",
+					"var.BowShootingRightPose": "if(is_using_item && var.BowShootingRight > 0 && var.CrawlPose < 1, 1, 0)",
+					"var.BowShootingRightPoseStrength": "(var.BowShootingRightPoseStrength + (var.BowShootingRightPose - var.BowShootingRightPoseStrength) / 8 * var.DT) * var.BowShootingRight",
+					"var.BowShootingRightPoseStartTimer": "if(var.BowShootingRightPose > 0, var.BowShootingRightPoseStartTimer + var.DT, 0)",
+					"var.BowShootingRightPoseEndTimer": "if(var.BowShootingRightPose < 1, clamp(var.BowShootingRightPoseEndTimer + var.DT * 1.25, 0, 10000), 0) + (1 - var.BowShootingRight) * 10000"
+				},
+				{
+					"var.BowShootingRightPoseBodyStrength": "(1 - var.BowShootingRightPoseStrength * 0.5)",
+					"var.BowShootingRightPoseHeadStrength": "1",
+					"var.BowShootingRightPoseLeftArmStrength": "(1 - var.BowShootingRightPoseStrength)",
+					"var.BowShootingRightPoseRightArmStrength": "(1 - var.BowShootingRightPoseStrength)",
+					"var.BowShootingRightPoseLeftLegStrength": "1",
+					"var.BowShootingRightPoseRightLegStrength": "1",
+					"var.BowShootingRightPoseRootStrength": "1"
+				},
+				{
+				    "var.bsribrx": "(clamp(var.BowShootingRightPoseStartTimer * 0.025, 0, torad(45)) - sin(clamp(var.BowShootingRightPoseStartTimer * 0.2, 0, torad(360))) * 1) * -0.1 - sin(clamp(var.BowShootingRightPoseEndTimer * 0.1 + sin(var.BowShootingRightPoseEndTimer * 0.2) * 0.25, 0, torad(180))) * 0.2 * (1 - var.BowShootingRightPose) + var.RotX * 0.1 * var.BowShootingRightPoseStrength",
+				    "var.bsribry": "(1 - 1 / (1 + var.BowShootingRightPoseStartTimer * 0.1)) * -0.8 + sin(clamp(var.BowShootingRightPoseEndTimer * 0.1 + sin(var.BowShootingRightPoseEndTimer * 0.2) * 0.25, 0, torad(180))) * 0.2 * (1 - var.BowShootingRightPose) - clamp(0.8 - var.BowShootingRightPoseEndTimer * 0.1, 0, 0.8) * (1 - var.BowShootingRightPose)",
+				    "var.bsribrz": "0",
+				    "var.bsribtx": "0",
+				    "var.bsribty": "0",
+				    "var.bsribtz": "0"
+				},
+				{
+				    "var.bsrillrx": "var.BowShootingRightPoseStrength * 0.25",
+				    "var.bsrillry": "0",
+				    "var.bsrillrz": "0",
+				    "var.bsrillty": "",
+				    "var.bsrilltx": "0",
+				    "var.bsrilltz": "var.BowShootingRightPoseStrength * -2.5"
+				},
+				{
+				    "var.bsrirlrx": "var.BowShootingRightPoseStrength * -0.25",
+				    "var.bsrirlry": "0",
+				    "var.bsrirlrz": "0",
+				    "var.bsrirlty": "0",
+				    "var.bsrirltx": "0",
+				    "var.bsrirltz": "var.BowShootingRightPoseStrength * 2.5"
+				},
+				{
+				    "var.bsrihrx": "sin(clamp(var.BowShootingRightPoseEndTimer * 0.08 + sin(var.BowShootingRightPoseEndTimer * 0.16) * 0.25, 0, torad(180))) * -0.2 * (1 - var.BowShootingRightPose)",
+				    "var.bsrihry": "0",
+				    "var.bsrihrz": "((clamp(var.BowShootingRightPoseStartTimer * 0.02, 0, torad(180)) - sin(clamp(var.BowShootingRightPoseStartTimer * 0.15, 0, torad(360))) * 1) * 0.2) * -0.5 + clamp(0.2 - var.BowShootingRightPoseEndTimer * 0.02, 0, 0.2) * (1 - var.BowShootingRightPose)",
+				    "var.bsrihtx": "0",
+				    "var.bsrihty": "0",
+				    "var.bsrihtz": "0"
+				},
+				{
+				    "var.bsrirarx": "sin(clamp(var.BowShootingRightPoseStartTimer * 0.1, 0, torad(90))) * -1.7 - (clamp(torad(90) - var.BowShootingRightPoseEndTimer * 0.025, 0, torad(90)) + sin(clamp(var.BowShootingRightPoseEndTimer * 0.05, 0, torad(180))) * 1) * (1 - var.BowShootingRightPose) * cos(var.BowShootingRightPoseEndTimer * 0.035) + var.RotX * var.BowShootingRightPoseStrength",
+				    "var.bsrirary": "(1 - 1 / (1 + var.BowShootingRightPoseStartTimer * 0.1)) * -0.1 + sin(clamp(var.BowShootingRightPoseEndTimer * 0.1 + sin(var.BowShootingRightPoseEndTimer * 0.2) * 0.25, 0, torad(180))) * 0.2 * (1 - var.BowShootingRightPose) + head_yaw * 0.02 * var.BowShootingRightPoseStrength",
+				    "var.bsrirarz": "0",
+				    "var.bsriratx": "(1 - 1 / (1 + var.BowShootingRightPoseStartTimer * 0.1)) * 3",
+				    "var.bsriraty": "clamp(sin(var.RotX), -10, 0) * 4 * var.BowShootingRightPoseStrength",
+				    "var.bsriratz": "sin(clamp(var.BowShootingRightPoseEndTimer * 0.1 + sin(var.BowShootingRightPoseEndTimer * 0.2) * 0.25, 0, torad(180))) * 4 * (1 - var.BowShootingRightPose) - (1 - 1 / (1 + var.BowShootingRightPoseStartTimer * 0.1)) * 3 + clamp(head_yaw * 0.075, 0, 10) * var.BowShootingRightPoseStrength"
+				},
+				{
+				    "var.bsrilarx": "(1 - 1 / (1 + var.BowShootingRightPoseStartTimer * 0.4)) * -1.7 / (1 + clamp(var.BowShootingRightPoseStartTimer * 0.05 - 2, 0, 1) * 0.1) - clamp(1.7 - var.BowShootingRightPoseEndTimer * 0.06, 0, 1.7) * (1 - var.BowShootingRightPose) * cos(var.BowShootingRightPoseEndTimer * 0.1) + var.RotX * 0.5 * var.BowShootingRightPoseStrength",
+				    "var.bsrilary": "var.BowShootingRightPoseStrength * 0.5 + clamp(0.5 - var.BowShootingRightPoseEndTimer * 0.1, 0, 0.5) * (1 - var.BowShootingRightPose) + head_yaw * 0.01 * var.BowShootingRightPoseStrength",
+				    "var.bsrilarz": "var.BowShootingRightPoseStrength * 0.1 * var.BowShootingRightPose + clamp(0.1 - var.BowShootingRightPoseEndTimer * 0.01, 0, 0.1) * (1 - var.BowShootingRightPose)",
+				    "var.bsrilatx": "clamp(var.BowShootingRightPoseStartTimer * 0.1, 0, 1) * -5 * sin(torad(head_yaw)) + clamp(var.BowShootingRightPoseStartTimer * 0.05 - 1.75, 0, 1) * 4 * sin(torad(head_yaw)) - clamp(1 - var.BowShootingRightPoseEndTimer * 0.01, 0, 1) * (1 - var.BowShootingRightPose) * sin(torad(head_yaw)) - clamp(head_yaw * 0.02, -10, 10) * -2 * var.BowShootingRightPoseStrength + sin(clamp(var.BowShootingRightPoseEndTimer * 0.15 + sin(var.BowShootingRightPoseEndTimer * 0.3) * 0.25, 0, torad(180))) * 1 * (1 - var.BowShootingRightPose) * sin(torad(head_yaw))",
+				    "var.bsrilaty": "clamp(var.BowShootingRightPoseStartTimer * 0.1, 0, 1) * -5 * -sin(var.RotX) + clamp(var.BowShootingRightPoseStartTimer * 0.05 - 1.75, 0, 1) * 4 * -sin(var.RotX) - clamp(1 - var.BowShootingRightPoseEndTimer * 0.01, 0, 1) * (1 - var.BowShootingRightPose) * -sin(var.RotX) + sin(clamp(var.BowShootingRightPoseEndTimer * 0.15 + sin(var.BowShootingRightPoseEndTimer * 0.3) * 0.25, 0, torad(180))) * 1 * (1 - var.BowShootingRightPose) * -sin(var.RotX)",
+				    "var.bsrilatz": "clamp(var.BowShootingRightPoseStartTimer * 0.1, 0, 1) * -5 * cos(var.RotX) * cos(torad(head_yaw)) + clamp(var.BowShootingRightPoseStartTimer * 0.05 - 1.75, 0, 1) * 4 * cos(var.RotX) * cos(torad(head_yaw)) - clamp(1 - var.BowShootingRightPoseEndTimer * 0.01, 0, 1) * (1 - var.BowShootingRightPose) * cos(var.RotX) * cos(torad(head_yaw)) + clamp(head_yaw * 0.02, 0, 10) * -2 * var.BowShootingRightPoseStrength + sin(clamp(var.BowShootingRightPoseEndTimer * 0.15 + sin(var.BowShootingRightPoseEndTimer * 0.3) * 0.25, 0, torad(180))) * 1 * (1 - var.BowShootingRightPose) * cos(var.RotX) * cos(torad(head_yaw))"
+				},
+				{
+				    "var.bsrirrx": "0",
+				    "var.bsrirry": "0",
+				    "var.bsrirtx": "0",
+				    "var.bsrirty": "0",
+				    "var.bsrirtz": "0"
+				},
+				{
+					"var.BOW_SHOOTING_LEFT": "0",
+					"var.BowShootingLeftPose": "if(is_using_item && var.BowShootingLeft > 0 && var.CrawlPose < 1, 1, 0)",
+					"var.BowShootingLeftPoseStrength": "(var.BowShootingLeftPoseStrength + (var.BowShootingLeftPose - var.BowShootingLeftPoseStrength) / 8 * var.DT) * var.BowShootingLeft",
+					"var.BowShootingLeftPoseStartTimer": "if(var.BowShootingLeftPose > 0, var.BowShootingLeftPoseStartTimer + var.DT, 0)",
+					"var.BowShootingLeftPoseEndTimer": "if(var.BowShootingLeftPose < 1, clamp(var.BowShootingLeftPoseEndTimer + var.DT * 1.25, 0, 10000), 0) + (1 - var.BowShootingLeft) * 10000"
+				},
+				{
+					"var.BowShootingLeftPoseBodyStrength": "(1 - var.BowShootingLeftPoseStrength * 0.5)",
+					"var.BowShootingLeftPoseHeadStrength": "1",
+					"var.BowShootingLeftPoseLeftArmStrength": "(1 - var.BowShootingLeftPoseStrength)",
+					"var.BowShootingLeftPoseRightArmStrength": "(1 - var.BowShootingLeftPoseStrength)",
+					"var.BowShootingLeftPoseLeftLegStrength": "1",
+					"var.BowShootingLeftPoseRightLegStrength": "1",
+					"var.BowShootingLeftPoseRootStrength": "1"
+				},
+				{
+				    "var.bslibrx": "(clamp(var.BowShootingLeftPoseStartTimer * 0.025, 0, torad(45)) - sin(clamp(var.BowShootingLeftPoseStartTimer * 0.2, 0, torad(360))) * 1) * -0.1 - sin(clamp(var.BowShootingLeftPoseEndTimer * 0.1 + sin(var.BowShootingLeftPoseEndTimer * 0.2) * 0.25, 0, torad(180))) * 0.2 * (1 - var.BowShootingLeftPose) + var.RotX * 0.1 * var.BowShootingLeftPoseStrength",
+				    "var.bslibry": "(1 - 1 / (1 + var.BowShootingLeftPoseStartTimer * 0.1)) * 0.8 + sin(clamp(var.BowShootingLeftPoseEndTimer * 0.1 - sin(var.BowShootingLeftPoseEndTimer * 0.2) * 0.25, 0, torad(180))) * 0.2 * (1 - var.BowShootingLeftPose) + clamp(0.8 - var.BowShootingLeftPoseEndTimer * 0.1, 0, 0.8) * (1 - var.BowShootingLeftPose)",
+				    "var.bslibrz": "0",
+				    "var.bslibtx": "0",
+				    "var.bslibty": "0",
+				    "var.bslibtz": "0"
+				},
+				{
+				    "var.bslillrx": "var.BowShootingLeftPoseStrength * -0.25",
+				    "var.bslillry": "0",
+				    "var.bslillrz": "0",
+				    "var.bslillty": "",
+				    "var.bslilltx": "0",
+				    "var.bslilltz": "var.BowShootingLeftPoseStrength * 2.5"
+				},
+				{
+				    "var.bslirlrx": "var.BowShootingLeftPoseStrength * 0.25",
+				    "var.bslirlry": "0",
+				    "var.bslirlrz": "0",
+				    "var.bslirlty": "0",
+				    "var.bslirltx": "0",
+				    "var.bslirltz": "var.BowShootingLeftPoseStrength * -2.5"
+				},
+				{
+				    "var.bslihrx": "sin(clamp(var.BowShootingLeftPoseEndTimer * 0.08 + sin(var.BowShootingLeftPoseEndTimer * 0.16) * 0.25, 0, torad(180))) * -0.2 * (1 - var.BowShootingLeftPose)",
+				    "var.bslihry": "0",
+				    "var.bslihrz": "((clamp(var.BowShootingLeftPoseStartTimer * 0.02, 0, torad(180)) - sin(clamp(var.BowShootingLeftPoseStartTimer * 0.15, 0, torad(360))) * 1) * 0.2) * 0.5 - clamp(0.2 - var.BowShootingLeftPoseEndTimer * 0.02, 0, 0.2) * (1 - var.BowShootingLeftPose)",
+				    "var.bslihtx": "0",
+				    "var.bslihty": "0",
+				    "var.bslihtz": "0"
+				},
+				{
+				    "var.bslirarx": "(1 - 1 / (1 + var.BowShootingLeftPoseStartTimer * 0.4)) * -1.7 / (1 + clamp(var.BowShootingLeftPoseStartTimer * 0.05 - 2, 0, 1) * 0.1) - clamp(1.7 - var.BowShootingLeftPoseEndTimer * 0.06, 0, 1.7) * (1 - var.BowShootingLeftPose) * cos(var.BowShootingLeftPoseEndTimer * 0.1) + var.RotX * 0.5 * var.BowShootingLeftPoseStrength",
+				    "var.bslirary": "var.BowShootingLeftPoseStrength * -0.5 - clamp(0.5 - var.BowShootingLeftPoseEndTimer * 0.1, 0, 0.5) * (1 - var.BowShootingLeftPose) + head_yaw * 0.01 * var.BowShootingLeftPoseStrength",
+				    "var.bslirarz": "var.BowShootingLeftPoseStrength * -0.1 * var.BowShootingLeftPose - clamp(0.1 - var.BowShootingLeftPoseEndTimer * 0.01, 0, 0.1) * (1 - var.BowShootingLeftPose)",
+				    "var.bsliratx": "clamp(var.BowShootingLeftPoseStartTimer * 0.1, 0, 1) * -5 * sin(torad(head_yaw)) + clamp(var.BowShootingLeftPoseStartTimer * 0.05 - 1.75, 0, 1) * 4 * sin(torad(head_yaw)) - clamp(1 - var.BowShootingLeftPoseEndTimer * 0.01, 0, 1) * (1 - var.BowShootingLeftPose) * sin(torad(head_yaw)) - clamp(head_yaw * 0.02, -10, 10) * -2 * var.BowShootingLeftPoseStrength + sin(clamp(var.BowShootingLeftPoseEndTimer * 0.15 + sin(var.BowShootingLeftPoseEndTimer * 0.3) * 0.25, 0, torad(180))) * 1 * (1 - var.BowShootingLeftPose) * sin(torad(head_yaw))",
+				    "var.bsliraty": "clamp(var.BowShootingLeftPoseStartTimer * 0.1, 0, 1) * -5 * -sin(var.RotX) + clamp(var.BowShootingLeftPoseStartTimer * 0.05 - 1.75, 0, 1) * 4 * -sin(var.RotX) - clamp(1 - var.BowShootingLeftPoseEndTimer * 0.01, 0, 1) * (1 - var.BowShootingLeftPose) * -sin(var.RotX) + sin(clamp(var.BowShootingLeftPoseEndTimer * 0.15 + sin(var.BowShootingLeftPoseEndTimer * 0.3) * 0.25, 0, torad(180))) * 1 * (1 - var.BowShootingLeftPose) * -sin(var.RotX)",
+				    "var.bsliratz": "clamp(var.BowShootingLeftPoseStartTimer * 0.1, 0, 1) * -5 * cos(var.RotX) * cos(torad(head_yaw)) + clamp(var.BowShootingLeftPoseStartTimer * 0.05 - 1.75, 0, 1) * 4 * cos(var.RotX) * cos(torad(head_yaw)) - clamp(1 - var.BowShootingLeftPoseEndTimer * 0.01, 0, 1) * (1 - var.BowShootingLeftPose) * cos(var.RotX) * cos(torad(head_yaw)) + clamp(head_yaw * 0.02, -10, 0) * 2 * var.BowShootingLeftPoseStrength + sin(clamp(var.BowShootingLeftPoseEndTimer * 0.15 + sin(var.BowShootingLeftPoseEndTimer * 0.3) * 0.25, 0, torad(180))) * 1 * (1 - var.BowShootingLeftPose) * cos(var.RotX) * abs(cos(torad(head_yaw)))"
+				},
+				{
+				    "var.bslilarx": "sin(clamp(var.BowShootingLeftPoseStartTimer * 0.1, 0, torad(90))) * -1.7 - (clamp(torad(90) - var.BowShootingLeftPoseEndTimer * 0.025, 0, torad(90)) + sin(clamp(var.BowShootingLeftPoseEndTimer * 0.05, 0, torad(180))) * 1) * (1 - var.BowShootingLeftPose) * cos(var.BowShootingLeftPoseEndTimer * 0.035) + var.RotX * var.BowShootingLeftPoseStrength",
+				    "var.bslilary": "(1 - 1 / (1 + var.BowShootingLeftPoseStartTimer * 0.1)) * 0.1 - sin(clamp(var.BowShootingLeftPoseEndTimer * 0.1 + sin(var.BowShootingLeftPoseEndTimer * 0.2) * 0.25, 0, torad(180))) * 0.2 * (1 - var.BowShootingLeftPose) + head_yaw * 0.02 * var.BowShootingLeftPoseStrength",
+				    "var.bslilarz": "0",
+				    "var.bslilatx": "(1 - 1 / (1 + var.BowShootingLeftPoseStartTimer * 0.1)) * -3",
+				    "var.bslilaty": "clamp(sin(var.RotX), -10, 0) * 4 * var.BowShootingLeftPoseStrength",
+				    "var.bslilatz": "sin(clamp(var.BowShootingLeftPoseEndTimer * 0.1 + sin(var.BowShootingLeftPoseEndTimer * 0.2) * 0.25, 0, torad(180))) * 4 * (1 - var.BowShootingLeftPose) - (1 - 1 / (1 + var.BowShootingLeftPoseStartTimer * 0.1)) * 3 - clamp(head_yaw * 0.075, -10, 0) * var.BowShootingLeftPoseStrength"
+				},
+				{
+				    "var.bslirrx": "0",
+				    "var.bslirry": "0",
+				    "var.bslirtx": "0",
+				    "var.bslirty": "0",
+				    "var.bslirtz": "0"
+				}
+			]
+		},
+		{
+			"part": "headwear",
+			"id": "headwear",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-4, 24, -4, 8, 8, 8], "textureOffset": [32, 0], "sizeAdd": 0.5}
+			],
+			"animations": [
+				{
+					"var.brx": "var.brx + var.swbrx + var.crbrx + var.clbrx",
+					"var.bry": "var.bry + var.swbry + var.crbry + var.clbry",
+					"var.brz": "var.brz + var.swbrz + var.crbrz + var.clbrz",
+					"var.btx": "var.btx + var.swbtx + var.crbtx + var.clbtx",
+					"var.bty": "var.bty + var.swbty + var.crbty + var.clbty",
+					"var.btz": "var.btz + var.swbtz + var.crbtz + var.clbtz",
+					"var.hrx": "var.hrx + var.swhrx + var.crhrx + var.clhrx",
+					"var.hry": "var.hry + var.swhry + var.crhry + var.clhry",
+					"var.hrz": "var.hrz + var.swhrz + var.crhrz + var.clhrz",
+					"var.htx": "var.htx + var.swhtx + var.crhtx + var.clhtx",
+					"var.hty": "var.hty + var.swhty + var.crhty + var.clhty",
+					"var.htz": "var.htz + var.swhtz + var.crhtz + var.clhtz",
+					"var.larx": "var.larx + var.swlarx + var.crlarx + var.cllarx",
+					"var.lary": "var.lary + var.swlary + var.crlary + var.cllary",
+					"var.larz": "var.larz + var.swlarz + var.crlarz + var.cllarz",
+					"var.latx": "var.latx + var.swlatx + var.crlatx + var.cllatx",
+					"var.laty": "var.laty + var.swlaty + var.crlaty + var.cllaty",
+					"var.latz": "var.latz + var.swlatz + var.crlatz + var.cllatz",
+					"var.rarx": "var.rarx  + var.swrarx + var.crrarx + var.clrarx",
+					"var.rary": "var.rary  + var.swrary + var.crrary + var.clrary",
+					"var.rarz": "var.rarz  + var.swrarz + var.crrarz + var.clrarz",
+					"var.ratx": "var.ratx + var.swratx + var.crratx + var.clratx",
+					"var.raty": "var.raty + var.swraty + var.crraty + var.clraty",
+					"var.ratz": "var.ratz + var.swratz + var.crratz + var.clratz",
+					"var.llrx": "var.llrx + var.swllrx + var.crllrx + var.clllrx",
+					"var.llry": "var.llry + var.swllry + var.crllry + var.clllry",
+					"var.llrz": "var.llrz + var.swllrz + var.crllrz + var.clllrz",
+					"var.lltx": "var.lltx + var.swlltx + var.crlltx + var.cllltx",
+					"var.llty": "var.llty + var.swllty + var.crllty + var.clllty",
+					"var.lltz": "var.lltz + var.swlltz + var.crlltz + var.cllltz",
+					"var.rlrx": "var.rlrx + var.swrlrx + var.crrlrx + var.clrlrx",
+					"var.rlry": "var.rlry + var.swrlry + var.crrlry + var.clrlry",
+					"var.rlrz": "var.rlrz + var.swrlrz + var.crrlrz + var.clrlrz",
+					"var.rltx": "var.rltx + var.swrltx + var.crrltx + var.clrltx",
+					"var.rlty": "var.rlty + var.swrlty + var.crrlty + var.clrlty",
+					"var.rltz": "var.rltz + var.swrltz + var.crrltz + var.clrltz",
+					"var.DisableParentedLimbs": "clamp(var.ClimbPoseStrength + var.CrawlPoseStrength, 0, 1)"
+				},
+				{
+				    "var.allsbrx": "var.dfsbrx + var.pksbrx",
+				    "var.allsbry": "var.dfsbry + var.pksbry",
+				    "var.allsbrz": "var.dfsbrz + var.pksbrz",
+				    "var.allsbtx": "var.dfsbtx + var.pksbtx",
+				    "var.allsbty": "var.dfsbty + var.pksbty",
+				    "var.allsbtz": "var.dfsbtz + var.pksbtz",
+				    "var.allsllrx": "var.dfsllrx + var.pksllrx",
+				    "var.allsllry": "var.dfsllry + var.pksllry",
+				    "var.allsllrz": "var.dfsllrz + var.pksllrz",
+				    "var.allsllty": "var.dfsllty + var.pksllty",
+				    "var.allslltx": "var.dfslltx + var.pkslltx",
+				    "var.allslltz": "var.dfslltz + var.pkslltz",
+				    "var.allsrlrx": "var.dfsrlrx + var.pksrlrx",
+				    "var.allsrlry": "var.dfsrlry + var.pksrlry",
+				    "var.allsrlrz": "var.dfsrlrz + var.pksrlrz",
+				    "var.allsrlty": "var.dfsrlty + var.pksrlty",
+				    "var.allsrltx": "var.dfsrltx + var.pksrltx",
+				    "var.allsrltz": "var.dfsrltz + var.pksrltz",
+				    "var.allshrx": "var.dfshrx + var.pkshrx",
+				    "var.allshry": "var.dfshry + var.pkshry",
+				    "var.allshrz": "var.dfshrz + var.pkshrz",
+				    "var.allshtx": "var.dfshtx + var.pkshtx",
+				    "var.allshty": "var.dfshty + var.pkshty",
+				    "var.allshtz": "var.dfshtz + var.pkshtz",
+				    "var.allsrarx": "var.dfsrarx + var.pksrarx",
+				    "var.allsrary": "var.dfsrary + var.pksrary",
+				    "var.allsrarz": "var.dfsrarz + var.pksrarz",
+				    "var.allsratx": "var.dfsratx + var.pksratx",
+				    "var.allsraty": "var.dfsraty + var.pksraty",
+				    "var.allsratz": "var.dfsratz + var.pksratz",
+				    "var.allslarx": "var.dfslarx + var.pkslarx",
+				    "var.allslary": "var.dfslary + var.pkslary",
+				    "var.allslarz": "var.dfslarz + var.pkslarz",
+				    "var.allslatx": "var.dfslatx + var.pkslatx",
+				    "var.allslaty": "var.dfslaty + var.pkslaty",
+				    "var.allslatz": "var.dfslatz + var.pkslatz",
+				    "var.allsrrx": "var.dfsrrx + var.pksrrx",
+				    "var.allsrry": "var.dfsrry + var.pksrry",
+				    "var.allsrtx": "var.dfsrtx + var.pksrtx",
+				    "var.allsrty": "var.dfsrty + var.pksrty",
+				    "var.allsrtz": "var.dfsrtz + var.pksrtz",
+				    "var.SwingPoseBodyStrength": "var.DefaultSwingPoseBodyStrength * var.PickaxeSwingPoseBodyStrength",
+				    "var.SwingPoseHeadStrength": "var.DefaultSwingPoseHeadStrength * var.PickaxeSwingPoseHeadStrength",
+				    "var.SwingPoseLeftArmStrength": "var.DefaultSwingPoseLeftArmStrength * var.PickaxeSwingPoseLeftArmStrength",
+				    "var.SwingPoseRightArmStrength": "var.DefaultSwingPoseRightArmStrength * var.PickaxeSwingPoseRightArmStrength",
+				    "var.SwingPoseLeftLegStrength": "var.DefaultSwingPoseLeftLegStrength * var.PickaxeSwingPoseLeftLegStrength",
+				    "var.SwingPoseRightLegStrength": "var.DefaultSwingPoseRightLegStrength * var.PickaxeSwingPoseRightLegStrength",
+				    "var.SwingPoseRootStrength": "var.DefaultSwingPoseRootStrength * var.PickaxeSwingPoseRootStrength"
+				},
+				{
+				    "var.allibrx": "var.blribrx + var.bllibrx + var.bsribrx + var.bslibrx",
+				    "var.allibry": "var.blribry + var.bllibry + var.bsribry + var.bslibry",
+				    "var.allibrz": "var.blribrz + var.bllibrz + var.bsribrz + var.bslibrz",
+				    "var.allibtx": "var.blribtx + var.bllibtx + var.bsribtx + var.bslibtx",
+				    "var.allibty": "var.blribty + var.bllibty + var.bsribty + var.bslibty",
+				    "var.allibtz": "var.blribtz + var.bllibtz + var.blribtz + var.bllibtz",
+				    "var.allillrx": "var.blrillrx + var.bllillrx + var.bsrillrx + var.bslillrx",
+				    "var.allillry": "var.blrillry + var.bllillry + var.bsrillry + var.bslillry",
+				    "var.allillrz": "var.blrillrz + var.bllillrz + var.bsrillrz + var.bslillrz",
+				    "var.allillty": "var.blrillty + var.bllillty + var.bsrillty + var.bslillty",
+				    "var.allilltx": "var.blrilltx + var.bllilltx + var.bsrilltx + var.bslilltx",
+				    "var.allilltz": "var.blrilltz + var.bllilltz + var.bsrilltz + var.bslilltz",
+				    "var.allirlrx": "var.blrirlrx + var.bllirlrx + var.bsrirlrx + var.bslirlrx",
+				    "var.allirlry": "var.blrirlry + var.bllirlry + var.bsrirlry + var.bslirlry",
+				    "var.allirlrz": "var.blrirlrz + var.bllirlrz + var.bsrirlrz + var.bslirlrz",
+				    "var.allirlty": "var.blrirlty + var.bllirlty + var.bsrirlty + var.bslirlty",
+				    "var.allirltx": "var.blrirltx + var.bllirltx + var.bsrirltx + var.bslirltx",
+				    "var.allirltz": "var.blrirltz + var.bllirltz + var.bsrirltz + var.bslirltz",
+				    "var.allihrx": "var.blrihrx + var.bllihrx + var.bsrihrx + var.bslihrx",
+				    "var.allihry": "var.blrihry + var.bllihry + var.bsrihry + var.bslihry",
+				    "var.allihrz": "var.blrihrz + var.bllihrz + var.bsrihrz + var.bslihrz",
+				    "var.allihtx": "var.blrihtx + var.bllihtx + var.bsrihtx + var.bslihtx",
+				    "var.allihty": "var.blrihty + var.bllihty + var.bsrihty + var.bslihty",
+				    "var.allihtz": "var.blrihtz + var.bllihtz + var.blrihtz + var.bllihtz",
+				    "var.allirarx": "var.blrirarx + var.bllirarx + var.bsrirarx + var.bslirarx",
+				    "var.allirary": "var.blrirary + var.bllirary + var.bsrirary + var.bslirary",
+				    "var.allirarz": "var.blrirarz + var.bllirarz + var.bsrirarz + var.bslirarz",
+				    "var.alliratx": "var.blriratx + var.blliratx + var.bsriratx + var.bsliratx",
+				    "var.alliraty": "var.blriraty + var.blliraty + var.bsriraty + var.bsliraty",
+				    "var.alliratz": "var.blriratz + var.blliratz + var.bsriratz + var.bsliratz",
+				    "var.allilarx": "var.blrilarx + var.bllilarx + var.bsrilarx + var.bslilarx",
+				    "var.allilary": "var.blrilary + var.bllilary + var.bsrilary + var.bslilary",
+				    "var.allilarz": "var.blrilarz + var.bllilarz + var.bsrilarz + var.bslilarz",
+				    "var.allilatx": "var.blrilatx + var.bllilatx + var.bsrilatx + var.bslilatx",
+				    "var.allilaty": "var.blrilaty + var.bllilaty + var.bsrilaty + var.bslilaty",
+				    "var.allilatz": "var.blrilatz + var.bllilatz + var.bsrilatz + var.bslilatz",
+				    "var.allirrx": "var.blrirrx + var.bllirrx + var.bsrirrx + var.bslirrx",
+				    "var.allirry": "var.blrirry + var.bllirry + var.bsrirry + var.bslirry",
+				    "var.allirtx": "var.blrirtx + var.bllirtx + var.bsrirtx + var.bslirtx",
+				    "var.allirty": "var.blrirty + var.bllirty + var.bsrirty + var.bslirty",
+				    "var.allirtz": "var.blrirtz + var.bllirtz + var.bsrirtz + var.bslirtz",
+				    "var.allipbs": "var.BlockingRightPoseBodyStrength * var.BlockingLeftPoseBodyStrength * var.BowShootingRightPoseBodyStrength * var.BowShootingLeftPoseBodyStrength",
+				    "var.alliphs": "var.BlockingRightPoseHeadStrength * var.BlockingLeftPoseHeadStrength * var.BowShootingRightPoseHeadStrength * var.BowShootingLeftPoseHeadStrength",
+				    "var.alliplas": "var.BlockingRightPoseLeftArmStrength * var.BlockingLeftPoseLeftArmStrength * var.BowShootingRightPoseLeftArmStrength * var.BowShootingLeftPoseLeftArmStrength",
+				    "var.allipras": "var.BlockingRightPoseRightArmStrength * var.BlockingLeftPoseRightArmStrength * var.BowShootingRightPoseRightArmStrength * var.BowShootingLeftPoseRightArmStrength",
+				    "var.alliplls": "var.BlockingRightPoseLeftLegStrength * var.BlockingLeftPoseLeftLegStrength * var.BowShootingRightPoseLeftLegStrength * var.BowShootingLeftPoseLeftLegStrength",
+				    "var.alliprls": "var.BlockingRightPoseRightLegStrength * var.BlockingLeftPoseRightLegStrength * var.BowShootingRightPoseRightLegStrength * var.BowShootingLeftPoseRightLegStrength",
+				    "var.alliprs": "var.BlockingRightPoseRootStrength * var.BlockingLeftPoseRootStrength * var.BowShootingRightPoseRootStrength * var.BowShootingLeftPoseRootStrength"
+				},
+				{
+				    "var.sbrx": "var.allsbrx",
+				    "var.sbry": "var.allsbry * var.SwingSide",
+				    "var.sbrz": "var.allsbrz * var.SwingSide",
+				    "var.sbtx": "var.allsbtx * var.SwingSide",
+				    "var.sbty": "var.allsbty",
+				    "var.sbtz": "var.allsbtz",
+				    "var.sllrx": "if(var.SwingSide > 0, var.allsllrx, var.allsrlrx)",
+				    "var.sllry": "if(var.SwingSide > 0, var.allsllry, -var.allsrlry)",
+				    "var.sllrz": "if(var.SwingSide > 0, var.allsllrz, -var.allsrlrz)",
+				    "var.sllty": "if(var.SwingSide > 0, var.allsllty, var.allsrlty)",
+				    "var.slltx": "if(var.SwingSide > 0, var.allslltx, -var.allsrltx)",
+				    "var.slltz": "if(var.SwingSide > 0, var.allslltz, var.allsrltz)",
+				    "var.srlrx": "if(var.SwingSide > 0, var.allsrlrx, var.allsllrx)",
+				    "var.srlry": "if(var.SwingSide > 0, var.allsrlry, -var.allsllry)",
+				    "var.srlrz": "if(var.SwingSide > 0, var.allsrlrz, -var.allsllrz)",
+				    "var.srlty": "if(var.SwingSide > 0, var.allsrlty, var.allsllty)",
+				    "var.srltx": "if(var.SwingSide > 0, var.allsrltx, -var.allslltx)",
+				    "var.srltz": "if(var.SwingSide > 0, var.allsrltz, var.allslltz)",
+				    "var.shrx": "var.allshrx",
+				    "var.shry": "var.allshry * var.SwingSide",
+				    "var.shrz": "var.allshrz * var.SwingSide",
+				    "var.shtx": "var.allshtx * var.SwingSide",
+				    "var.shty": "var.allshty",
+				    "var.shtz": "var.allshtz",
+				    "var.srarx": "if(var.SwingSide > 0, var.allsrarx, var.allslarx)",
+				    "var.srary": "if(var.SwingSide > 0, var.allsrary, -var.allslary)",
+				    "var.srarz": "if(var.SwingSide > 0, var.allsrarz, -var.allslarz)",
+				    "var.sratx": "if(var.SwingSide > 0, var.allsratx, -var.allslatx)",
+				    "var.sraty": "if(var.SwingSide > 0, var.allsraty, var.allslaty)",
+				    "var.sratz": "if(var.SwingSide > 0, var.allsratz, var.allslatz)",
+				    "var.slarx": "if(var.SwingSide > 0, var.allslarx, var.allsrarx)",
+				    "var.slary": "if(var.SwingSide > 0, var.allslary, -var.allsrary)",
+				    "var.slarz": "if(var.SwingSide > 0, var.allslarz, -var.allsrarz)",
+				    "var.slatx": "if(var.SwingSide > 0, var.allslatx, -var.allsratx)",
+				    "var.slaty": "if(var.SwingSide > 0, var.allslaty, var.allsraty)",
+				    "var.slatz": "if(var.SwingSide > 0, var.allslatz, var.allsratz)",
+				    "var.srrx": "var.allsrrx",
+				    "var.srry": "var.allsrry * var.SwingSide",
+				    "var.srtx": "var.allsrtx * var.SwingSide",
+				    "var.srty": "var.allsrty",
+				    "var.srtz": "var.allsrtz",
+				    "var.spbs": "var.SwingPoseBodyStrength",
+				    "var.sphs": "var.SwingPoseHeadStrength",
+				    "var.splas": "if(var.SwingSide > 0, var.SwingPoseLeftArmStrength, var.SwingPoseRightArmStrength)",
+				    "var.spras": "if(var.SwingSide > 0, var.SwingPoseRightArmStrength, var.SwingPoseLeftArmStrength)",
+				    "var.splls": "if(var.SwingSide > 0, var.SwingPoseLeftLegStrength, var.SwingPoseRightLegStrength)",
+				    "var.sprls": "if(var.SwingSide > 0, var.SwingPoseRightLegStrength, var.SwingPoseLeftLegStrength)",
+				    "var.sprs": "var.SwingPoseRootStrength"
+				},
+				{
+					"var.brx": "var.brx * var.spbs * var.allipbs + var.sbrx + var.allibrx",
+					"var.bry": "var.bry * var.spbs * var.allipbs + var.sbry + var.allibry",
+					"var.brz": "var.brz * var.spbs * var.allipbs + var.sbrz + var.allibrz",
+					"var.btx": "var.btx * var.spbs * var.allipbs + var.sbtx + var.allibtx",
+					"var.bty": "var.bty * var.spbs * var.allipbs + var.sbty + var.allibty",
+					"var.btz": "var.btz * var.spbs * var.allipbs + var.sbtz + var.allibtz",
+					"var.hrx": "var.hrx * var.sphs * var.alliphs + var.shrx + var.allihrx",
+					"var.hry": "var.hry * var.sphs * var.alliphs + var.shry + var.allihry",
+					"var.hrz": "var.hrz * var.sphs * var.alliphs + var.shrz + var.allihrz",
+					"var.htx": "var.htx * var.sphs * var.alliphs + var.shtx + var.allihtx",
+					"var.hty": "var.hty * var.sphs * var.alliphs + var.shty + var.allihty",
+					"var.htz": "var.htz * var.sphs * var.alliphs + var.shtz + var.allihtz",
+					"var.larx": "var.larx * var.splas * var.alliplas + var.slarx + var.allilarx",
+					"var.lary": "var.lary * var.splas * var.alliplas + var.slary + var.allilary",
+					"var.larz": "var.larz * var.splas * var.alliplas + var.slarz + var.allilarz",
+					"var.latx": "var.latx * var.splas * var.alliplas + var.slatx + var.allilatx",
+					"var.laty": "var.laty * var.splas * var.alliplas + var.slaty + var.allilaty",
+					"var.latz": "var.latz * var.splas * var.alliplas + var.slatz + var.allilatz",
+					"var.rarx": "var.rarx * var.spras * var.allipras + var.srarx + var.allirarx",
+					"var.rary": "var.rary * var.spras * var.allipras + var.srary + var.allirary",
+					"var.rarz": "var.rarz * var.spras * var.allipras + var.srarz + var.allirarz",
+					"var.ratx": "var.ratx * var.spras * var.allipras + var.sratx + var.alliratx",
+					"var.raty": "var.raty * var.spras * var.allipras + var.sraty + var.alliraty",
+					"var.ratz": "var.ratz * var.spras * var.allipras + var.sratz + var.alliratz",
+					"var.llrx": "var.llrx * var.splls * var.alliplls + var.sllrx + var.allillrx",
+					"var.llry": "var.llry * var.splls * var.alliplls + var.sllry + var.allillry",
+					"var.llrz": "var.llrz * var.splls * var.alliplls + var.sllrz + var.allillrz",
+					"var.lltx": "var.lltx * var.splls * var.alliplls + var.slltx + var.allilltx",
+					"var.llty": "var.llty * var.splls * var.alliplls + var.sllty + var.allillty",
+					"var.lltz": "var.lltz * var.splls * var.alliplls + var.slltz + var.allilltz",
+					"var.rlrx": "var.rlrx * var.sprls * var.alliprls + var.srlrx + var.allirlrx",
+					"var.rlry": "var.rlry * var.sprls * var.alliprls + var.srlry + var.allirlry",
+					"var.rlrz": "var.rlrz * var.sprls * var.alliprls + var.srlrz + var.allirlrz",
+					"var.rltx": "var.rltx * var.sprls * var.alliprls + var.srltx + var.allirltx",
+					"var.rlty": "var.rlty * var.sprls * var.alliprls + var.srlty + var.allirlty",
+					"var.rltz": "var.rltz * var.sprls * var.alliprls + var.srltz + var.allirltz",
+					"var.rrx": "var.rrx * var.sprs * var.alliprs + var.srrx + var.allirrx",
+					"var.rry": "var.rry * var.sprs * var.alliprs + var.srry + var.allirry",
+					"var.rrz": "var.rrz * var.sprs * var.alliprs + var.srrz + var.allirrz",
+					"var.rtx": "var.rtx * var.sprs * var.alliprs + var.srtx + var.allirtx",
+					"var.rty": "var.rty * var.sprs * var.alliprs + var.srty + var.allirty",
+					"var.rtz": "var.rtz * var.sprs * var.alliprs + var.srtz + var.allirtz"
+				},
+				{
+					"body.rx": "var.brx",
+					"body.ry": "var.bry * cos(var.brx) + var.brz * sin(var.brx)",
+					"body.rz": "var.brz * cos(var.brx) + var.bry * sin(var.brx)",
+					"body.tx": "var.btx + sin(var.brz) * 11",
+					"body.ty": "22 + var.bty - cos(var.brx) * 11 - cos(var.brz) * 11",
+					"body.tz": "var.btz - sin(var.brx) * 11",
+					"head.rx": "var.hrx",
+					"head.ry": "var.hry",
+					"head.rz": "var.hrz",
+					"head.tx": "body.tx + var.htx",
+					"head.ty": "body.ty + var.hty",
+					"head.tz": "body.tz + var.htz",
+					"right_arm.rx": "if(is_first_person_hand && !is_in_gui, right_arm.rx, var.rarx)",
+					"right_arm.ry": "if(is_first_person_hand && !is_in_gui, right_arm.ry, var.rary)",
+					"right_arm.rz": "if(is_first_person_hand && !is_in_gui, right_arm.rz, var.rarz + abs(body.rz) * (1 - var.DisableParentedLimbs) * 0.5)",
+					"right_arm.tx": "if(is_first_person_hand && !is_in_gui, right_arm.tx, var.DisableParentedLimbs * -5 + (body.tx - 5 * cos(var.bry)) * (1 - var.DisableParentedLimbs) + var.ratx + abs(body.rz) * (1 - var.DisableParentedLimbs))",
+					"right_arm.ty": "if(is_first_person_hand && !is_in_gui, right_arm.ty, body.ty * (1 - var.DisableParentedLimbs) + 2.5 + var.raty)",
+					"right_arm.tz": "if(is_first_person_hand && !is_in_gui, right_arm.tz, (body.tz + sin(var.bry) * 5) * (1 - var.DisableParentedLimbs) + var.ratz)",
+					"left_arm.rx": "if(is_first_person_hand && !is_in_gui, left_arm.rx, var.larx)",
+					"left_arm.ry": "if(is_first_person_hand && !is_in_gui, left_arm.ry, var.lary)",
+					"left_arm.rz": "if(is_first_person_hand && !is_in_gui, left_arm.rz, var.larz - abs(body.rz) * (1 - var.DisableParentedLimbs) * 0.5)",
+					"left_arm.tx": "if(is_first_person_hand && !is_in_gui, left_arm.tx, var.DisableParentedLimbs * 5 + (body.tx + 5 * cos(var.bry)) * (1 - var.DisableParentedLimbs) + var.latx - abs(body.rz) * (1 - var.DisableParentedLimbs))",
+					"left_arm.ty": "if(is_first_person_hand && !is_in_gui, left_arm.ty, body.ty * (1 - var.DisableParentedLimbs) + 2.5 + var.laty)",
+					"left_arm.tz": "if(is_first_person_hand && !is_in_gui, left_arm.tz, (body.tz - sin(var.bry) * 5) * (1 - var.DisableParentedLimbs) + var.latz)",
+					"right_leg.rx": "var.rlrx + (-sin(var.bry) * 0.5 - var.btz * 0.08 - clamp(var.rlty * 1, -5, 0) * 0.1) * (1 - var.DisableParentedLimbs)",
+					"right_leg.ry": "var.rlry - var.rltry",
+					"right_leg.rz": "var.rlrz + var.btx * 0.08 * (1 - var.DisableParentedLimbs)",
+					"right_leg.tx": "-2 + var.rltx + var.btx * (1 - var.DisableParentedLimbs)",
+					"right_leg.ty": "12 + if(var.is_on_ground > 0, clamp(var.rlty, -100, 0), var.rlty)",
+					"right_leg.tz": "var.rltz + (clamp(var.rlty * 1, -5, 0) + sin(var.bry) * 5 + var.btz) * (1 - var.DisableParentedLimbs)",
+					"left_leg.rx": "var.llrx + (sin(var.bry) * 0.5 - var.btz * 0.08 - clamp(var.llty * 1, -5, 0) * 0.1) * (1 - var.DisableParentedLimbs)",
+					"left_leg.ry": "var.llry - var.lltry",
+					"left_leg.rz": "var.llrz + var.btx * 0.08 * (1 - var.DisableParentedLimbs)",
+					"left_leg.tx": "2 + var.lltx + var.btx * (1 - var.DisableParentedLimbs)",
+					"left_leg.ty": "12 + if(var.is_on_ground > 0, clamp(var.llty, -100, 0), var.llty)",
+					"left_leg.tz": "var.lltz + (clamp(var.llty * 1, -5, 0) - sin(var.bry) * 5 + var.btz) * (1 - var.DisableParentedLimbs)",
+					"var.prrx": "var.rrx",
+				    "var.prry": "var.rry * (1 - var.DisableParentedLimbs)",
+				    "var.prtx": "var.rtx",
+				    "var.prty": "var.rty - if(is_sneaking, 2, 0) - 0.1",
+				    "var.prtz": "var.rtz + if(is_crawling, 2, 0)",
+					"root.rx": "if(var.NewFrame > 0, var.prrx, 0)",
+					"root.ry": "if(var.NewFrame > 0, var.prry, 0)",
+					"root.tx": "if(var.NewFrame > 0, var.prtx, 0)",
+					"root.ty": "if(var.NewFrame > 0, var.prty, 0)",
+					"root.tz": "if(var.NewFrame > 0, var.prtz, 0)"
+				},
+				{
+					"var.cbrx": "body.rx",
+					"var.cbry": "body.ry",
+					"var.cbrz": "body.rz",
+					"var.cbtx": "body.tx",
+					"var.cbty": "body.ty",
+					"var.cbtz": "body.tz"
+				},
+				{
+					"var.LastHead_Yaw": "if(var.NewFrame > 0, head_yaw, var.LastHead_Yaw)",
+					"var.LastHead_Pitch": "if(var.NewFrame > 0, head_pitch, var.LastHead_Pitch)",
+					"var.LastVelocityYJump": "if(var.NewFrame > 0, var.VelocityYJump, var.LastVelocityYJump)",
+					"var.LastVelocityY": "if(var.NewFrame > 0, var.VelocityY, var.LastVelocityY)",
+					"var.LastAvgVelocityY": "if(var.NewFrame > 0, var.AvgVelocityY, var.LastAvgVelocityY)",
+					"var.LastWalkingStrength": "if(var.NewFrame > 0, var.WalkingStrength, var.LastWalkingStrength)",
+					"var.LastSneakingPoseStrength": "if(var.NewFrame > 0, var.SneakingPoseStrength, var.LastSneakingPoseStrength)",
+					"var.LastHeadTurningPose": "if(var.NewFrame > 0, var.HeadTurningPose, var.LastHeadTurningPose)",
+					"var.LastFallingPose": "if(var.NewFrame > 0, var.FallingPose, var.LastFallingPose)",
+					"var.LastSwingProgress": "if(var.NewFrame > 0, var.SwingProgress, var.LastSwingProgress)",
+					"var.LastAge": "if(var.NewFrame > 0, var.Age, var.LastAge)",
+					"var.LastPosY": "if(var.NewFrame > 0, pos_y, var.LastPosY)",
+					"var.LastPosZ": "if(var.NewFrame > 0, pos_z, var.LastPosZ)",
+					"var.LastPosX": "if(var.NewFrame > 0, pos_x, var.LastPosX)",
+					"var.LastRotY": "if(var.NewFrame > 0, rot_y, var.LastRotY)",
+					"var.LastRotX": "if(var.NewFrame > 0, rot_x, var.LastRotX)",
+					"var.LastHeightAboveGround": "if(var.NewFrame > 0, var.HeightAboveGround, var.LastHeightAboveGround)",
+					"var.LastFrameCount": "frame_counter"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 16]}
+			]
+		},
+		{
+			"part": "jacket",
+			"id": "jacket",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 32], "sizeAdd": 0.25}
+			]
+		},
+		{
+			"part": "right_arm",
+			"id": "right_arm",
+			"invertAxis": "xy",
+			"translate": [-5, -21.5, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [4, 11.5, -2, 3, 12, 4], "textureOffset": [40, 16]}
+			]
+		},
+		{
+			"part": "right_sleeve",
+			"id": "right_sleeve",
+			"invertAxis": "xy",
+			"translate": [-5, -21.5, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [4, 11.5, -2, 3, 12, 4], "textureOffset": [40, 32], "sizeAdd": 0.25}
+			]
+		},
+		{
+			"part": "left_arm",
+			"id": "left_arm",
+			"invertAxis": "xy",
+			"translate": [5, -21.5, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-7, 11.5, -2, 3, 12, 4], "textureOffset": [32, 48]}
+			]
+		},
+		{
+			"part": "left_sleeve",
+			"id": "left_sleeve",
+			"invertAxis": "xy",
+			"translate": [5, -21.5, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-7, 11.5, -2, 3, 12, 4], "textureOffset": [48, 48], "sizeAdd": 0.25}
+			]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1.9, -12, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-0.1, 0, -2, 4, 12, 4], "textureOffset": [0, 16]}
+			]
+		},
+		{
+			"part": "right_pants",
+			"id": "right_pants",
+			"invertAxis": "xy",
+			"translate": [-1.9, -12, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-0.1, 0, -2, 4, 12, 4], "textureOffset": [0, 32], "sizeAdd": 0.25}
+			]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1.9, -12, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-3.9, 0, -2, 4, 12, 4], "textureOffset": [16, 48]}
+			]
+		},
+		{
+			"part": "left_pants",
+			"id": "left_pants",
+			"invertAxis": "xy",
+			"translate": [1.9, -12, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-3.9, 0, -2, 4, 12, 4], "textureOffset": [0, 48], "sizeAdd": 0.25}
+			]
+		}
+	]
+}

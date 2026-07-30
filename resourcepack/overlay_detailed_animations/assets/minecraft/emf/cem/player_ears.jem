@@ -1,0 +1,27 @@
+{
+	"credit": "by Cymock & MapleTape",
+	"textureSize": [64, 64],
+	"texture": ".png",
+	"models": [
+		{
+			"part": "left_ear",
+			"id": "left_ear",
+			"invertAxis": "xy",
+			"translate": [-6, -30, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [3, 30, -1, 6, 6, 1], "textureOffset": [24, 0], "sizeAdd": 1}
+			]
+		},
+		{
+			"part": "right_ear",
+			"id": "right_ear",
+			"invertAxis": "xy",
+			"translate": [6, -30, 0],
+			"scale": 1,
+			"boxes": [
+				{"coordinates": [-9, 30, -1, 6, 6, 1], "textureOffset": [24, 0], "sizeAdd": 1}
+			]
+		}
+	]
+}
