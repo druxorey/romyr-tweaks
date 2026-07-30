@@ -1,5 +1,0 @@
-{
-  "containers": "minecraft:lectern",
-  "textures": {
-    "minecraft:textures/gui/book.png": "optigui:gui/book/lectern.png"}
-}
